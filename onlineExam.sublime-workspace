@@ -1,0 +1,875 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"firs",
+				"first_name"
+			],
+			[
+				"las",
+				"last_name"
+			],
+			[
+				"in",
+				"international_subcat"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"aid",
+				"aidsdetailgov"
+			],
+			[
+				"aids",
+				"aidsdetailgov"
+			],
+			[
+				"ais",
+				"aidsdetailsint"
+			],
+			[
+				"desc",
+				"desc"
+			],
+			[
+				"natio",
+				"national"
+			],
+			[
+				"inter",
+				"international"
+			],
+			[
+				"crow",
+				"crowdFunding"
+			],
+			[
+				"no",
+				"not"
+			],
+			[
+				"to",
+				"total"
+			],
+			[
+				"cro",
+				"crowdFunding"
+			],
+			[
+				"na",
+				"national"
+			],
+			[
+				"dono",
+				"donorNameSum"
+			],
+			[
+				"donorNam",
+				"donorNameSum"
+			],
+			[
+				"donorName",
+				"donorNameList"
+			],
+			[
+				"a",
+				"aggregate"
+			],
+			[
+				"Htt",
+				"HttpResponse"
+			],
+			[
+				"fund",
+				"fundraised"
+			],
+			[
+				"crowd",
+				"crowdFunding"
+			],
+			[
+				"tran",
+				"transactionType"
+			],
+			[
+				"reci",
+				"recipientCountry"
+			],
+			[
+				"s",
+				"strip"
+			],
+			[
+				"pie",
+				"piechartgov"
+			],
+			[
+				"piechart",
+				"piechartint"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"data",
+				"dataInt"
+			],
+			[
+				"Ht",
+				"HttpResponse"
+			],
+			[
+				"do",
+				"donorType"
+			],
+			[
+				"int",
+				"international_percent"
+			],
+			[
+				"agg",
+				"agg_amount"
+			],
+			[
+				"tra",
+				"transactionDate"
+			],
+			[
+				"donor",
+				"donorCountry"
+			],
+			[
+				"All",
+				"AllDataAdmin"
+			],
+			[
+				"o",
+				"objects"
+			],
+			[
+				"curr",
+				"currency"
+			],
+			[
+				"rece",
+				"recipientCountry"
+			],
+			[
+				"tabl",
+				"table_csv"
+			],
+			[
+				"dat",
+				"dateType"
+			],
+			[
+				"so",
+				"source"
+			],
+			[
+				"recipi",
+				"recipientType"
+			],
+			[
+				"recei",
+				"recipientWebsite"
+			],
+			[
+				"don",
+				"donorCountry"
+			],
+			[
+				"dor",
+				"donorType"
+			],
+			[
+				"str",
+				"strip"
+			],
+			[
+				"max",
+				"max_length"
+			],
+			[
+				"Url",
+				"URLField"
+			],
+			[
+				"Te",
+				"TextField"
+			],
+			[
+				"ma",
+				"max_length"
+			],
+			[
+				"de",
+				"default"
+			],
+			[
+				"De",
+				"DecimalField"
+			],
+			[
+				"adi",
+				"aid_amount"
+			],
+			[
+				"sub",
+				"subcategory"
+			],
+			[
+				"subca",
+				"subcategory"
+			],
+			[
+				"order",
+				"order_by"
+			],
+			[
+				"subcat",
+				"subcat_total"
+			],
+			[
+				"fil",
+				"filter"
+			],
+			[
+				"nat",
+				"nat_corporates"
+			],
+			[
+				"nat_",
+				"nat_government"
+			],
+			[
+				"Go",
+				"Government"
+			],
+			[
+				"Int",
+				"International"
+			],
+			[
+				"gof",
+				"gofundme_csv"
+			],
+			[
+				"gofu",
+				"gofundme"
+			],
+			[
+				"da",
+				"date_created"
+			],
+			[
+				"Info",
+				"infographics"
+			],
+			[
+				"con",
+				"context"
+			],
+			[
+				"ai",
+				"aidsdetails"
+			],
+			[
+				"tes",
+				"testname1"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"use",
+				"username"
+			],
+			[
+				"user",
+				"userlogin"
+			],
+			[
+				"si",
+				"signup_client"
+			],
+			[
+				"sign",
+				"signup_client"
+			],
+			[
+				"db",
+				"db_connection"
+			],
+			[
+				"login",
+				"loginsuccess"
+			],
+			[
+				"h",
+				"html	html"
+			],
+			[
+				"test",
+				"testTable"
+			],
+			[
+				"pos",
+				"postgresql"
+			],
+			[
+				"l",
+				"link	Tag"
+			],
+			[
+				"arr",
+				"arrayPosition"
+			],
+			[
+				"userList",
+				"userListData"
+			],
+			[
+				"ta",
+				"tableContent"
+			],
+			[
+				"ge",
+				"get_nodejs_data"
+			],
+			[
+				"an",
+				"angular"
+			],
+			[
+				"get",
+				"get_nodejs_data"
+			],
+			[
+				"que",
+				"questionSet"
+			],
+			[
+				"Node",
+				"NodejsSearchController"
+			],
+			[
+				"node",
+				"nodejs_add"
+			],
+			[
+				"Ques",
+				"QuestionSet"
+			],
+			[
+				"qu",
+				"questionSet"
+			],
+			[
+				"search",
+				"searchQuestion"
+			],
+			[
+				"li",
+				"li	Tag"
+			],
+			[
+				"for",
+				"form	Tag"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"urlenco",
+				"urlencodedparser"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"cs",
+				"csvFile"
+			],
+			[
+				"csv",
+				"csvRow"
+			],
+			[
+				"down",
+				"downloadDirectory"
+			],
+			[
+				"url",
+				"urlretrieve"
+			],
+			[
+				"downl",
+				"downloadList"
+			],
+			[
+				"downlo",
+				"downloadDirectory"
+			],
+			[
+				"fr",
+				"from"
+			],
+			[
+				"p",
+				"print"
+			],
+			[
+				"c",
+				"country"
+			],
+			[
+				"hi",
+				"historyIP"
+			],
+			[
+				"S",
+				"SgmlLinkExtractor"
+			],
+			[
+				"all",
+				"allIntLinks"
+			],
+			[
+				"ex",
+				"externalLinks"
+			],
+			[
+				"site",
+				"siteUrl"
+			],
+			[
+				"rand",
+				"randint"
+			],
+			[
+				"ran",
+				"random"
+			],
+			[
+				"star",
+				"startingPage"
+			],
+			[
+				"sp",
+				"splitAddress"
+			],
+			[
+				"sta",
+				"startingPage"
+			],
+			[
+				"e",
+				"externalLinks"
+			],
+			[
+				"pa",
+				"pages"
+			],
+			[
+				"new",
+				"newPage"
+			],
+			[
+				"page",
+				"pageUrl"
+			],
+			[
+				"co",
+				"compile"
+			],
+			[
+				"find",
+				"findAll"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "onlineExam/onlineExam/urls.py",
+			"settings":
+			{
+				"buffer_size": 760,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/about.html",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/aids.html",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/aidsdetail-gov.html",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/aidsdetails-gov.html",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/aidsdetail-int.html",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/aidsdetails-int.html",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/settings.py~",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/settings_dev.py",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/infographics.html",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/provideaidinfo.html",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/survey.html",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/aidsdetails.html",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/index.html",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/fundraising/admin.py",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/fundraising/models.py",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/settings.py",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/urls.py",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/forms.py",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem/onlineExam/onlineExam/urls.py",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/views.py",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund.sublime-project",
+		"/home/saurav/Documents/GitDjango/Django/nepalfund/nepalfund/templates/provideaidinfo.html",
+		"/home/saurav/Documents/GitDjango/Django/nepalfund/nepalfund/templates/infographics.html",
+		"/home/saurav/Documents/GitDjango/Django/nepalfund/nepalfund/templates/index.html",
+		"/home/saurav/Documents/GitDjango/Django/nepalfund/nepalfund/templates/aidsdetails-gov.html",
+		"/home/saurav/Documents/GitDjango/Django/nepalfund/nepalfund/templates/aidsdetails.html",
+		"/home/saurav/Documents/GitDjango/Django/nepalfund/fundraising/models.py",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/manage.py",
+		"/home/saurav/Documents/GitDjango/Django/nepalfund/nepalfund/templates/aids.html",
+		"/home/saurav/Documents/GitDjango/Django/nepalfund/nepalfund/templates/about.html",
+		"/home/saurav/Documents/GitDjango/Django/nepalfund/nepalfund/templates/base.html",
+		"/home/saurav/Documents/GitDjango/Django/nepalfund/nepalfund/views.py",
+		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/database.sql",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/nepalfund/templates/about.html",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/original_fund.csv",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/nepalfund/templates/aidsdetails-gov.html",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/nepalfund/templates/aidsdetails-int.html",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/nepalfund/templates/aidsdetails.html",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/nepalfund/templates/aids.html",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/nepalfund/static/css/style.css",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/database.sql",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/fundraising/admin.py",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/nepalfund/templates/base.html",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/nepalfund/templates/provideaidinfo.html",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/nepalfund/urls.py",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/nepalfund/templates/infographics.html",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/nepalfund/templates/index.html",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/fundraising/models.py",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/nepalfund/nepalfund/views.py",
+		"/home/saurav/Documents/kobitwork/provideaidinfo.php",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/data_column.txt",
+		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/templates/table.html",
+		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/templates/survey.html",
+		"/home/saurav/Documents/Django/try-django/src/newsletter/views.py",
+		"/home/saurav/Documents/Django/try-django/src/templates/base.html",
+		"/home/saurav/Documents/Django/try-django/src/templates/navbar.html",
+		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/index.php",
+		"/home/saurav/Documents/Django/try-django/src/templates/head_css.html",
+		"/home/saurav/Documents/Django/try-django/src/newsletter/templates/home.html",
+		"/home/saurav/Documents/Django/innoseva/templates/layout.html",
+		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/views.py",
+		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/templates/base.html",
+		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/urls.py",
+		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/settings_dev.py",
+		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/manage.py",
+		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/settings.py",
+		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/about.php",
+		"/home/saurav/Documents/For BLOG/Nodejs/nodejs+mongodb/index.js",
+		"/home/saurav/Documents/For BLOG/Nodejs/customEvents/index.js",
+		"/home/saurav/Documents/upwork/projects/vehicleTracking/VehicleTrackingSystem/index.js",
+		"/home/saurav/Documents/For BLOG/Nodejs/login and sign up /loginsuccess.html",
+		"/home/saurav/Documents/For BLOG/Nodejs/login and sign up /login.html",
+		"/home/saurav/Documents/For BLOG/Nodejs/login and sign up /signup.html",
+		"/home/saurav/Documents/For BLOG/Nodejs/login and sign up /index.js",
+		"/home/saurav/Documents/upwork/projects/vehicleTracking/VehicleTrackingSystem/templates/userLogin/signup.html",
+		"/home/saurav/Documents/For BLOG/Blog Template/blog.css",
+		"/home/saurav/Documents/For BLOG/Blog Template/index.html",
+		"/home/saurav/Documents/For BLOG/Blog Template/contact.html",
+		"/home/saurav/Documents/For BLOG/Nodejs/simple express server/index.js",
+		"/home/saurav/Documents/For BLOG/Nodejs/simple express server/index.html",
+		"/home/saurav/Documents/For BLOG/Blog Template/about.html",
+		"/home/saurav/Documents/For BLOG/Nodejs/nodejs+postgresql/index.js",
+		"/home/saurav/Documents/For BLOG/Nodejs/Simple Http Server/simplehttpserver.html",
+		"/home/saurav/Downloads/pdfReader.py",
+		"/home/saurav/Documents/upwork/projects/vehicleTracking/VehicleTrackingSystem/templates/userLogin/login.html",
+		"/home/saurav/Documents/upwork/projects/vehicleTracking/VehicleTrackingSystem/templates/userLogin/index.html",
+		"/home/saurav/Documents/Blog Template/untitled",
+		"/home/saurav/Documents/Heroku/First/python-getting-started/.env",
+		"/home/saurav/Documents/Heroku/First/python-getting-started/gettingstarted/settings.py",
+		"/home/saurav/Documents/Heroku/First/python-getting-started/hello/views.py",
+		"/home/saurav/Documents/Heroku/First/python-getting-started/requirements.txt",
+		"/home/saurav/Documents/Heroku/First/python-getting-started/gettingstarted/urls.py",
+		"/home/saurav/Documents/Heroku/First/python-getting-started/manage.py",
+		"/home/saurav/Documents/upwork/test/templates/angular.html",
+		"/home/saurav/Documents/upwork/test/templates/django.html",
+		"/home/saurav/Documents/upwork/test/templates/python.html",
+		"/home/saurav/Documents/upwork/test/templates/nodejs.html",
+		"/home/saurav/Documents/upwork/test/templates/excel.html",
+		"/home/saurav/Documents/upwork/test/templates/index.html",
+		"/home/saurav/Documents/upwork/test/templates/javascript.html",
+		"/home/saurav/Documents/upwork/test/index.js",
+		"/home/saurav/Documents/nodejs/node_mongodb/nodetest2/package.json",
+		"/home/saurav/Documents/nodejs/node_mongodb/nodetest2/views/layout.jade",
+		"/home/saurav/Documents/nodejs/node_mongodb/nodetest2/views/index.jade",
+		"/home/saurav/Documents/nodejs/node_mongodb/nodetest2/app.js",
+		"/home/saurav/Documents/nodejs/node_mongodb/nodetest2/routes/users.js",
+		"/home/saurav/Documents/nodejs/node_mongodb/nodetest2/routes/index.js",
+		"/home/saurav/Documents/nodejs/node_mongodb/nodetest2/public/javascripts/global.js",
+		"/home/saurav/Documents/upwork/test/python.html",
+		"/home/saurav/Documents/angular/tutorialzine/4_instantSearch/index.js",
+		"/home/saurav/Documents/angular/tutorialzine/4_instantSearch/index.html",
+		"/home/saurav/Documents/upwork/projects/vehicleTracking/VehicleTrackingSystem/templates/poi/poi.html",
+		"/home/saurav/Documents/angular/tutorialzine/5_switchableGrid/index.css",
+		"/home/saurav/Documents/angular/tutorialzine/5_switchableGrid/index.js",
+		"/home/saurav/Documents/angular/tutorialzine/5_switchableGrid/index.html",
+		"/home/saurav/Documents/angular/tutorialzine/3_orderForm/index.html",
+		"/home/saurav/Documents/angular/tutorialzine/4_instantSearch/index.css",
+		"/home/saurav/Documents/angular/tutorialzine/3_orderForm/index.css",
+		"/home/saurav/Documents/angular/tutorialzine/3_orderForm/index.js",
+		"/home/saurav/Documents/upwork/projects/vehicleTracking/VehicleTrackingSystem/templates/userLogin/profile_edit.html",
+		"/home/saurav/Documents/angular/tutorialzine/2_inlineEditor/index.html",
+		"/home/saurav/Documents/angular/tutorialzine/2_inlineEditor/index.js",
+		"/home/saurav/Documents/angular/tutorialzine/2_inlineEditor/index.css",
+		"/home/saurav/Documents/angular/tutorialzine/first/index.css",
+		"/home/saurav/Documents/angular/tutorialzine/first/index.html",
+		"/home/saurav/Documents/web_scrapping/scrapy/1_crawler/wikiSpider/wikiSpider/items.py",
+		"/home/saurav/Documents/web_scrapping/scrapy/1_crawler/wikiSpider/wikiSpider/spiders/articleSpider.py",
+		"/home/saurav/Documents/web_scrapping/1_first/json_parser.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"items",
+			"required",
+			"progressbar",
+			"germany",
+			"subcategory",
+			"})/',",
+			"'});\n",
+			"{\n",
+			";\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "onlineExam/onlineExam/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 760,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 27.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 529.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "onlineExam.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 225.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
