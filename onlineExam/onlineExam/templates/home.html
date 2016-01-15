@@ -1,105 +1,67 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
         
-        <!-- Top Navbar -->
-        <div class="navbar navbar-inverse navbar-upper navbar-fixed-top" role="navigation">  
-  
-            <div class="navbar-header">
-                <div class="navbar-header"><a class="navbar-brand" href="#">Email:support@gmail.com</a></div>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                </button>
-            </div>
-            
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav pull-right">
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Register</a></li>
-                </ul>
-           
-            </div>
-        </div>
-    <div class="navbar navbar-inverse navbar-static-top navbar-lower" role="navigation"> 
-        <div class="navbar-header">
-             <div class="navbar-header"><a class="navbar-brand" href="#">Logo or Something</a></div>
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-        </div>
-        
-        <div class="collapse navbar-collapse">
-            
-            <ul class="nav navbar-nav pull-right">
-                
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Classes</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-            <!-- <div class="col-sm-3 col-md-3 pull-right">
-            <div class="navbar-text">Text</div>
-            <form class="navbar-form" role="search">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
-            </div>
-            </form>
-            </div> -->
-            
-        </div>
-    </div>
+    {% include 'navbar.html' %}
 
-
-
-    <!-- <table id="slideleft">
-      <tr class="slideLeftItem" style="position:fixed;left:-320px;z-index:1000;height:100%;">
-        <td><img src="https://lh3.googleusercontent.com/-GMJe-Am-U9Q/T4p4bZu7jDI/AAAAAAAAAFs/qQqmMGn-wwg/s800/facebook-vertical.png" style="top:5px; position:absolute; border-left-width:5px; left:318px;"/></td>
-        <td class="contentBox" style="border:solid 5px #5370AD; width:300px;height:300px;position:relative;border-radius:5px;background-color:white;">
-          <div id="fb-root"></div>
-          <fb:like-box href="https://www.facebook.com/getengineeringtroop?fref=ts" width="300" show_faces="true" stream="false" header="false">
-          </fb:like-box>
-        </td>
-      </tr>
-    </table> -->
-
-
-
-        <!-- Intro-->
+            <!-- Intro-->
         <header class="intro">
             <div class="intro-body">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                           <center></center>
+                        <div class="col-md-10">
+                           
                             <p class="intro-text">Donate to Nepal Earthquake Relief.<br> Help Nepal Come Back</p>
-                            <a href="#aids" class="btn btn-circle page-scroll">
+                            <!-- <a href="#aids" class="btn btn-circle page-scroll">
                                 <i class="fa fa-angle-double-down animated"></i>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>
             </div>
         </header>
         <!-- intro ends -->
+        <div class="container">
+            <div class="row text-center" style="color:orange;font-size:30px;font-weight:bold;margin-top:20px;margin-bottom:20px;">Courses We Offer</div>
+            <div class="row">
+                <div class="col-md-5 img-center">
+                    <img src="{% static 'img/engineer.jpg' %}" height="auto">
+                    <div>Institute of Engineering(IOE)</div>
+                    <a href="{% url 'engineer' %}"><div class="button">Get Started</div></a>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5 img-center" style="" height="auto">
+                    <img src="{% static 'img/doctor.png' %}">
+                    <div>Institute of Medicine(IOM)</div>
+                    <a href="{% url 'doctor' %}"><div class="button">Get Started</div></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="banner-bottom container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 .banner-bottom-body">
+                        <div class="row" style="color:#fff;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque suscipit eros, non iaculis nisl. Etiam eget enim eu quam congue bibendum et nec neque. In fermentum erat vitae purus blandit iaculis. Morbi fermentum mi turpis, vitae elementum quam maximus ut. Vivamus nec nulla ut nulla rutrum consectetur vel eget sapien.
+                        </div> 
+                        <div style="text-align:left;" class="row">
+                            <div class="col-md-2 col-xs-3">
+                                <img src="{% static 'img/doctor.png' %}" style="background-color:white;" height=100 class="img-circle"/>
+                            </div>
+                            <div class="col-md-4 col-xs-8" style="padding-top:3%"><span style="font-weight:bold;color:orange;">Hello</span><br/><span style="color:#fff;">hello</span></div>
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>            
+        </div>
 
               
-        <!-- footer section start-->
-        <footer class="footer">
-            <div class="container text-center">
-                <p>Powered by:<a href="http://www.getengineeringtroop.com" target="_blank"> Get Engineering Troop</a></p>
-            </div>
-        </footer>
-        <!-- footer section ends -->
-    </div>
+        {% include "footer.html" %}
 
 
 {% endblock %}

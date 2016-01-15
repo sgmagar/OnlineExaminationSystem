@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+        
+    {% include 'navbar.html' %}
+    <div class="container">
+	    <div class="text-center title" style="color:orange;">{{ register }}</div>
+	    <div class="row">
+	    	<div class="col-md-4 col-md-offset-4">
+			    <form action="{% url 'register' %}" method="post">{% csrf_token %}
+					{% for field in userForm %}
+						
+				            {{ field }}<span style="color:red">{% for error in field.errors %}<li>{{ error }}</li>{% endfor %}</span>
+				           <br/>
+				        
+					{% endfor %}
+					{% for field in userProfileForm %}
+						
+				            <span style="color:red">{% for error in field.errors %}<li>{{ error }}</li>{% endfor %}</span>
+				            {{ field }}
+				            <br/>
+				        
+					{% endfor %}
+					{% if register == 'Register Here' %}
+					<input type="submit" class="btn btn-warning" value="Register" />
+					{% endif %}
+				</form>
+			</div>
+		</div>
+	</div>
+
+   {% include 'footer.html' %}
+
+{% endblock %}

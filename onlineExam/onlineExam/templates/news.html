@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+        
+   {% include 'navbar.html' %}
+    <div class="container-fluid">
+        <div class="container">
+            <div class="text-center title" style="color:orange;">News</div>
+            <div class="row" style="text-align:center; font-size:20px; margin-bottom:3%; color:orange;">
+                {% for news in news %}
+                    {{ news }} {{ news.publishDate }}<br/>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                     <a href="{% url 'login' %}"><div class="button">Login</div></a>    
+                </div>
+                <div class="col-md-6 text-center">
+                     <a href="{% url 'register' %}"><div class="button">Register</div></a> 
+                </div>
+            </div>
+           
+            
+        </div>
+    </div>
+
+
+
+              
+        <!-- footer section start-->
+        <!-- <footer class="upper-footer container-fluid">
+            <div class="container">
+                <div class="col-md-4">
+                    <div>Home</div>
+                    <div>Classes</div>
+                    <div>FAQ</div>
+                    <div>Contact Us</div>
+                </div>
+                <div class="col-md-4">
+                    <div>Terms of Service</div>
+                    <div>Privacy Policy</div>
+                    <div>Subscription Plan</div>
+                </div>
+                <div class="col-md-4">
+                    Follow Us<br/>
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                      <i class="fa fa-facebook fa-stack-1x" style="color:orange;"></i>
+                    </span>
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                      <i class="fa fa-twitter fa-stack-1x" style="color:orange;"></i>
+                    </span>
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                      <i class="fa fa-google-plus fa-stack-1x" style="color:orange;"></i>
+                    </span>
+                </div>
+            </div>
+        </footer> -->
+        <!-- footer section end -->
+       <!--  <div id = "footerDiv" class = "navbar-fixed-bottom" style = "background-color:yellow;margin-bottom:0px; height: 30px; padding-top:2px;color:orange;">
+            <div class="container">
+                <p style="font-size:16px;">Copyright* All Rights Reserved<span style="float:right;">Powered By: Get</span></p>
+            </div>
+        </div> -->
+        {% include "footer.html" %}
+
+
+{% endblock %}

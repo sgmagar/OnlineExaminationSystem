@@ -21,4 +21,12 @@ from .views import *
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', home, name='home'),
+    url(r'^classes/', classes, name='classes'),
+    url(r'^faq/', faq, name='faq'),
+    url(r'^contactus/', contactus, name='contactus'),
+    url(r'^doctor/', doctor, name='doctor'),
+    url(r'^engineer/', engineer, name='engineer'),
+    url(r'^register/', register, name='register'),
+    url(r'^login/',login_view, name='login'),
+    url(r'^logout/',logout_view, name='logout'),
 ]
