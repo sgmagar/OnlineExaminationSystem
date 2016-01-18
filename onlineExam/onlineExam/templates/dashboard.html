@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+        
+    {% include 'navbar.html' %}
+    <div class="text-center title">Dashboard</div>
+    <div class="container">
+    	<div class="row">
+    		<div> {% if rechargeError != None %}{{rechargeError}}{% endif %}</div>
+    		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button>
+    		<div class="text-center">
+    			{{ ioe_questionset.size }}
+    			{% if ioe_questionset.length != 0 %}
+    				<div style="color:orange;font-size:15px;font-weight:bold;">IOE Question Set</div>
+    				{% for qset in ioe_questionset %}
+    					<div style="color:orange">Question Set {{ qset.qgroup }}</div>
+    				{% endfor %}
+    			{% endif %}
+    			{% if iom_questionset.length != 0 %}
+    				<div style="color:orange;font-size:15px;font-weight:bold;">IOM Question Set</div>
+    				{% for qset in iom_questionset %}
+    					<div style="color:orange">Question Set {{ qset.qgroup }}</div>
+    				{% endfor %}
+    			{% endif %}
+    			{% if moe_questionset.length != 0 %}
+    				<div style="color:orange;font-size:15px;font-weight:bold;">MOE Question Set</div>
+    				{% for qset in moe_questionset %}
+    					<div style="color:orange">Question Set {{ qset.qgroup }}</div>
+    				{% endfor %}
+    			{% endif %}
+    		</div>
+    	</div>
+    </div>
+
+   {% include 'footer.html' %}
+
+   <div class="modal fade" id="rechargeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="exampleModalLabel">Recharge Here</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form action = "{% url 'recharge' %}" method = "POST">{% csrf_token %}
+		          <div class="form-group">
+		          	<select name="group" class="form-control">
+		          		<option value="IOE">IOE</option>
+		          		<option value="IOM">IOM</option>
+		          		<option value="MOE">MOE</option>
+		          	</select>
+		  
+		            <input type="text" class="form-control" id="pin" name = "pin" placeholder="Pin Number" autofocus required>
+		          </div>
+		          
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <input type="submit" class="btn btn-warning" value = "Recharge">
+			      </div>
+		       </form>
+		    </div>
+		  </div>
+	</div>
+
+{% endblock %}
+{% block footer %}
+	<script type="text/javascript">
+		$('#rechargeModal').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget) // Button that triggered the modal
+		var recipient = button.data('whatever') // Extract info from data-* attributes
+		// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+		// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+		var modal = $(this)
+		modal.find('.modal-title').text('New message to ' + recipient)
+		modal.find('.modal-body input').val(recipient)
+	});
+	</script>
+{% endblock %}

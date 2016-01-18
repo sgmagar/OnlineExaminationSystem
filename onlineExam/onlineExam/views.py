@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse, Http404
 from django.core.urlresolvers import reverse
 
@@ -6,11 +6,17 @@ from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponse, Http404
 from django.contrib.auth.decorators import login_required
 
+from importlib import import_module
+from django.conf import settings
+SessionStore = import_module(settings.SESSION_ENGINE).SessionStore
+session = SessionStore()
+
 
 from exam.models import *
 from .forms import *
 
 def home(request):
+	request.session['rechargeError']=None
 	
 	context = {
 		"title":"Home"
@@ -88,7 +94,8 @@ def login_view(request):
 				context={
 					'login':'Login Success',
 				}
-				return render(request,'login.html',context)
+				print user.id
+				return redirect(reverse('dashboard' , args=(user.id,)))
 		else:
 			context={
 				'login':'Login Here',
@@ -105,3 +112,44 @@ def login_view(request):
 def logout_view(request):
 	logout(request)
 	return redirect(reverse('home'))
+
+@login_required(login_url='login')
+def dashboard(request, id):
+	user = get_object_or_404(User,pk=id)
+	ioe_questionset = request.user.userquestionset_set.filter(qgroup='IOE')
+	iom_questionset = request.user.userquestionset_set.filter(qgroup='IOM')
+	moe_questionset = request.user.userquestionset_set.filter(qgroup='MOE')
+	print len(ioe_questionset)
+	context={
+		'title':'Dashboard',
+		'rechargeError': request.session['rechargeError'],
+		'ioe_questionset':ioe_questionset,
+		'iom_questionset':iom_questionset,
+		'moe_questionset':moe_questionset,
+
+	}
+	request.session['rechargeError']=None
+	return render(request,'dashboard.html',context)
+
+@login_required(login_url='login')
+def recharge(request):
+	if request.method=='POST':
+		group = request.POST['group']
+		pin = request.POST['pin']
+		user = request.user;
+		key = Key.objects.get(group=group,key=pin,status=False)
+		print key
+		if  not key:
+			request.session['rechargeError']='Key is invalid'
+			# print request.session['rechargeError']
+		else:
+			qset = user.userquestionset_set.filter(qgroup='IOE').count()
+			for i in range(1,11):
+				userquestionset=UserQuestionSet.objects.create(user=user,qgroup=group,questionset=qset+i)
+				userquestionset.save()
+			key.status=True
+			key.save()
+
+
+	return redirect(reverse('dashboard', args=(request.user.id,)))
+

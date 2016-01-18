@@ -37,9 +37,61 @@ class UserAdmin(BaseUserAdmin):
 class KeyAdmin(admin.ModelAdmin):
 	search_fields=['key']
 	list_display=['key','status']
+
 	ordering=('-status',)
+
+class UserQuestionSetAdmin(admin.ModelAdmin):
+	search_fields=['user']
+	list_display=['user','questionset','status','score']
+	ordering = ('user',)
+	# def get_usernamee(self,obj):
+	# 	return obj.user.username
+# class AnswerIOEAdmin(admin.ModelAdmin):
+# 	list_display = ['question','answer','value','afile']
+# 	search_fields =['question']
+# 	ordering=('question',)
+class AnswerIOEInline(admin.TabularInline):
+	model=AnswerIOE
+	extra=0
+	can_delete = False
+	verbose_name_plural='AnswerIOE'
+class QuestionIOEAdmin(admin.ModelAdmin):
+	search_fields=['questionset','questionno','question']
+	inlines = (AnswerIOEInline,)
+	list_display=['questionset','questionno','subject','qtype','question','qfile']
+	ordering=('questionset','questionno',)
+
+class AnswerIOMInline(admin.TabularInline):
+	model=AnswerIOM
+	extra=0
+	can_delete = False
+	verbose_name_plural='AnswerIOM'
+class QuestionIOMAdmin(admin.ModelAdmin):
+	search_fields=['questionset','questionno','question']
+	inlines = (AnswerIOMInline,)
+	list_display=['questionset','questionno','subject','qtype','question','qfile']
+	ordering=('questionset','questionno',)
+
+class AnswerMOEInline(admin.TabularInline):
+	model=AnswerMOE
+	extra=0
+	can_delete = False
+	verbose_name_plural='AnswerMOE'
+class QuestionMOEAdmin(admin.ModelAdmin):
+	search_fields=['questionset','questionno','question']
+	inlines = (AnswerMOEInline,)
+	list_display=['questionset','questionno','subject','qtype','question','qfile']
+	ordering=('questionset','questionno',)
+	
+
 
 admin.site.register(News,NewsAdmin)
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
 admin.site.register(Key, KeyAdmin)
+admin.site.register(UserQuestionSet,UserQuestionSetAdmin)
+# admin.site.register(AnswerIOE,AnswerIOEAdmin)
+admin.site.register(QuestionIOE,QuestionIOEAdmin)
+admin.site.register(QuestionIOM,QuestionIOMAdmin)
+admin.site.register(QuestionMOE,QuestionMOEAdmin)
+
