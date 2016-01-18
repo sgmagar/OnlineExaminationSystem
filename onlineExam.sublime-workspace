@@ -4,12 +4,32 @@
 		"selected_items":
 		[
 			[
-				"s",
-				"status"
+				"use",
+				"userquestionset_set"
+			],
+			[
+				"user",
+				"userquestionset"
+			],
+			[
+				"rech",
+				"rechargeError"
+			],
+			[
+				"op",
+				"option	Tag"
 			],
 			[
 				"re",
-				"register"
+				"request"
+			],
+			[
+				"C",
+				"CharField"
+			],
+			[
+				"s",
+				"status"
 			],
 			[
 				"cle",
@@ -356,14 +376,6 @@
 				"result"
 			],
 			[
-				"use",
-				"username"
-			],
-			[
-				"user",
-				"userlogin"
-			],
-			[
 				"si",
 				"signup_client"
 			],
@@ -502,28 +514,16 @@
 			[
 				"fr",
 				"from"
-			],
-			[
-				"p",
-				"print"
-			],
-			[
-				"c",
-				"country"
-			],
-			[
-				"hi",
-				"historyIP"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "onlineExam/onlineExam/urls.py",
+			"file": "onlineExam/exam/models.py",
 			"settings":
 			{
-				"buffer_size": 1197,
+				"buffer_size": 4796,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +531,23 @@
 			"file": "onlineExam/onlineExam/views.py",
 			"settings":
 			{
-				"buffer_size": 2521,
+				"buffer_size": 4080,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "onlineExam/onlineExam/urls.py",
+			"settings":
+			{
+				"buffer_size": 1316,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "onlineExam/onlineExam/templates/dashboard.html",
+			"settings":
+			{
+				"buffer_size": 3370,
 				"line_ending": "Unix"
 			}
 		},
@@ -579,7 +595,7 @@
 			"file": "onlineExam/exam/admin.py",
 			"settings":
 			{
-				"buffer_size": 1430,
+				"buffer_size": 3166,
 				"line_ending": "Unix"
 			}
 		},
@@ -616,14 +632,6 @@
 			}
 		},
 		{
-			"file": "onlineExam/exam/models.py",
-			"settings":
-			{
-				"buffer_size": 1430,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "onlineExam/onlineExam/forms.py",
 			"settings":
 			{
@@ -646,7 +654,7 @@
 			"file": "onlineExam/onlineExam/templates/base.html",
 			"settings":
 			{
-				"buffer_size": 1408,
+				"buffer_size": 1451,
 				"line_ending": "Unix"
 			}
 		},
@@ -717,7 +725,6 @@
 	[
 		"/home/saurav/Documents/Django/OnlineExaminationSystem/onlineExam",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem/onlineExam/exam",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem/onlineExam/exam/migrations",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem/onlineExam/onlineExam",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem/onlineExam/onlineExam/static",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem/onlineExam/onlineExam/static/css",
@@ -725,6 +732,7 @@
 	],
 	"file_history":
 	[
+		"/home/saurav/Documents/Django/Online_Quiz/online_quiz/quiz/templates/quiz/index.html",
 		"/home/saurav/Documents/Taranga/Taranga/deliveryVan/VehicleTrackingSystem/templates/userLogin/login.html",
 		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/index.html",
 		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/404.html",
@@ -851,8 +859,7 @@
 		"/home/saurav/Documents/angular/tutorialzine/2_inlineEditor/index.html",
 		"/home/saurav/Documents/angular/tutorialzine/2_inlineEditor/index.js",
 		"/home/saurav/Documents/angular/tutorialzine/2_inlineEditor/index.css",
-		"/home/saurav/Documents/angular/tutorialzine/first/index.css",
-		"/home/saurav/Documents/angular/tutorialzine/first/index.html"
+		"/home/saurav/Documents/angular/tutorialzine/first/index.css"
 	],
 	"find":
 	{
@@ -903,24 +910,80 @@
 	"groups":
 	[
 		{
-			"selected": 12,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "onlineExam/onlineExam/urls.py",
+					"file": "onlineExam/exam/models.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1197,
+						"buffer_size": 4796,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1194,
-								1194
+								1402,
+								1402
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "onlineExam/onlineExam/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4080,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3120,
+								3131
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1800.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "onlineExam/onlineExam/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1313,
+								1313
 							]
 						],
 						"settings":
@@ -935,35 +998,35 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "onlineExam/onlineExam/views.py",
+					"buffer": 3,
+					"file": "onlineExam/onlineExam/templates/dashboard.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2521,
+						"buffer_size": 3370,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2487,
-								2487
+								492,
+								492
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 978.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
 					"file": "onlineExam/onlineExam/templates/faq.html",
 					"semi_transient": false,
 					"settings":
@@ -988,11 +1051,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
 					"file": "onlineExam/onlineExam/templates/register.html",
 					"semi_transient": false,
 					"settings":
@@ -1004,8 +1067,8 @@
 						"selection":
 						[
 							[
-								903,
-								903
+								555,
+								555
 							]
 						],
 						"settings":
@@ -1017,11 +1080,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 6,
 					"file": "onlineExam/onlineExam/templates/login.html",
 					"semi_transient": false,
 					"settings":
@@ -1033,8 +1096,8 @@
 						"selection":
 						[
 							[
-								604,
-								604
+								259,
+								259
 							]
 						],
 						"settings":
@@ -1045,11 +1108,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "onlineExam/onlineExam/templates/news.html",
 					"semi_transient": false,
 					"settings":
@@ -1075,11 +1138,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "onlineExam/onlineExam/templates/footer.html",
 					"semi_transient": false,
 					"settings":
@@ -1102,27 +1165,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 45.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "onlineExam/exam/admin.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1430,
+						"buffer_size": 3166,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1267,
-								1267
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1133,11 +1196,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 10,
 					"file": "onlineExam/onlineExam/templates/home.html",
 					"semi_transient": false,
 					"settings":
@@ -1164,11 +1227,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 11,
 					"file": "onlineExam/onlineExam/templates/navbar.html",
 					"semi_transient": false,
 					"settings":
@@ -1194,11 +1257,11 @@
 						"translation.y": 45.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 12,
 					"file": "onlineExam/onlineExam/static/css/style.css",
 					"semi_transient": false,
 					"settings":
@@ -1210,8 +1273,8 @@
 						"selection":
 						[
 							[
-								25267,
-								25267
+								16760,
+								16760
 							]
 						],
 						"settings":
@@ -1221,14 +1284,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 11850.0,
+						"translation.y": 4785.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 13,
 					"file": "onlineExam/onlineExam/templates/classes.html",
 					"semi_transient": false,
 					"settings":
@@ -1253,39 +1316,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "onlineExam/exam/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1430,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								201,
-								205
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
+					"buffer": 14,
 					"file": "onlineExam/onlineExam/forms.py",
 					"semi_transient": false,
 					"settings":
@@ -1310,11 +1345,11 @@
 						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 15,
 					"file": "onlineExam/exam/__init__.py",
 					"semi_transient": false,
 					"settings":
@@ -1338,24 +1373,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 16,
 					"file": "onlineExam/onlineExam/templates/base.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1408,
+						"buffer_size": 1451,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								75,
-								75
+								1152,
+								1152
 							]
 						],
 						"settings":
@@ -1365,14 +1400,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 17,
 					"file": "onlineExam/onlineExam/settings.py",
 					"semi_transient": false,
 					"settings":
@@ -1398,11 +1433,11 @@
 						"translation.y": 33.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 18,
 					"file": "/home/saurav/Documents/GitDjango/Django/user_login/userLogin/userLogin/settings.py",
 					"semi_transient": false,
 					"settings":
@@ -1428,7 +1463,7 @@
 						"translation.y": 1305.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 18,
 					"type": "text"
 				}
 			]

@@ -53,7 +53,7 @@ class UserQuestionSet(models.Model):
 	score = models.IntegerField(default=0,blank=True)
 
 	def __unicode__(self):
-		return self.questionset
+		return unicode(self.questionset)
 
 class QuestionIOE(models.Model):
 	questionset = models.IntegerField(unique=True)

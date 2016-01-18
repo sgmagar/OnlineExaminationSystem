@@ -43,7 +43,7 @@ class KeyAdmin(admin.ModelAdmin):
 class UserQuestionSetAdmin(admin.ModelAdmin):
 	search_fields=['user']
 	list_display=['user','questionset','status','score']
-	ordering = ('user',)
+	ordering = ('user','questionset',)
 	# def get_usernamee(self,obj):
 	# 	return obj.user.username
 # class AnswerIOEAdmin(admin.ModelAdmin):

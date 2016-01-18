@@ -4,26 +4,26 @@
 {% block content %}
         
     {% include 'navbar.html' %}
-    <div class="text-center title">Dashboard</div>
+    <div class="text-center title" style="color:orange;">Dashboard</div>
     <div class="container">
     	<div class="row">
-    		<div> {% if rechargeError != None %}{{rechargeError}}{% endif %}</div>
+    		{% if rechargeError != None %}<div class="alert alert-danger"> {{rechargeError}}</div>{% endif %}
     		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button>
     		<div class="text-center">
-    			{{ ioe_questionset.size }}
-    			{% if ioe_questionset.length != 0 %}
+    			{% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
+    			{% if ioe_questionset|length > 0 %}
     				<div style="color:orange;font-size:15px;font-weight:bold;">IOE Question Set</div>
     				{% for qset in ioe_questionset %}
-    					<div style="color:orange">Question Set {{ qset.qgroup }}</div>
+    					<div style="color:orange"><a href="{% url 'questionset' qset.qgroup qset.questionset %}">Question Set {{ qset.questionset|stringformat:"i" }}</a> {% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
     				{% endfor %}
     			{% endif %}
-    			{% if iom_questionset.length != 0 %}
+    			{% if iom_questionset|length > 0 %}
     				<div style="color:orange;font-size:15px;font-weight:bold;">IOM Question Set</div>
     				{% for qset in iom_questionset %}
     					<div style="color:orange">Question Set {{ qset.qgroup }}</div>
     				{% endfor %}
     			{% endif %}
-    			{% if moe_questionset.length != 0 %}
+    			{% if moe_questionset|length > 0 %}
     				<div style="color:orange;font-size:15px;font-weight:bold;">MOE Question Set</div>
     				{% for qset in moe_questionset %}
     					<div style="color:orange">Question Set {{ qset.qgroup }}</div>

@@ -31,4 +31,5 @@ urlpatterns = [
     url(r'^logout/',logout_view, name='logout'),
     url(r'^dashboard/(?P<id>[0-9]+)/', dashboard, name='dashboard'),
     url(r'^recharge', recharge, name='recharge'),
+    url(r'^questionset/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', questionset, name='questionset')
 ]

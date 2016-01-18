@@ -17,6 +17,7 @@ from .forms import *
 
 def home(request):
 	request.session['rechargeError']=None
+	request.session['qsetError']=None
 	
 	context = {
 		"title":"Home"
@@ -116,19 +117,22 @@ def logout_view(request):
 @login_required(login_url='login')
 def dashboard(request, id):
 	user = get_object_or_404(User,pk=id)
-	ioe_questionset = request.user.userquestionset_set.filter(qgroup='IOE')
-	iom_questionset = request.user.userquestionset_set.filter(qgroup='IOM')
-	moe_questionset = request.user.userquestionset_set.filter(qgroup='MOE')
+	ioe_questionset = request.user.userquestionset_set.filter(qgroup='IOE').order_by('questionset')
+	iom_questionset = request.user.userquestionset_set.filter(qgroup='IOM').order_by('questionset')
+	moe_questionset = request.user.userquestionset_set.filter(qgroup='MOE').order_by('questionset')
+
 	print len(ioe_questionset)
 	context={
 		'title':'Dashboard',
 		'rechargeError': request.session['rechargeError'],
+		'qsetError': request.session['qsetError'],
 		'ioe_questionset':ioe_questionset,
 		'iom_questionset':iom_questionset,
 		'moe_questionset':moe_questionset,
 
 	}
 	request.session['rechargeError']=None
+	request.session['qsetError']=None
 	return render(request,'dashboard.html',context)
 
 @login_required(login_url='login')
@@ -137,19 +141,43 @@ def recharge(request):
 		group = request.POST['group']
 		pin = request.POST['pin']
 		user = request.user;
-		key = Key.objects.get(group=group,key=pin,status=False)
+		key = Key.objects.filter(group=group,key=pin,status=False)
+		
 		print key
 		if  not key:
 			request.session['rechargeError']='Key is invalid'
 			# print request.session['rechargeError']
 		else:
-			qset = user.userquestionset_set.filter(qgroup='IOE').count()
+			qset = user.userquestionset_set.filter(qgroup=group).count()
 			for i in range(1,11):
 				userquestionset=UserQuestionSet.objects.create(user=user,qgroup=group,questionset=qset+i)
 				userquestionset.save()
-			key.status=True
-			key.save()
+			key[0].status=True
+			key[0].save()
 
 
 	return redirect(reverse('dashboard', args=(request.user.id,)))
+@login_required(login_url='login')
+def questionset(request,qgroup,qset):
+	if qgroup.strip() == 'IOE':
+		if(len(request.user.userquestionset_set.filter(qgroup='IOE',questionset=qset))>0):
+			print qgroup,qset
+			return HttpResponse("Your group is "+qgroup+" and questionset is "+qset)
+		else:
+			request.session['qsetError']="You don't have acces to this question"
+			return redirect(reverse('dashboard' ,args=(request.user.id,)))
+	if qgroup.strip() == 'IOM':
+		if(len(request.user.userquestionset_set.filter(qgroup='IOM',questionset=qset))>0):
+			print qgroup,qset
+			return HttpResponse("Your group is "+qgroup+" and questionset is "+qset)
+		else:
+			request.session['qsetError']="You don't have acces to this question"
+			return redirect(reverse('dashboard' ,args=(request.user.id,)))
+	if qgroup.strip() == 'MOE':
+		if(len(request.user.userquestionset_set.filter(qgroup='MOE',questionset=qset))>0):
+			print qgroup,qset
+			return HttpResponse("Your group is "+qgroup+" and questionset is "+qset)
+		else:
+			request.session['qsetError']="You don't have acces to this question"
+			return redirect(reverse('dashboard' ,args=(request.user.id,)))
 
