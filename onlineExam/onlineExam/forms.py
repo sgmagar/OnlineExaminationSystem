@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.contrib.auth.models import User
 from exam.models import *
 # from bootstrap3_datetime.widgets import DateTimePicker

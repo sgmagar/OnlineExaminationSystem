@@ -40,6 +40,20 @@ class Key(models.Model):
 	status = models.BooleanField(default=False)
 	def __unicode__(self):
 		return self.key
+
+class Faq(models.Model):
+	question = models.TextField(default=None)
+	answer = models.TextField(default=None)
+
+	def __unicode__(self):
+		return self.question
+
+class ContactUs(models.Model):
+	name = models.CharField(max_length=40)
+	email = models.EmailField()
+	message = models.TextField()
+
+
 class UserQuestionSet(models.Model):
 	user = models.ForeignKey(User)
 	GROUP_CHOICES=(
@@ -47,7 +61,7 @@ class UserQuestionSet(models.Model):
 		('IOM','IOM'),
 		('MOE','MOE'),
 	)
-	qgroup = models.CharField(default='IOE',max_length='4', choices=GROUP_CHOICES)
+	qgroup = models.CharField(default='IOE',max_length=4, choices=GROUP_CHOICES)
 	questionset=models.IntegerField()
 	status = models.BooleanField(default=False)
 	score = models.IntegerField(default=0,blank=True)
@@ -56,8 +70,8 @@ class UserQuestionSet(models.Model):
 		return unicode(self.questionset)
 
 class QuestionIOE(models.Model):
-	questionset = models.IntegerField(unique=True)
-	questionno = models.IntegerField(unique=True)
+	questionset = models.IntegerField()
+	questionno = models.IntegerField()
 	SUBJECT_CHOICES=(
 			('Physics','Physics'),
 			('Math','Math'),
@@ -72,6 +86,13 @@ class QuestionIOE(models.Model):
 		)
 	qtype = models.CharField(default='Short',max_length=6, choices=TYPE_CHOICES)
 	question = models.TextField(default=None, max_length=200)
+	ANSWER_CHOICES=(
+			('a','a'),
+			('b','b'),
+			('c','c'),
+			('d','d'),
+		)
+	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	qfile = models.ImageField(default=None,blank=True, upload_to="IOE/question/%y/%m/%d/%H/%M/%S")
 
 	def __unicode__(self):
@@ -79,13 +100,20 @@ class QuestionIOE(models.Model):
 
 class AnswerIOE(models.Model):
 	question = models.ForeignKey(QuestionIOE)
+	ANSWER_CHOICES=(
+			('a','a'),
+			('b','b'),
+			('c','c'),
+			('d','d'),
+		)
+	choice = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	answer = models.CharField(max_length=200, default=None)
-	value = models.BooleanField(default=False)
+	
 	afile = models.ImageField(default=None,blank=True, upload_to="IOE/answer/%y/%m/%d/%H/%M/%S")
 
 class QuestionIOM(models.Model):
-	questionset = models.IntegerField(unique=True)
-	questionno = models.IntegerField(unique=True)
+	questionset = models.IntegerField()
+	questionno = models.IntegerField()
 	SUBJECT_CHOICES=(
 			('Physics','Physics'),
 			('Math','Math'),
@@ -100,6 +128,13 @@ class QuestionIOM(models.Model):
 		)
 	qtype = models.CharField(default='Short',max_length=6, choices=TYPE_CHOICES)
 	question = models.TextField(default=None, max_length=200)
+	ANSWER_CHOICES=(
+			('a','a'),
+			('b','b'),
+			('c','c'),
+			('d','d'),
+		)
+	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	qfile = models.ImageField(default=None,blank=True, upload_to="IOE/question/%y/%m/%d/%H/%M/%S")
 
 	def __unicode__(self):
@@ -107,13 +142,20 @@ class QuestionIOM(models.Model):
 
 class AnswerIOM(models.Model):
 	question = models.ForeignKey(QuestionIOM)
+	ANSWER_CHOICES=(
+			('a','a'),
+			('b','b'),
+			('c','c'),
+			('d','d'),
+		)
+	choice = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	answer = models.CharField(max_length=200, default=None)
-	value = models.BooleanField(default=False)
+	
 	afile = models.ImageField(default=None,blank=True, upload_to="IOE/answer/%y/%m/%d/%H/%M/%S")
 
 class QuestionMOE(models.Model):
-	questionset = models.IntegerField(unique=True)
-	questionno = models.IntegerField(unique=True)
+	questionset = models.IntegerField()
+	questionno = models.IntegerField()
 	SUBJECT_CHOICES=(
 			('Physics','Physics'),
 			('Math','Math'),
@@ -128,6 +170,13 @@ class QuestionMOE(models.Model):
 		)
 	qtype = models.CharField(default='Short',max_length=6, choices=TYPE_CHOICES)
 	question = models.TextField(default=None, max_length=200)
+	ANSWER_CHOICES=(
+			('a','a'),
+			('b','b'),
+			('c','c'),
+			('d','d'),
+		)
+	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	qfile = models.ImageField(default=None,blank=True, upload_to="IOE/question/%y/%m/%d/%H/%M/%S")
 
 	def __unicode__(self):
@@ -135,8 +184,15 @@ class QuestionMOE(models.Model):
 
 class AnswerMOE(models.Model):
 	question = models.ForeignKey(QuestionMOE)
+	ANSWER_CHOICES=(
+			('a','a'),
+			('b','b'),
+			('c','c'),
+			('d','d'),
+		)
+	choice = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	answer = models.CharField(max_length=200, default=None)
-	value = models.BooleanField(default=False)
+	
 	afile = models.ImageField(default=None,blank=True, upload_to="IOE/answer/%y/%m/%d/%H/%M/%S")
 
 

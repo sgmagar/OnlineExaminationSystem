@@ -2,46 +2,171 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<title>{{ title }}</title>
-<!-- Bootstrap Core CSS -->
+    <title>{{ title }}</title>
+    <!-- Bootstrap Core CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,500,700' rel='stylesheet' type='text/css'> -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Dosis:300,400,500,600' rel='stylesheet' type='text/css'>
 
-<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.transitions.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+
+    <link href="{% static 'owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'owl-carousel/owl.theme.css' %}" rel="stylesheet">
+
 <!-- Custom CSS -->
-<link href="{% static 'css/social.css' %}" rel="stylesheet">
-<link href="{% static 'css/design.css' %}" rel="stylesheet">
-<!-- Bootstrap CSS -->
-<!-- <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"> -->
-
-
-<!-- Custom CSS -->
-
-<link href="{% static 'css/style.css' %}" rel="stylesheet">
-
-
-<!-- Custom Fonts -->
-<link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
+<!-- <link href="{% static 'css/design.css' %}" rel="stylesheet">
+<link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/flexslider.css' %}" rel="stylesheet"> -->
 </head>
 <body>
 	{% block content %}
 
 	{% endblock %}
 
-	<script src="{% static 'js/jquery.js' %}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="{% static 'js/jquery-1.9.1.min.js' %}"></script>
+    <script src="{% static 'owl-carousel/owl.carousel.js' %}"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
 
-    <!-- Custom Theme JavaScript -->
-    <script src="{% static 'js/earthquake.js' %}"></script>
+      navigation : true,
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem : true
+
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+
+      });
+    });
+    </script>
+    <script>
+        new WOW().init();
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#starting-slider").owlCarousel({
+                autoPlay: 3000,
+                navigation : false, // Show next and prev buttons
+                slideSpeed : 700,
+                paginationSpeed : 1000,
+                singleItem:true
+            });
+        });
+    </script>
+
+
+    <script>
+        $( function() {
+              // init Isotope
+            var $container = $('.isotope').isotope
+            ({
+                itemSelector: '.element-item',
+                layoutMode: 'fitRows'
+            });
+
+
+            // bind filter button click
+            $('#filters').on( 'click', 'button', function() 
+            {
+                var filterValue = $( this ).attr('data-filter');
+                // use filterFn if matches value
+                $container.isotope({ filter: filterValue });
+             });
+
+          // change is-checked class on buttons
+            $('.button-group').each( function( i, buttonGroup ) 
+            {
+                var $buttonGroup = $( buttonGroup );
+                $buttonGroup.on( 'click', 'button', function() 
+                {
+                    $buttonGroup.find('.is-checked').removeClass('is-checked');
+                    $( this ).addClass('is-checked');
+                });
+            });
+          
+        });
+    </script>
+
+    <!-- Google map -->
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(24.900392, 91.853181),
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel:  false
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+    <script>
+            $(window).scroll(function() {
+                if ($(window).scrollTop() >= 100) {
+
+                    $('nav').addClass('navbar-fixed-top');
+
+                } else {
+
+                    $('nav').removeClass('navbar-fixed-top');
+
+                }
+
+            });
+    </script>
+
+    <script type="text/javascript">
+        $('li').each(function(){
+            if(window.location.href.indexOf($(this).find('a:first').attr('href'))>-1)
+            {
+            $(this).addClass('active').siblings().removeClass('active');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(".faq-q").click( function () {
+          var container = $(this).parents(".faq-c");
+          var answer = container.find(".faq-a");
+          var trigger = container.find(".faq-t");
+          
+          answer.slideToggle(200);
+          
+          if (trigger.hasClass("faq-o")) {
+            trigger.removeClass("faq-o");
+          }
+          else {
+            trigger.addClass("faq-o");
+          }
+        });
+    </script>
+    
     {% block script %}
 
     {% endblock %}

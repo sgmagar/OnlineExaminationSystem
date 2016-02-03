@@ -1,69 +1,56 @@
 <!-- Top Navbar -->
-    
-    <div class="navbar navbar-fixed-top navbar-default" role="navigation">  
-    
-        <div class="navbar-header col-md-8 col-lg-9 col-sm-7 col-xs-5" style="padding-left: 5%">
-            <a class="navbar-brand" href="#">Email:support@gmail.com</a>
-            <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar"> -->
-           <!--  <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>-->
-        </div>
-        <div class="col-md-4 col-lg-3 col-sm-5 col-xs-7 nav-font" style="margin-top:15px;color:#fff;padding-right:5%;">
-             <!-- <ul class="nav navbar-nav pull-right">
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
-            </ul> -->
-            <!-- <div  class="col-xs-4"></div> -->
-            {% if not user.is_authenticated %}
-                <div class="col-xs-5 col-sm-5 col-md-4" style="text-align:right;"></div>
-                <div class="col-xs-4 col-sm-4 col-md-4" style="text-align:right;"> <a href="{% url 'login' %}">Login</a></div>
-                <div class="col-xs-3 col-sm-3 col-md-4" style="text-align:right;"> <a href="{% url 'register' %}">Register</a></div>
-            {% endif %}
-            {% if user.is_authenticated %}
-                <div class="col-xs-5 col-sm-5 col-md-4" style="text-align:right;"> <a href="{% url 'login' %}">Login</a></div>
-                <div class="col-xs-4 col-sm-4 col-md-4" style="text-align:right;"> <a href="{% url 'register' %}">Register</a></div>
-                <div class="col-xs-3 col-sm-3 col-md-4" style="text-align:right;"> <a href="{% url 'logout' %}">Logout</a></div>
-            {% endif %}
-            
-            
-       
-        </div>
-    </div>
-    
-    
-    <div class="navbar navbar-static-top navbar-inverse" role="navigation"> 
-        <div class="navbar-header " style="padding-left:5%;">
-             <div class="navbar-header"><a class="navbar-brand" href="#" style="color:#fff;">Logo or Something</a></div>
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-        </div>
-        
-        <div class="collapse navbar-collapse navbar-right" style="padding-right:5%;">
-            <ul class="nav navbar-nav ">
-                
-                <li><a href="{% url 'home' %}" {% if title == 'Home' %}class="active"{% endif %}><span style="color:#fff;">Home</span></a></li>
-                <li><a href="{% url 'classes' %}" {% if title == 'Classes' %}class="active"{% endif %}><span style="color:#fff;">Classes</span></a></li>
-                <li><a href="{% url 'faq' %}" {% if title == 'FAQ' %}class="active"{% endif %}><span style="color:#fff;">FAQ</span></a></li>
-                <li><a href="{% url 'contactus' %}" {% if title == 'Contact Us'  %}class="active"{% endif %}><span style="color:#fff;">Contact Us</span></a></li>
-            </ul>
-            <!-- <div class="col-sm-3 col-md-3 pull-right">
-            <div class="navbar-text">Text</div>
-            <form class="navbar-form" role="search">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
+    <div class="top-header">
+
+        <div class="container-fluid">
+            <div class="col-md-6 col-xs-6" style="color:#fff; padding-top:3px;">
+                <i class="fa fa-envelope">&nbsp;</i><a href="#">Email:support@gmail.com</a>
             </div>
-            </form>
-            </div> -->
-            
+            <div class="col-md-6 col-xs-6" style="padding-top:3px;">
+                <p class="text-right" >
+                    {% if not user.is_authenticated %}
+                       <a href="{% url 'login' %}">Login</a>&nbsp|&nbsp<a href="{% url 'register' %}">Register</a>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}">Logout</a>
+                    {% endif %}
+                </p>
+            </div>
         </div>
-    </div>
+    </div>    
+    
+    <section class= "navs">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0px;">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="{% url 'home' %}">
+                        <span><i class="fa fa-home"></i></span>
+                        MockTest
+                    </a>
+                </div>
+    
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{% url 'home' %}" {% if title == 'Home' %}class="active"{% endif %}><span style="color:#fff;">Home</span></a></li>
+                        <li><a href="{% url 'about' %}" {% if title == 'About Us' %}class="active"{% endif %}><span style="color:#fff;">About Us</span></a></li>
+                        <li><a href="{% url 'classes' %}" {% if title == 'Classes' %}class="active"{% endif %}><span style="color:#fff;">Classes</span></a></li>
+                        <li><a href="{% url 'faq' %}" {% if title == 'FAQ' %}class="active"{% endif %}><span style="color:#fff;">FAQ</span></a></li>
+                        <li><a href="{% url 'contactus' %}" {% if title == 'Contact Us'  %}class="active"{% endif %}><span style="color:#fff;">Contact Us</span></a></li>
+                        <!-- <li class="active"><a href="index.php">Home</a></li>
+                        <li class=""><a href="about.php">About</a></li>
+                        <li class=""><a href="services.php">Services</a></li>
+                        <li class=""><a href="faq.php">FAQs</a></li>
+                        <li class=""><a href="gallery.php">Gallery</a></li>
+                        <li class=""><a href="contact.php">Contact Us</a></li> -->
+                    </ul>
+                </div><!-- navbar-collapse -->
+            </div><!-- container-fluid -->
+        </nav>
+    </section>

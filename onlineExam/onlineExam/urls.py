@@ -21,6 +21,7 @@ from .views import *
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', home, name='home'),
+    url(r'^about/', about, name='about'),
     url(r'^classes/', classes, name='classes'),
     url(r'^faq/', faq, name='faq'),
     url(r'^contactus/', contactus, name='contactus'),
@@ -31,5 +32,21 @@ urlpatterns = [
     url(r'^logout/',logout_view, name='logout'),
     url(r'^dashboard/(?P<id>[0-9]+)/', dashboard, name='dashboard'),
     url(r'^recharge', recharge, name='recharge'),
-    url(r'^questionset/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', questionset, name='questionset')
+    url(r'^questionset/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', questionset, name='questionset'),
+    url(r'^checkset/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', checkset, name='checkset'),
+    url(r'^rules/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', rules, name='rules'),
+    #api urls
+    url(r'api/questions/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', api_questions),
 ]
+
+if settings.DEBUG:
+    urlpatterns.append(
+            url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        })
+    )
+    urlpatterns.append(
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.STATIC_ROOT,
+        })
+    )

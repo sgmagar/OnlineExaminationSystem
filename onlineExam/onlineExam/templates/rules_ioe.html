@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+        
+    {% include 'navbar.html' %}
+    <section id="dashboard" >
+		<div class="container">
+			<div class="col-md-6">
+				<p>Welcome : {{ firstname }}</p>
+			</div>
+			
+			<hr/>
+			<div class="col-md-12 rules">
+				<h3>Examination Note</h3>
+				<ul>
+					<li>You have to check radio button on correct option.</li>
+					<li>There will be no negative marking.</li>
+					<li>Click on the next button to navigate to next page.</li>
+					<li>Click on the previous button to navigate to previous page.</li>
+					<li>You can change your option during examination period.</li>
+					<li>Information along with time remaining, total attempted and total questions will be displayed at the top of the page.</li>
+				</ul>
+				<p><a href="{% url 'questionset' qgroup qset %}"><button class="btn btn-primary">Start Test</button></a></p>
+			</div>
+			
+
+		</div>
+
+	</section>
+
+   {% include 'footer.html' %}
+
+{% endblock %}

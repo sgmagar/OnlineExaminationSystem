@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
@@ -58,7 +59,7 @@ class AnswerIOEInline(admin.TabularInline):
 class QuestionIOEAdmin(admin.ModelAdmin):
 	search_fields=['questionset','questionno','question']
 	inlines = (AnswerIOEInline,)
-	list_display=['questionset','questionno','subject','qtype','question','qfile']
+	list_display=['questionset','questionno','subject','qtype','question','answer','qfile']
 	ordering=('questionset','questionno',)
 
 class AnswerIOMInline(admin.TabularInline):
@@ -69,7 +70,7 @@ class AnswerIOMInline(admin.TabularInline):
 class QuestionIOMAdmin(admin.ModelAdmin):
 	search_fields=['questionset','questionno','question']
 	inlines = (AnswerIOMInline,)
-	list_display=['questionset','questionno','subject','qtype','question','qfile']
+	list_display=['questionset','questionno','subject','qtype','question','answer','qfile']
 	ordering=('questionset','questionno',)
 
 class AnswerMOEInline(admin.TabularInline):
@@ -80,9 +81,15 @@ class AnswerMOEInline(admin.TabularInline):
 class QuestionMOEAdmin(admin.ModelAdmin):
 	search_fields=['questionset','questionno','question']
 	inlines = (AnswerMOEInline,)
-	list_display=['questionset','questionno','subject','qtype','question','qfile']
+	list_display=['questionset','questionno','subject','qtype','question','answer','qfile']
 	ordering=('questionset','questionno',)
 	
+
+class FaqAdmin(admin.ModelAdmin):
+	search_fields=['question']
+
+class ContactUsAdmin(admin.ModelAdmin):
+	search_fields=['message']
 
 
 admin.site.register(News,NewsAdmin)
@@ -95,3 +102,5 @@ admin.site.register(QuestionIOE,QuestionIOEAdmin)
 admin.site.register(QuestionIOM,QuestionIOMAdmin)
 admin.site.register(QuestionMOE,QuestionMOEAdmin)
 
+admin.site.register(Faq, FaqAdmin)
+admin.site.register(ContactUs, ContactUsAdmin)

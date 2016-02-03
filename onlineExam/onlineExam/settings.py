@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for onlineExam project.
 
@@ -83,7 +84,8 @@ DATABASES = {
         'PASSWORD': 'heisenberg',
         'HOST': '127.0.0.1',
         'PORT': '3306',
-        'ENCODING': 'utf-8',
+        # 'OPTIONS': {'init_command':'SET storage_engine=INNODB,character_set_connection=utf8,collation_connection=utf8_unicode_ci'},
+        'OPTIONS':{'charset': 'utf8'},
     }
 }
 

@@ -4,29 +4,58 @@
 {% block content %}
         
     {% include 'navbar.html' %}
-    <div class="text-center title" style="color:orange;">Dashboard</div>
+    <section id="dashboard" >
+		<div class="container">
+			<div class="col-md-6">
+				<p>Welcome : {{ firstname }}</p>
+			</div>
+			
+			<hr/>
+			<div class="col-md-12">
+				<h2>IOE Entrance Model</h2>
+			</div>
+			<div class="col-md-3">
+				<img src="assets/img/ioe-logo.png" alt="ioe-logo" class="img img-responsive">
+			</div>
+			<div class="col-md-9">
+				<p style="color:red;">Based on New Syllabus</p>
+				<p>Time :2 hours 0 minute 0 second</p>
+				<p>Total Question:100</p>
+				<p>Subjects : Physics, Chemistry, Mathematics, English, Engineering Aptitude</p>
+				<p><a href="{% url 'rules' 'IOE' 255 %}"><button class="btn btn-primary" style="margin-top:10px;">Practice One Set For Free!!</button></a></p>
+			</div>
+
+			<div class="col-md-12">
+				<h2>Go Premium</h2>
+				<p> To practice more sets of question, Go premium. You can recharge Rs 100 and practice 10 Sets of question.</p>
+				{% if rechargeError != None %}<div class="alert alert-danger"> {{rechargeError}}</div>{% endif %}
+				<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p>
+				<p><a href="#">More info about our Recharge plan.</a></p>
+			</div>
+
+		</div>
+
+	</section>
     <div class="container">
     	<div class="row">
-    		{% if rechargeError != None %}<div class="alert alert-danger"> {{rechargeError}}</div>{% endif %}
-    		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button>
     		<div class="text-center">
     			{% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
     			{% if ioe_questionset|length > 0 %}
     				<div style="color:orange;font-size:15px;font-weight:bold;">IOE Question Set</div>
     				{% for qset in ioe_questionset %}
-    					<div style="color:orange"><a href="{% url 'questionset' qset.qgroup qset.questionset %}">Question Set {{ qset.questionset|stringformat:"i" }}</a> {% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
+    					<div style="color:orange"><a href="{% url 'rules' qset.qgroup qset.questionset %}">Question Set {{ qset.questionset|stringformat:"i" }}</a> {% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
     				{% endfor %}
     			{% endif %}
     			{% if iom_questionset|length > 0 %}
     				<div style="color:orange;font-size:15px;font-weight:bold;">IOM Question Set</div>
     				{% for qset in iom_questionset %}
-    					<div style="color:orange">Question Set {{ qset.qgroup }}</div>
+    					<div style="color:orange"><a href="{% url 'rules' qset.qgroup qset.questionset %}">Question Set {{ qset.questionset|stringformat:"i" }}</a> {% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
     				{% endfor %}
     			{% endif %}
     			{% if moe_questionset|length > 0 %}
     				<div style="color:orange;font-size:15px;font-weight:bold;">MOE Question Set</div>
     				{% for qset in moe_questionset %}
-    					<div style="color:orange">Question Set {{ qset.qgroup }}</div>
+    					<div style="color:orange"><a href="{% url 'rules' qset.qgroup qset.questionset %}">Question Set {{ qset.questionset|stringformat:"i" }}</a> {% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
     				{% endfor %}
     			{% endif %}
     		</div>
@@ -57,7 +86,7 @@
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			        <input type="submit" class="btn btn-warning" value = "Recharge">
+			        <input type="submit" class="btn btn-primary" value = "Recharge">
 			      </div>
 		       </form>
 		    </div>

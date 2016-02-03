@@ -4,7 +4,54 @@
 {% block content %}
         
     {% include 'navbar.html' %}
-    <div class="text-center title">FAQ</div>
+    <section class="faq-title text-center">
+		<div class="faq-wrapper">
+			<div class="container">
+				<div class= "row">
+					<h1 class="headline">Frequently Asked Questions</h1>
+				</div>
+				<div class="row">
+					<div class="sub-headline">
+						<p>Lorem ipsum dolor sit amet, consectetur </p>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</section>
+
+	<section class="faq-content">
+		<div class="container">
+			<div class="row">
+				<main class="col-md-12">
+					<div class="faq-header">Things you need to know...</div>
+						{% for faq in faq %}
+						<div class="faq-c">
+						  <div class="faq-q"><span class="faq-t">+</span>{{ faq.question }}</div>
+						  <div class="faq-a">
+						    <p>{{ faq.answer }}</p>
+						  </div>
+						</div>
+						{% endfor %}
+
+						
+
+					<!-- <div class="row">
+		    			<div class="col-md-6 col-md-offset-3 text-center">
+		    				<ul class="pagination">
+								<li class="disabled"><a href="#">&gt;&gt;</a></li>
+								<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+							  	<li><a href="#">2</a></li>
+							  	<li><a href="#">3</a></li>
+							  	<li><a href="#">4</a></li>
+							  	<li><a href="#">5</a></li>
+							  	<li><a href="#">&gt;&gt;</a></li>
+							</ul>
+		    			</div>
+		    		</div> -->
+				</main>
+			</div>
+		</div>
+	</section>
 
    {% include 'footer.html' %}
 

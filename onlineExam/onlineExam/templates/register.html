@@ -4,31 +4,54 @@
 {% block content %}
         
     {% include 'navbar.html' %}
-    <div class="container">
-	    <div class="text-center title" style="color:orange;">{{ register }}</div>
-	    <div class="row">
-	    	<div class="col-md-4 col-md-offset-4">
-			    <form action="{% url 'register' %}" method="post">{% csrf_token %}
-					{% for field in userForm %}
-						
-				            {{ field }}<span style="color:red">{% for error in field.errors %}<li>{{ error }}</li>{% endfor %}</span>
-				           <br/>
-				        
-					{% endfor %}
-					{% for field in userProfileForm %}
-						
-				            <span style="color:red">{% for error in field.errors %}<li>{{ error }}</li>{% endfor %}</span>
-				            {{ field }}
-				            <br/>
-				        
-					{% endfor %}
-					{% if register == 'Register Here' %}
-					<input type="submit" class="btn btn-warning" value="Register" />
-					{% endif %}
-				</form>
-			</div>
+    <section id="login-page">
+	    <div class="container">
+	    	<div class="col-md-offset-3 col-md-6 col-md-offset-3 login-form">
+					<h2>{{ register }}</h2>
+					<form action="{% url 'register' %}" method="post">{% csrf_token %}		               
+						<fieldset>
+							{% for field in userForm %}
+								
+								<div class="input-group input-group-lg">
+			                        <span class="input-group-addon">
+			                        	{% if field.label == 'Username' %}<i class="fa fa-user"></i>{% endif %}
+			                        	{% if field.label == 'Email address' %}<i class="fa fa-envelope"></i>{% endif %}
+			                        	{% if field.label == 'First name' %}<i class="fa fa-user"></i>{% endif %}
+			                        	{% if field.label == 'Last name' %}<i class="fa fa-user"></i>{% endif %}
+			                        	{% if field.label == 'Password' %}<i class="fa fa-lock"></i>{% endif %}
+			                        	{% if field.label == 'Confirmpassword' %}<i class="fa fa-lock"></i>{% endif %}
+			                        </span>
+			                         {{ field }}<span style="color:red">{% for error in field.errors %}<li>{{ error }}</li>{% endfor %}</span>
+			                    </div>
+			                    <div class="clearfix"></div><br>
+						           
+						        
+							{% endfor %}
+							{% for field in userProfileForm %}
+								
+						            <div class="input-group input-group-lg">
+				                        <span class="input-group-addon">
+				                        {% if field.label == 'College' %}<i class="fa fa-university"></i>{% endif %}
+				                        {% if field.label == 'Faculty' %}<i class="fa fa-user-md"></i>{% endif %}
+				                        {% if field.label == 'Phone' %}<i class="fa fa-phone"></i>{% endif %}
+				                        </span>
+				                         {{ field }}<span style="color:red">{% for error in field.errors %}<li>{{ error }}</li>{% endfor %}</span>
+				                    </div>
+				                    <div class="clearfix"></div><br>
+						        
+							{% endfor %}
+							{% if register == 'Register Here' %}
+								<p class="login-btn">
+			                        <button type="submit" class="btn btn-primary">Register</button>
+			                    </p>
+							{% endif %}
+		                	
+		                </fieldset>
+	            	</form>					
+				</div>
+		    
 		</div>
-	</div>
+	</section>
 
    {% include 'footer.html' %}
 
