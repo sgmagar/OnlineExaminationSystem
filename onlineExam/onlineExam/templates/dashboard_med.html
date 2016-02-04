@@ -4,7 +4,8 @@
 {% block content %}
         
     {% include 'navbar.html' %}
-     <!-- Dashboard begins -->
+
+    <!-- Dashboard begins -->
         <section id="dashboard">
     
                 <div class="container">
@@ -13,70 +14,16 @@
                             <!-- tab table begins -->
                             <div class="tabtable"> 
                                     <ul class="nav nav-tabs">
-                                    <li class="active"><a href="#tab1" data-toggle="tab">IOE</a></li>
-                                    <li class="active2"><a href="#tab2" data-toggle="tab">IOM</a></li>
-                                    <li class="active2"><a href="#tab3" data-toggle="tab">MOE</a></li>
+                                    <li class="active"><a href="#tab1" data-toggle="tab">IOM</a></li>
+                                    <li class="active2"><a href="#tab2" data-toggle="tab">MOE</a></li>
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab1">
-                                            <!-- IOE div starts -->
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-md-6 center">
-                                                        <p><center><img src="{% static 'img/ioe-logo.png' %}" class="img img-responsive img-circle" alt="profile-pic" style="width:128px; height:128px;" ></center></p>
-                                                        <h2>IOE Mock Test</h2>
-                                                        <p>You can take one test for Free!</p>
-                                                        <p>
-                                                            <a href="rules.php" class="btn btn-default btn-lg">Start Free Test</a>
-                                                        </p>
-                                                    </div>  
-                                                </div>        
-                                                <div class="row test-description">
-                                    
-                                                    <div class="col-md-9 center">
-                                                        <div class="col-md-4" style="border-right:2px solid #D0DEE1; border-left:2px solid #D0DEE1;">
-                                                            <h2 style="margin-bottom:0px;">100</h2>
-                                                            <p>Questions</p>
-                                                        </div>
-                                                        <div class="col-md-4" style="border-right:2px solid #D0DEE1;">
-                                                            <h2 style="margin-bottom:0px;">2 hours</h2>
-                                                            <p>Total Time</p>
-                                                        </div>
-                                                        <div class="col-md-4" style="border-right:2px solid #D0DEE1;">
-                                                            <h2 style="margin-bottom:0px;">5</h2>
-                                                            <p>Subjects</p>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="container-fluid go-premium">
-                                                <div class="row">
-                                                    <div class="col-md-8 center">
-                                                        <h2>Go Premium</h2>
-                                                        <p>To practice more sets of question, Go premium. You can recharge Rs 100 and practice 10 Sets of question.</p>
-                                                        {% if rechargeError != None %}<div class="alert alert-danger"> {{rechargeError}}</div>{% endif %}
-														<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p>
-														{% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
-										    			{% if ioe_questionset|length > 0 %}
-										    				
-										    				{% for qset in ioe_questionset %}
-										    					<div class="question-set"><a href="{% url 'questionset' qset.qgroup qset.questionset %}" class="btn btn-default" >Question Set {{ qset.questionset|stringformat:"i" }}</a>{% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
-										    				{% endfor %}
-										    			{% endif %}
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- IOE div ends -->
-                                        </div>
-                                        <div class="tab-pane" id="tab2">
                                             <!-- IOM div starts -->
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-md-6 center">
-                                                        <p><center><img src="{% static 'img/iom-logo.png' %}" class="img img-responsive img-circle" alt="profile-pic" style="width:128px; height:128px;" ></center></p>
+                                                        <p><center><img src="assets/img/iom-logo.png" class="img img-responsive img-circle" alt="profile-pic" style="width:128px; height:128px;" ></center></p>
                                                         <h2>IOM Mock Test</h2>
                                                         <p>You can take one test for Free!</p>
                                                         <p>
@@ -109,27 +56,29 @@
                                                     <div class="col-md-8 center">
                                                         <h2>Go Premium</h2>
                                                         <p>To practice more sets of question, Go premium. You can recharge Rs 100 and practice 10 Sets of question.</p>
-                                                        {% if rechargeError != None %}<div class="alert alert-danger"> {{rechargeError}}</div>{% endif %}
-															<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p>
-															
-                                                        {% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
-										    			{% if iom_questionset|length > 0 %}
-										    				
-										    				{% for qset in iom_questionset %}
-										    					<div class="question-set"><a href="{% url 'questionset' qset.qgroup qset.questionset %}" class="btn btn-default" >Question Set {{ qset.questionset|stringformat:"i" }}</a>{% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
-										    				{% endfor %}
-										    			{% endif %}
+                                                        <div class="question-set">
+                                                            <a href="#" class="btn btn-default"><span class="fa fa-lock"></span>&nbsp;&nbsp;Question Set 1</a>
+                                                        </div>
+                                                        <div class="question-set">
+                                                            <a href="#" class="btn btn-default"><span class="fa fa-lock"></span>&nbsp;&nbsp;Question Set 2</a>
+                                                        </div>
+                                                        <div class="question-set">
+                                                            <a href="#" class="btn btn-default"><span class="fa fa-lock"></span>&nbsp;&nbsp;Question Set 3</a>
+                                                        </div>
+                                                        <div class="question-set">
+                                                            <a href="#" class="btn btn-default"><span class="fa fa-lock"></span>&nbsp;&nbsp;Question Set 4</a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!-- IOM div ends -->
                                         </div>
-                                        <div class="tab-pane" id="tab3">
+                                        <div class="tab-pane" id="tab2">
                                             <!-- MOE div starts -->
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-md-6 center">
-                                                        <p><center><img src="{% static 'img/moe-logo.png' %}" class="img img-responsive img-circle" alt="profile-pic" style="width:128px; height:128px;" ></center></p>
+                                                        <p><center><img src="assets/img/moe-logo.png" class="img img-responsive img-circle" alt="profile-pic" style="width:128px; height:128px;" ></center></p>
                                                         <h2>MOE Mock Test</h2>
                                                         <p>You can take one test for Free!</p>
                                                         <p>
@@ -162,16 +111,18 @@
                                                     <div class="col-md-8 center">
                                                         <h2>Go Premium</h2>
                                                         <p>To practice more sets of question, Go premium. You can recharge Rs 100 and practice 10 Sets of question.</p>
-                                                        {% if rechargeError != None %}<div class="alert alert-danger"> {{rechargeError}}</div>{% endif %}
-															<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p>
-															
-                                                        {% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
-										    			{% if moe_questionset|length > 0 %}
-										    				
-										    				{% for qset in moe_questionset %}
-										    					<div class="question-set"><a href="{% url 'questionset' qset.qgroup qset.questionset %}" class="btn btn-default" >Question Set {{ qset.questionset|stringformat:"i" }}</a>{% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
-										    				{% endfor %}
-										    			{% endif %}
+                                                        <div class="question-set">
+                                                            <a href="#" class="btn btn-default"><span class="fa fa-lock"></span>&nbsp;&nbsp;Question Set 1</a>
+                                                        </div>
+                                                        <div class="question-set">
+                                                            <a href="#" class="btn btn-default"><span class="fa fa-lock"></span>&nbsp;&nbsp;Question Set 2</a>
+                                                        </div>
+                                                        <div class="question-set">
+                                                            <a href="#" class="btn btn-default"><span class="fa fa-lock"></span>&nbsp;&nbsp;Question Set 3</a>
+                                                        </div>
+                                                        <div class="question-set">
+                                                            <a href="#" class="btn btn-default"><span class="fa fa-lock"></span>&nbsp;&nbsp;Question Set 4</a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,8 +139,66 @@
             
         </section>
         <!-- Dashboard ends -->
+    <section id="dashboard" >
+		<div class="container">
+			<div class="col-md-6">
+				<p>Welcome : {{ firstname }}</p>
+			</div>
+			
+			<hr/>
+			<div class="col-md-12">
+				<h2>IOE Entrance Model</h2>
+			</div>
+			<div class="col-md-3">
+				<img src="assets/img/ioe-logo.png" alt="ioe-logo" class="img img-responsive">
+			</div>
+			<div class="col-md-9">
+				<p style="color:red;">Based on New Syllabus</p>
+				<p>Time :2 hours 0 minute 0 second</p>
+				<p>Total Question:100</p>
+				<p>Subjects : Physics, Chemistry, Mathematics, English, Engineering Aptitude</p>
+				<p><a href="{% url 'rules' 'IOE' 255 %}"><button class="btn btn-primary" style="margin-top:10px;">Practice One Set For Free!!</button></a></p>
+			</div>
+
+			<div class="col-md-12">
+				<h2>Go Premium</h2>
+				<p> To practice more sets of question, Go premium. You can recharge Rs 100 and practice 10 Sets of question.</p>
+				{% if rechargeError != None %}<div class="alert alert-danger"> {{rechargeError}}</div>{% endif %}
+				<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p>
+				<p><a href="#">More info about our Recharge plan.</a></p>
+			</div>
+
+		</div>
+
+	</section>
+    <div class="container">
+    	<div class="row">
+    		<div class="text-center">
+    			{% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
+    			{% if ioe_questionset|length > 0 %}
+    				<div style="color:orange;font-size:15px;font-weight:bold;">IOE Question Set</div>
+    				{% for qset in ioe_questionset %}
+    					<div style="color:orange"><a href="{% url 'rules' qset.qgroup qset.questionset %}">Question Set {{ qset.questionset|stringformat:"i" }}</a> {% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
+    				{% endfor %}
+    			{% endif %}
+    			{% if iom_questionset|length > 0 %}
+    				<div style="color:orange;font-size:15px;font-weight:bold;">IOM Question Set</div>
+    				{% for qset in iom_questionset %}
+    					<div style="color:orange"><a href="{% url 'rules' qset.qgroup qset.questionset %}">Question Set {{ qset.questionset|stringformat:"i" }}</a> {% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
+    				{% endfor %}
+    			{% endif %}
+    			{% if moe_questionset|length > 0 %}
+    				<div style="color:orange;font-size:15px;font-weight:bold;">MOE Question Set</div>
+    				{% for qset in moe_questionset %}
+    					<div style="color:orange"><a href="{% url 'rules' qset.qgroup qset.questionset %}">Question Set {{ qset.questionset|stringformat:"i" }}</a> {% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
+    				{% endfor %}
+    			{% endif %}
+    		</div>
+    	</div>
+    </div>
 
    {% include 'footer.html' %}
+
    <div class="modal fade" id="rechargeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">

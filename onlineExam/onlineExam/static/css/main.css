@@ -1,34 +1,4 @@
-/*
-Theme Name: HealthCare
-Theme URI: http://themewagon.com/demo/HealthCare/
-Author: ThemeWagon
-Author URI: http://themewagon.com/
-Description: A responsive theme for commercial medical purpose. Built with HTML5, CSS3, Bootstrap framework. Google fonts, Font Awesome Icon integrated
-Version: 1.1.2014.11
-License: GNU General Public License v3
-License URI: http://www.gnu.org/licenses/gpl-3.0.txt
-Tags: responsive layout, multiple-page, parallax 
-Text Domain:
-*/
 
-/**
- * Table of Contents:
- *
- * 1. - Home
-        1.1 - heading-slider
-        1.2 - starting-text
-        1.3 - reason for choice
-        1.4 - testimonial
- * 2. - Service
- * 3. - Doctor
-        3.1 - doctor-list
-        3.2 - job
- * 4. - Blog
- * 5. - FAQ
- * 6. - Gallery
- * 7. - Contact
- * -----------------------------------------------------------------------------
- */
 
  * {outline: none !important;}
 
@@ -97,6 +67,13 @@ h1, h2, h3, h4, h5, h6
     display: none;
 }
 
+.center{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+    display: block;
+    text-align: center;
+}
 /* ----------------------------------------Header --------------------------------------------*/
 .top-header{
     height: 30px;
@@ -283,74 +260,7 @@ li:last-child
     display: inline-block;
 }
 
-/* ------------------------------------   appointment  ----------------------------------------- */
 
-.appointment
-{
-    background-color: #e6e6e6;
-}
-.appointment .header 
-{
-    background-color: #46a1b4;
-    min-height: 99px;
-    height: auto !important;
-    padding: 10px 23px 0px;
-    margin: 0px 0px 30px;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.2)), to(rgba(0,0,0,0)));
-    background-image: -webkit-linear-gradient(top, rgba(255,255,255,.2), rgba(0,0,0,0));
-    background-image: -moz-linear-gradient(top, rgba(255,255,255,.2), rgba(0,0,0,0));
-    background-image: -ms-linear-gradient(top, rgba(255,255,255,.2), rgba(0,0,0,0));
-    background-image: -o-linear-gradient(top, rgba(255,255,255,.2), rgba(0,0,0,0));
-    background-image: linear-gradient(top, rgba(255,255,255,.2), rgba(0,0,0,0));
-}
-.appointment .header h2, .appointment .header .number 
-{
-    text-shadow: 1px 1px 0px #20606D;
-    color: #ffffff;
-    font-size: 24px;
-    line-height: 40px;
-    font-weight: normal;
-}  
-.appointment .header a i
-{
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
-    border: 2px solid #fff;
-    background: #6DBEC2;
-    color: white;
-    padding-top: 3px;
-    padding-left: 6px;
-}
-.appointment .header .or 
-{
-    display: block;
-    width: 100%;
-    height: 35px;
-    background: url(../img/or-bg.png) center center no-repeat; 
-    font-size: 14px;
-    color: #fff;
-    text-align: center;
-    line-height: 35px;
-    position: relative;
-    top: 17px;
-}
-.captcha-container 
-{
-    margin: 0 0 20px;
-}
-.captcha-container img 
-{
-    vertical-align: top;
-    margin: 10px 0px;
-}
-.appointment .input-group
-{
-    padding: 10px 0px;
-}
 
 /* ========================================= 1. Home============================================= */
 
@@ -454,48 +364,6 @@ section.starting-text
     color: white;
     background-color: #46a1b4;
 }
-/* ----------------------------------- 1.3 reason for choise------------------------------------ */
-
-.service-heading 
-{
-    padding: 20px 0px;
-    color: darkcyan;
-    font-size: 29px;
-}
-
-.service-img 
-{
-    opacity: 0.9;
-}
-/* .fa-facebook , .fa-twitter ,.fa-google-plus , .fa-instagram , .fa-pinterest , .fa-skype{
-
-    margin-top: 7px;
-} */
-.form-control {
-    height: 38px !important;
-}
-.hservice {
-    /*background: rgb(242, 247, 255);*/
-    background-color: rgba(185, 208, 240, 0.16);
-    border: 1px solid #CED8E7;
-    margin: 30px 0px;
-    padding-bottom: 30px;
-    transition: all 0.3s ease-in;
-}
-.hservice:hover 
-{
-    box-shadow: 0px 2px 3px 2px #CED8E7;
-}
-
-.hservice:hover .service-img 
-{
-    opacity: 1;
-}
-.service-description p 
-{
-    padding: 0px 10px;
-    line-height: 25px;
-}
 /* ------------------------------------- 1.4 testimonial-------------------------------------------- */
 #testimonial
 {
@@ -530,127 +398,9 @@ section.starting-text
     margin-bottom: 20px;
     border: 10px solid rgb(131, 129, 137);
 }
-/* ========================================= 2. Service=========================================== */
-.service-title
-{
-    background: url(../img/gradient-blue-computer.jpg);
-    background-size: cover;
-    vertical-align: middle;
-    background-position: center;
-    color: #F0FEFF;
-}
-.service-title .headline 
-{
-    font-size: 70px;
-    word-spacing: 10px;
-}
-.service-wrapper
-{
-    /*background-color: rgba(45, 53, 56, 0.28);*/
-    background-color: rgba(70, 161, 180, 0.62);
-    padding: 78px 0px;
-    margin-top: 65px;
-}
-.service
-{
-    padding: 40px 20px;
-    transition: all 0.5s ease 0s;
-}
-.featured-service-content 
-{
-    margin: 40px 0px;
-}
-.service .service-icon i
-{
-    width: 150px;
-    height: 150px;
-    border-radius: 75px;
-    border: 2px solid #6DBEC2;
-    background: #fff;
-    color: #6DBEC2;
-    padding-top: 38px;
-    transition: all 0.7s ease 0s;
-}
-.about-service h3 
-{
-    padding: 12px 0px;
-    color: darkcyan;
-}
-
-.about-service p 
-{
-    padding: 0px 10px;
-}
-.service:hover .service-icon i
-{
-    color: white;
-    background-color: #6DBEC2;
-}
-.service:hover .about-service h3
-{
-    color: #02A2B6;
-}
-.special-service
-{
-    margin-top: 50px;
-}
-.service-tab 
-{
-    margin-top: 50px;
-}
-
-.service-item 
-{
-    padding: 30px 0px;
-}
-.service-item img 
-{
-    margin-bottom: 30px;
-}
-.service-item h3 
-{
-    color: darkcyan;
-    margin-top: 0px;
-}
-.service-item p 
-{
-    line-height: 25px;
-    padding: 10px 0px;
-}
-.special-service h2
-{
-    background: url("../img/title-bg.png") repeat-x scroll 0 13px rgba(0, 0, 0, 0);
-    margin-bottom: 10px;
-    margin-top: 0;
-}
-
-.sub-headline 
-{
-    padding: 15px 0px 40px 0px;
-    font-size: 24px;
-}
-.headline 
-{
-    padding-top: 45px;
-    font-size: 45px;
-}
-.service-rm-btn
-{
-    background-color: transparent;
-    color: #46a1b4;
-    border-radius: 0px;
-    font-size: 15px;
-    transition: all 0.3s ease-in;
-    padding: 5px 12px;
-    margin: 4px 0px 0px 5px;
-    border-color: #46a1b4;
-}
-.service-rm-btn:hover
-{
-    /* background-color: #46a1b4; */
-    background-color: rgb(0, 139, 168);
-    color: #fff;
-    border-color: #3A90CD;
+#testimonial .img-circle{
+    width: 200px;
+    height: 200px;
 }
 
 /*======================================Company Intro=============================*/
@@ -664,9 +414,8 @@ section.starting-text
     padding: 30px 0 0 0;
 }
 
-/* ========================================= 3. Doctor============================================ */
 
-/* ------------------------------------------  3.1 doctor-list --------------------------------- */
+/* ------------------------------------------  3.1 Team-list --------------------------------- */
 .team-button {
     margin-top: -60px;
 }
@@ -769,57 +518,7 @@ section.starting-text
     padding-left: 2px;
 }
 
-/* -------------------------------------- 3.2 job --------------------------------------------- */
-#job
-{
-    background: url(../img/ridgeviewmedicalclinic.jpg) 50% 0 no-repeat fixed;
-    width: 100%;
-    background-size: cover;
-    margin-top: 20px;
-    color: white;
-}
-.job-wrapper
-{
-    background-color: rgba(0, 0, 0, 0.87);
-    padding: 100px 0;
-}
-#job h2 
-{
-    padding-top: 11px;
-}
-#job h4 
-{
-    line-height: 30px;
-    padding: 20px 0px 10px 0px;
-}
-.block-image 
-{
-    position: relative;
-    z-index: 99;
-    overflow: hidden;
-}
-#job .form-control {
-    background-color: rgba(0, 0, 0, 0.45);
-    border-color: #fff;
-    color: #46a1b4;
-    height: 38px;
-}
-#job .input-group-addon
-{
-    background-color: transparent;
-    border-color: #fff;
-    color: #fff;
-}
-#job .input-group
-{
-    padding: 20px 0px;
-}
-#job .send 
-{
-    margin-top: 30px;
-    background-color: transparent;
-    border-color: #fff;
-}
+
 /* ========================================= 4. FAQs============================================= */
 .faq-title
 {
@@ -837,7 +536,7 @@ section.starting-text
 .faq-wrapper
 {
     background-color: rgba(45, 53, 56, 0.62);
-    padding: 78px 0px;
+    padding: 100px 0px;
 }
 
 
@@ -852,7 +551,7 @@ section.starting-text
 
 .faq-content
 {
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 
@@ -1237,7 +936,7 @@ textarea.contact-form-control{
 }
 .contact-block:after {
     content: '';
-    width: 100%;
+    width: 90%;
     border-bottom: 1px solid #ededed;
     left: 15%;
     position: relative;
@@ -1513,13 +1212,34 @@ li.socials-icons
 .fp p a:hover{
     color: darkcyan !important;
 }
-/*===========================================Dashboard====================================*/
+
+
+/*==============================================Dashboard section====================================================*/
 #dashboard{
-    background:#D0DEE1;
     width: 100%;
     height: auto;   
-    padding: 50px 0;
+    padding: 50px 0 0 0;
 }
+
+
+#dashboard .btn-default {
+    background-color: #46a1b4;
+    color: white;
+    border-radius: 0px;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+#dashboard .test-description{
+    margin-top:20px; 
+    border-top:2px solid #D0DEE1;
+    border-bottom:2px solid #D0DEE1;
+    padding-bottom: 10px;
+}
+
+#dashboard .test-description .center{
+    padding: 10px 0px;
+}
+
 #dashboard-question{
     background:#FFFFFF;
     width: 100%;
@@ -1535,6 +1255,26 @@ li.socials-icons
     margin-bottom: 20px;
     border: 1px;
     border-top: 1px solid #eee;
+}
+#dashboard .go-premium{
+    background:#E9EAEA;
+}
+#dashboard .go-premium .btn-default{
+    background-color: #FFFFFF;
+    color: #000;
+    padding: 4% 30%;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+#dashboard .go-premium .btn-default:hover{
+    background-color: #46a1b4;
+    color: #FFFFFF;
+}
+#dashboard .go-premium a{
+    font-size: 20px;
+}
+.rules{
+    margin-bottom: 30px;
 }
 .rules ul{
     list-style:disc !important;
@@ -1554,7 +1294,7 @@ li.socials-icons
     position:fixed; 
     background:#46a1b4; 
     color:#fff; 
-    padding:20px;
+    padding:20px 10px;
 }
 
 .owl-theme .owl-controls .owl-buttons .owl-prev,.owl-theme .owl-controls .owl-buttons .owl-next {
@@ -1567,14 +1307,14 @@ li.socials-icons
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 10px;
-    filter: Alpha(Opacity=50);
-    opacity: 0.5;
+    opacity: 1 !important;
     background: #46a1b4;
 }
 
 #dashboard-question .questions{
     padding-top: 50px;
 }
+
 
 .owl-theme .owl-controls .owl-buttons .owl-prev{
     float: left;
@@ -1656,3 +1396,120 @@ li.socials-icons
   padding: 5px 20px;
 }
 
+/*==============================================Result Section=======================================*/
+#result{
+    background:#D0DEE1;
+    width: 100%;
+    height: auto;   
+    padding: 50px 0;
+}
+#result .result-div{
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 1px 6px rgba(0,0,0,.4);
+}
+#result .table tr{
+    text-align: left !important;
+    font-size: 18px;
+}
+#result .btn-primary{
+    padding: 10px 40px;
+}
+/*==========================================Solution Section================================================*/
+#solution{
+    background:#D0DEE1;
+    width: 100%;
+    height: auto;   
+    padding: 50px 0;
+}
+#solution .center{
+    text-align: left;
+}
+
+/*=========================================About Section=====================================================*/
+.sidebar-div
+{
+    margin-bottom: 40px;
+}
+.sidebar-div h4, 
+{
+    background: url("../img/title-bg.png") repeat-x scroll 0 4px rgba(0, 0, 0, 0);
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.sidebar-div ul 
+{
+    padding-left: 0;
+    list-style: none;
+}
+.sidebar-div ul li 
+{
+    border-bottom: 1px solid #f3f3f3;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    list-style: none;
+    display: block;
+    padding: 10px 20px 10px 0;
+    position: relative;
+}
+.sidebar-div ul li:hover 
+{
+    background: #f8f8f8;
+    padding-left: 10px;
+}
+.sidebar-div ul li:hover a
+{
+    text-decoration: none;
+}
+.side-bar{
+    padding: 30px 0px;
+}
+.about{
+    margin-bottom: 30px;
+}
+.start-now-btn{
+    padding: 2% 25%;
+}
+.about .headline{
+    font-size:35px; 
+    padding-top:35px; 
+    margin-top:0px;
+}
+.about p{
+    color:rgb(51, 51, 51); 
+    line-height:1.8;
+}
+
+
+.go-top {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    color: #ffffff;
+    background-color: #46a1b4;
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+        -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    }
+
+.go-top:hover {
+    color: #ffffff;
+    background-color: #232732;
+    -o-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    }
+
+
+/*custom other*/
+.status a{
+    color: #fff;
+}

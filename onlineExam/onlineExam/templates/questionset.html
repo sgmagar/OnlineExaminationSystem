@@ -6,15 +6,7 @@
     {% include 'navbar.html' %}
 
     <section id="dashboard-question">
-			<div class="container" >
-				<div class="col-md-6">
-					<p>Welcome : User</p>
-				</div>
-				
-				<hr/>
-
-				
-                    <div class="container">
+			    <div class="container">
                       <div class="row">
                       	<form action="{% url 'checkset' qgroup qset %}" method="POST">{% csrf_token %}
 
@@ -24,96 +16,98 @@
 			                    <div class="item">
 				                    	{% for question in first_group %}  
 					                   
-											<div class="col-xs-1">{{ question.questionno }}.</div>
-											<div class="col-xs-11">{{ question.question }} {% if question.qfile != "" %}<img src="/media/{{ question.qfile }}">{% endif %}
+											<ul id="{{ question.questionno }}" class="list-group">
+											<li class="list-group-item">{{ question.questionno }}.
+											{{ question.question }} {% if question.qfile != "" %}<img src="/media/{{ question.qfile }}">{% endif %}</li>
 											{% if qgroup == 'IOE' %}
-												<div class="col-md-offset-1">
+												<li class="list-group-item">
 													{% for answer in question.answerioe_set.all|dictsort:'choice' %}
 														
 														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
 														
 													{% endfor %}
-												</div>
+												</li>
 											{% endif %}
 
 											{% if qgroup == 'IOM' %}
-												<div class="col-md-offset-1">
+												<li class="list-group-item">
 													{% for answer in question.answeriom_set.all|dictsort:'choice' %}
 														
 														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
 														
 													{% endfor %}
-												</div>
+												</li>
 											{% endif %}
 											{% if qgroup == 'MOE' %}
-												<div class="col-md-offset-1">
+												<li class="list-group-item">
 													{% for answer in question.answermoe_set.all|dictsort:'choice' %}
 														
 														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
 													{% endfor %}  
-												</div>
+												</li>
 											
 											{% endif %}
-											</div>
+											</ul>
 										
 										{% endfor %}
 									</div>
 									<div class="item">
 				                    	{% for question in second_group %}  
-					                   
-											<div class="col-xs-1">{{ question.questionno }}.</div>
-											<div class="col-xs-11">{{ question.question }} {% if question.qfile != "" %}<img src="/media/{{ question.qfile }}">{% endif %}
+					                   	
+											<ul id="{{ question.questionno }}" class="list-group">
+											<li class="list-group-item">{{ question.questionno }}.
+											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
 											{% if qgroup == 'IOE' %}
-												<div class="col-md-offset-1">
+												<li class="list-group-item">
 													{% for answer in question.answerioe_set.all|dictsort:'choice' %}
 														
 														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
 														
 													{% endfor %}
-												</div>
+												</li>
 											{% endif %}
 
 											{% if qgroup == 'IOM' %}
-												<div class="col-md-offset-1">
+												<li class="list-group-item">
 													{% for answer in question.answeriom_set.all|dictsort:'choice' %}
 														
 														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
 														
 													{% endfor %}
-												</div>
+												</li>
 											{% endif %}
 											{% if qgroup == 'MOE' %}
-												<div class="col-md-offset-1">
+												<li class="list-group-item">
 													{% for answer in question.answermoe_set.all|dictsort:'choice' %}
 														
 														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
 													{% endfor %}  
-												</div>
+												</li>
 											
 											{% endif %}
-											</div>
+											</ul>
 										
 										{% endfor %}
-										<input type="submit"  id= 'submit' class="btn btn-warning" value="Submit" />
+										<input type="submit"  id= 'submit' class="btn btn-primary" value="Submit" />
 	                        			</form>
 									</div>
+								</div>
+							</div>
                             
-                          </div>
-                        </div>
+                          
+                        
 
                         <div class="col-md-3">
                         	<div class="status">
-                        		<p>Time Left: <p id="time"></p></p>
-                        		<p>Questions Attempted : <p id=""></p></p>
-                        		<p>Questions Left : <p id="display"></p></p>
+                        		<p>Time Left: <span id="time"></span></p>
+                        		<p>Questions Attempted : <p id="attempt"></p></p>
+                        		<p>Questions Left : <p id="left"></p></p>
                         	</div>
                         	
                         </div>
 
-                      </div>
+                    
                     </div>
-
-
 			</div>
 
 		</section>
@@ -125,33 +119,46 @@
 	<script type="text/javascript">
 		var tim;
 
-        var min = 1;
-        var sec = 5;
+		var hour = 2
+        var min = 0;
+        var sec = 0;
         var f = new Date();
         f1();
         function f1() {
             f2();
-            document.getElementById("time").innerHTML = "Your started your Exam at " + f.getHours() + ":" + f.getMinutes();
+            document.getElementById("time").innerHTML = hour+":"+min+":" + sec;
              
           
         }
         function f2() {
             if (parseInt(sec) > 0) {
                 sec = parseInt(sec) - 1;
-                document.getElementById("time").innerHTML = "Your Left Time  is :"+min+" Minutes ," + sec+" Seconds";
+                document.getElementById("time").innerHTML = hour+":"+min+":" + sec;
                 tim = setTimeout("f2()", 1000);
             }
             else {
                 if (parseInt(sec) == 0) {
                 	min = parseInt(min) - 1;
-                    if (parseInt(min) < 0) {
-                        clearTimeout(tim);
-                        $('#submit').click();
-                        // location.href = "default5.aspx";
+                	if(min<0){
+                		min=0;
+                	}
+                    if (parseInt(min) == 0) {
+                    	hour = parseInt(hour) - 1;
+	                    if (parseInt(hour) < 0) {
+	                        clearTimeout(tim);
+	                        $('#submit').click();
+	                        // location.href = "default5.aspx";
+	                    }
+	                    else {
+	                        min = 60;
+	                        document.getElementById("time").innerHTML = hour+":"+min+":" + sec;
+	                        tim = setTimeout("f2()", 1000);
+	                    }
+                        
                     }
                     else {
                         sec = 60;
-                        document.getElementById("time").innerHTML = "Your Left Time  is :" + min + " Minutes ," + sec + " Seconds";
+                        document.getElementById("time").innerHTML = hour+":"+min+":" + sec;
                         tim = setTimeout("f2()", 1000);
                     }
 
@@ -159,27 +166,52 @@
                
             }
         }
-        display = document.getElementById("display");
-		unans_question = [];
-		for(i=1; i<5; i++){
+        var left = document.getElementById("left");
+        var attempt = document.getElementById("attempt");
+		var unans_question = [];
+		var ans_question = [];
+		for(i=1; i<=20; i++){
 			unans_question.push(i);
 			$('input:radio[name="'+i+'"]').change(function(){
 				if($(this).is(':checked')){
 					var num = parseInt($(this).attr('name'));
 					delete(unans_question[unans_question.indexOf(num)]);
-					displaylist(unans_question);
+					if ($.inArray(num, ans_question) == -1){
+						ans_question.push(num);
+					}
+					displayleft(unans_question);
+					displayattempt(ans_question);
 				}
 			});
 		}
-		displaylist(unans_question);
-		function displaylist (a) {
-			display.innerHTML='';
+		displayleft(unans_question);
+		function displayleft (a) {
+			left.innerHTML = '';
 			for(i=0; i<a.length;i++){
 				if(a[i]!= undefined){
-					display.innerHTML += a[i]+"  ";	
+					var link = "#"+a[i].toString();
+					left.innerHTML += "<a href=\""+link+"\" >"+a[i]+"</a>"+"  ";	
 				}
 			}
 		}
 
+		function displayattempt (a){
+			attempt.innerHTML = '';
+			for(i=0; i<a.length;i++){
+				if(a[i]!= undefined){
+					var link = "#"+a[i].toString();
+					attempt.innerHTML += "<a href=\""+link+"\" >"+a[i]+"</a>"+"  ";	
+				}
+			}
+		}
+
+		$(window).scroll(function() {
+               
+                $('nav').removeClass('navbar-fixed-top');
+
+               
+        });
+        
+        
 	</script>
 {% endblock %}

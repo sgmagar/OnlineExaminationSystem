@@ -4,34 +4,50 @@
 {% block content %}
         
     {% include 'navbar.html' %}
-    <div class="text-center title">Result</div>
-    <div class="container row">
-    	<div class="col-md-4 col-md-offset-4">
-    		Math: {{ math }}<br/>
-    		English: {{ english }}<br/>
-    		<span style='color:orange;'>________________________________</span><br/>
-    		Total: {{ total }}
-    	</div>
-
-    	<div class="col-md-4">
-    		<div class="text-center" style="color:orange;font-size:15px;font-weight:bold;">Wrong Answered</div>
-    		{% for question in wrong_questions %}
-    			{% with question|first as question %}
-    				{{ question.question }}
-	    			{% if qgroup == 'IOE' %}
-	    				<div class="col-md-offset-1">
-	    					Answer: &nbsp;&nbsp;
-	    					{% for answer in question.answerioe_set.all %}
-	    						{% if answer.value == True %}{{ answer.answer }}{% endif %}
-	    						<!-- {{ answer.answer }} -->
-	    					{% endfor %}
-	    				</div>
-	    			{% endif %}
-	    		{% endwith %}
-    		{% endfor %}
-    	</div>
-    </div>
-
+    <section id="result" >
+            <div class="result-div col-md-8 center">
+                <h2>Scorecard</h2>
+                <div class="table-responsive">
+                    <table class="table table-condensed table-hover">
+                      <thead>
+                        <tr>
+                          <th>Subject</th>
+                          <th>Total Question</th>
+                          <th>Attempted</th>
+                          <th>Total Correct</th>
+                          <th>Total Marks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>English</td>
+                          <td>{{ english_total }}</td>
+                          <td>{{ english_attempted }}</td>
+                          <td>{{ english_correct }}</td>
+                          <td>{{ english_mark }}</td>
+                        </tr>
+                        <tr>
+                          <td>Math</td>
+                          <td>{{ math_total }}</td>
+                          <td>{{ math_attempted }}</td>
+                          <td>{{ math_correct }}</td>
+                          <td>{{ math_mark }}</td>
+                        </tr>
+                        
+                        <tr>
+                          <td>Total</td>
+                          <td>{{ total }}</td>
+                          <td>{{ total_attempted }}</td>
+                          <td>{{ total_correct }}</td>
+                          <td>{{ total_mark }}</td>
+                        </tr>                        
+                      </tbody>
+                    </table>
+                </div>
+                <p><a href="#" class="btn btn-primary"> View Solutions</a></p>
+            </div>
+        </section>
+    
    {% include 'footer.html' %}
 
 {% endblock %}

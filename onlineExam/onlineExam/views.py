@@ -194,7 +194,7 @@ def recharge(request):
 @login_required(login_url='login')
 def questionset(request,qgroup,qset):
 	if qgroup.strip() == 'IOE':
-		if len(request.user.userquestionset_set.filter(qgroup='IOE',questionset=qset,status=False))>0:
+		if len(request.user.userquestionset_set.filter(qgroup='IOE',questionset=qset))>0:
 			english_question = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')
 			first_group = english_question[:10]
 			second_group = english_question[10:20] 
@@ -225,45 +225,71 @@ def questionset(request,qgroup,qset):
 
 @login_required(login_url='login')
 def checkset(request, qgroup, qset):
-	wrong=[]
-	score={
-		'english':0,
-		'math':0,
-		'total':0,
-		'qgroup': qgroup,
-	}
+	
 	if request.method == 'POST':
 		print request.POST
 		
 		if qgroup == 'IOE':
+			wrong=[]
+			english_total = 10
+			english_attempted = 0
+			english_correct = 0
+			english_mark = 0
+			math_total = 10
+			math_attempted = 0
+			math_correct = 0
+			math_mark = 0
 			questionIOE = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')
 			for i in range(1,20):
 				if i<=10:
 					try:
-						if request.POST[str(i)] == questionIOE[i-1].answer:
-							score['english'] +=1
-							score['total'] +=1
-							
-						else:
-							wrong.append(i-1)
+						if request.POST[str(i)]:
+							english_attempted +=1
+							if request.POST[str(i)] == questionIOE[i-1].answer:
+								english_correct = 1
+								english_mark +=1								
+							else:
+								wrong.append({str(i):request.POST[str(i)]})
 					except Exception as ex:
 						pass
 
 				elif i<=20:
 					try:
-						if request.POST[str(i)] == questionIOE[i-1].answer:
-							score['math'] +=1
-							score['total'] +=1
-						else:
-							wrong.append(i-1)
+						if request.POST[str(i)]:
+							math_attempted +=1
+							if request.POST[str(i)] == questionIOE[i-1].answer:
+								math_correct = 1
+								math_mark +=1								
+							else:
+								wrong.append({str(i):request.POST[str(i)]})
 					except Exception as ex:
 						pass
+
 				else:
 					pass
 		
-			wrong_questions = []
-			for questionno in wrong:
-				wrong_questions.append(questionIOE[questionno])
+			request.session['wrong_questions'] = wrong
+			userquestionset = request.user.userquestionset_set.get(qgroup=qgroup, questionset=qset)
+			userquestionset.score = english_mark+math_mark
+			userquestionset.status = True 
+			userquestionset.save()
+			score = {
+				'qgroup':qgroup,
+				'qset': qset,
+				'english_total': english_total,
+				'english_attempted': english_attempted,
+				'english_correct': english_correct,
+				'english_mark': english_mark,
+				'math_total': math_total,
+				'math_attempted': math_attempted,
+				'math_correct': math_correct,
+				'math_mark': math_mark,
+				'total': english_total + math_total,
+				'total_attempted': english_attempted + math_attempted,
+				'total_correct': english_correct + math_correct,
+				'total_mark': english_mark + math_mark,
+			}
+			return render(request, 'result.html', score)
 		elif qgroup == 'IOM':
 			for questionno in wrong:
 				question = QuestionIOM.objects.filter(questionset=qset,questionno=questionno)
@@ -274,9 +300,9 @@ def checkset(request, qgroup, qset):
 				wrong_questions.append(question)
 		else:
 			pass
-		score['wrong_questions']=wrong_questions
+		
 		# score = json.dumps(score)
-		return render(request, 'result.html', score)
+		
 					
 
 	else:
