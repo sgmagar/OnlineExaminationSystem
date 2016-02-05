@@ -20,11 +20,11 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>English</td>
-                          <td>{{ english_total }}</td>
-                          <td>{{ english_attempted }}</td>
-                          <td>{{ english_correct }}</td>
-                          <td>{{ english_mark }}</td>
+                          <td>Physics</td>
+                          <td>{{ physics_total }}</td>
+                          <td>{{ physics_attempted }}</td>
+                          <td>{{ physics_correct }}</td>
+                          <td>{{ physics_mark }}</td>
                         </tr>
                         <tr>
                           <td>Math</td>
@@ -33,7 +33,20 @@
                           <td>{{ math_correct }}</td>
                           <td>{{ math_mark }}</td>
                         </tr>
-                        
+                        <tr>
+                          <td>Chemistry</td>
+                          <td>{{ chemistry_total }}</td>
+                          <td>{{ chemistry_attempted }}</td>
+                          <td>{{ chemistry_correct }}</td>
+                          <td>{{ chemistry_mark }}</td>
+                        </tr>
+                        <tr>
+                          <td>English</td>
+                          <td>{{ english_total }}</td>
+                          <td>{{ english_attempted }}</td>
+                          <td>{{ english_correct }}</td>
+                          <td>{{ english_mark }}</td>
+                        </tr>
                         <tr>
                           <td>Total</td>
                           <td>{{ total }}</td>
@@ -44,7 +57,7 @@
                       </tbody>
                     </table>
                 </div>
-                <p><a href="#" class="btn btn-primary"> View Solutions</a></p>
+                <p><a href="{% url 'solution' qgroup qset %}" class="btn btn-primary"> View Solutions</a></p>
             </div>
         </section>
     

@@ -40,8 +40,17 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{% url 'home' %}" {% if title == 'Home' %}class="active"{% endif %}><span style="color:#fff;">Home</span></a></li>
                         <li><a href="{% url 'about' %}" {% if title == 'About Us' %}class="active"{% endif %}><span style="color:#fff;">About Us</span></a></li>
+                        <li class="dropdown">
+                                <a href="services.php" class="dropdown-toggle" data-toggle="dropdown">Services&nbsp<span class="caret"></span></b></a> 
+                                  <ul class="dropdown-menu">
+                                      <li><a href="#">IOE Entrance Preparation</a></li>
+                                      <li><a href="#">IOM Entrance Preparation</a></li>
+                                      <li><a href="#">MOE Entrance Preparation</a></li>
+                                    
+                                   </ul>
+                             </li>
                         <li><a href="{% url 'classes' %}" {% if title == 'Classes' %}class="active"{% endif %}><span style="color:#fff;">Classes</span></a></li>
-                        <li><a href="{% url 'faq' %}" {% if title == 'FAQ' %}class="active"{% endif %}><span style="color:#fff;">FAQ</span></a></li>
+                        <li><a href="{% url 'faq' %}" {% if title == 'FAQ' %}class="active"{% endif %}><span style="color:#fff;">FAQs</span></a></li>
                         <li><a href="{% url 'contactus' %}" {% if title == 'Contact Us'  %}class="active"{% endif %}><span style="color:#fff;">Contact Us</span></a></li>
                         <!-- <li class="active"><a href="index.php">Home</a></li>
                         <li class=""><a href="about.php">About</a></li>

@@ -198,9 +198,13 @@ def questionset(request,qgroup,qset):
 			english_question = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')
 			first_group = english_question[:10]
 			second_group = english_question[10:20] 
+			third_group = english_question[20:30]
+			fourth_group = english_question[30:40]
 			context={
 				'first_group':first_group,
 				'second_group':second_group,
+				'third_group':third_group,
+				'fourth_group':fourth_group,
 				'qgroup':qgroup,
 				'qset':qset,
 			}
@@ -231,63 +235,110 @@ def checkset(request, qgroup, qset):
 		
 		if qgroup == 'IOE':
 			wrong=[]
-			english_total = 10
-			english_attempted = 0
-			english_correct = 0
-			english_mark = 0
+			not_attempted = []
+			correct = []
+			physics_total = 10
+			physics_attempted = 0
+			physics_correct = 0
+			physics_mark = 0
 			math_total = 10
 			math_attempted = 0
 			math_correct = 0
 			math_mark = 0
+			chemistry_total = 10
+			chemistry_attempted = 0
+			chemistry_correct = 0
+			chemistry_mark = 0
+			english_total = 10
+			english_attempted = 0
+			english_correct = 0
+			english_mark = 0
 			questionIOE = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')
-			for i in range(1,20):
+			for i in range(1,41):
 				if i<=10:
 					try:
 						if request.POST[str(i)]:
-							english_attempted +=1
+							physics_attempted +=1
 							if request.POST[str(i)] == questionIOE[i-1].answer:
-								english_correct = 1
-								english_mark +=1								
+								correct.append(i)
+								physics_correct += 1
+								physics_mark +=1								
 							else:
-								wrong.append({str(i):request.POST[str(i)]})
+								wrong.append(i)
+
 					except Exception as ex:
-						pass
+						not_attempted.append(i)
 
 				elif i<=20:
 					try:
 						if request.POST[str(i)]:
 							math_attempted +=1
 							if request.POST[str(i)] == questionIOE[i-1].answer:
-								math_correct = 1
+								correct.append(i)
+								math_correct += 1
 								math_mark +=1								
 							else:
-								wrong.append({str(i):request.POST[str(i)]})
+								wrong.append(i)
 					except Exception as ex:
-						pass
+						not_attempted.append(i)
+
+				elif i<=30:
+					try:
+						if request.POST[str(i)]:
+							chemistry_attempted +=1
+							if request.POST[str(i)] == questionIOE[i-1].answer:
+								correct.append(i)
+								chemistry_correct += 1
+								chemistry_mark +=1								
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
+				elif i<=40:
+					try:
+						if request.POST[str(i)]:
+							english_attempted +=1
+							if request.POST[str(i)] == questionIOE[i-1].answer:
+								correct.append(i)
+								english_correct += 1
+								english_mark +=1								
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
 
 				else:
 					pass
 		
-			request.session['wrong_questions'] = wrong
+			request.session['checked_questions'] = {'qgroup':qgroup,'qset':qset,'wrong':wrong,
+				'not_attempted':not_attempted,'correct':correct}
 			userquestionset = request.user.userquestionset_set.get(qgroup=qgroup, questionset=qset)
-			userquestionset.score = english_mark+math_mark
+			userquestionset.score = physics_mark+math_mark+chemistry_mark+english_mark
 			userquestionset.status = True 
 			userquestionset.save()
 			score = {
 				'qgroup':qgroup,
 				'qset': qset,
-				'english_total': english_total,
-				'english_attempted': english_attempted,
-				'english_correct': english_correct,
-				'english_mark': english_mark,
+				'physics_total': physics_total,
+				'physics_attempted': physics_attempted,
+				'physics_correct': physics_correct,
+				'physics_mark': physics_mark,
 				'math_total': math_total,
 				'math_attempted': math_attempted,
 				'math_correct': math_correct,
 				'math_mark': math_mark,
-				'total': english_total + math_total,
-				'total_attempted': english_attempted + math_attempted,
-				'total_correct': english_correct + math_correct,
-				'total_mark': english_mark + math_mark,
+				'chemistry_total': math_total,
+				'chemistry_attempted': math_attempted,
+				'chemistry_correct': math_correct,
+				'chemistry_mark': math_mark,
+				'english_total': math_total,
+				'english_attempted': math_attempted,
+				'english_correct': math_correct,
+				'english_mark': math_mark,
+				'total': physics_total + math_total + chemistry_total+ english_total,
+				'total_attempted': physics_attempted + math_attempted + chemistry_attempted + english_attempted,
+				'total_correct': physics_correct + math_correct + chemistry_correct + english_correct,
+				'total_mark': physics_mark + math_mark + chemistry_mark+ english_mark,
 			}
 			return render(request, 'result.html', score)
 		elif qgroup == 'IOM':
@@ -307,6 +358,64 @@ def checkset(request, qgroup, qset):
 
 	else:
 		return redirect(reverse('dashboard', args=(request.user.id,) ))
+
+def solution(request, qgroup, qset):
+	if request.session['checked_questions']['qset'] == qset:
+		if request.session['checked_questions']['qgroup'] == 'IOE':
+			questionIOE = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')
+			for question in questionIOE:
+				if question.questionno in request.session['checked_questions']['wrong']:
+					question.status = 'wrong'
+				elif question.questionno in request.session['checked_questions']['not_attempted']:
+					question.status = 'not_attempted'
+				elif question.questionno in request.session['checked_questions']['correct']:
+					question.status = 'correct'
+				else:
+					pass
+			context = {
+				'qgroup': qgroup,
+				'questionIOE': questionIOE,
+				'title': 'Solution',
+			}
+			return render(request, 'solution.html', context)
+		elif request.session['checked_questions']['qgroup'] == 'IOM':
+			questionIOM = QuestionIOM.objects.filter(questionset=qset).order_by('questionno')
+			for question in questionIOM:
+				if question.questionno in request.session['checked_questions']['wrong']:
+					question.status = 'wrong'
+				elif question.questionno in request.session['checked_questions']['not_attempted']:
+					question.status = 'not_attempted'
+				elif question.questionno in request.session['checked_questions']['correct']:
+					question.status = 'correct'
+				else:
+					pass
+			context = {
+				'qgroup': qgroup,
+				'questionIOM': questionIOM,
+				'title': 'Solution',
+			}
+			return render(request, 'solution.html', context)
+		elif request.session['checked_questions']['qgroup'] == 'MOE':
+			questionMOE = QuestionMOE.objects.filter(questionset=qset).order_by('questionno')
+			for question in questionIOE:
+				if question.questionno in request.session['checked_questions']['wrong']:
+					question.status = 'wrong'
+				elif question.questionno in request.session['checked_questions']['not_attempted']:
+					question.status = 'not_attempted'
+				elif question.questionno in request.session['checked_questions']['correct']:
+					question.status = 'correct'
+				else:
+					pass
+			context = {
+				'qgroup': qgroup,
+				'questionMOE': questionMOE,
+				'title': 'Solution',
+			}
+			return render(request, 'solution.html', context)
+		else:
+			return redirect(reverse('dashboard' ,args=(request.user.id,)))	
+	else:
+		return redirect(reverse('dashboard' ,args=(request.user.id,)))
 
 @login_required(login_url='login')
 def rules(request, qgroup, qset):

@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^recharge', recharge, name='recharge'),
     url(r'^questionset/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', questionset, name='questionset'),
     url(r'^checkset/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', checkset, name='checkset'),
+    url(r'^solution/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', solution, name='solution'),
     url(r'^rules/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', rules, name='rules'),
     #api urls
     url(r'api/questions/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', api_questions),
