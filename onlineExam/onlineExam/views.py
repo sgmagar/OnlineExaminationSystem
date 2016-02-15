@@ -18,6 +18,8 @@ import json
 from exam.models import *
 from .forms import *
 
+from django.views.decorators.csrf import csrf_exempt  
+
 def home(request):
 	request.session['rechargeError']=None
 	request.session['qsetError']=None
@@ -84,13 +86,25 @@ def register(request):
 		if userform.is_valid() and profileform.is_valid():
 			user = userform.save(commit=False)
 			user.set_password(userform.cleaned_data['password'])
+			test_user = None
+			try :
+				test_user = User.objects.get(email=user.email)
+			except Exception as e:
+				pass
+			if test_user != None:
+				context={
+					'title':'Register',
+					"error":'Email already exists'
+				}
+				return render(request,'register.html',context)
 			user.save()
 			userprofile = profileform.save(commit=False)
 			userprofile.user = user
 			userprofile.save()
 			context={
 				'title':'Register',
-				"register":'Register Success'
+				"register":'Register Success',
+				
 			}
 			return render(request,'register.html',context)
 		context={
@@ -114,8 +128,14 @@ def login_view(request):
 	if request.method == 'POST':
 		username = request.POST['username']
 		password = request.POST['password']
-		print request.POST
-		user = authenticate(username=username, password=password)
+		
+		if '@' in username:
+			try:
+				username = User.objects.get(email=username).username
+			except Exception as e:
+				pass
+			
+		user = authenticate(username=username,password=password)
 		if user:
 			if user.is_active:
 				login(request, user)
@@ -151,6 +171,10 @@ def dashboard(request, id):
 		ioe_questionset = request.user.userquestionset_set.filter(qgroup='IOE').order_by('questionset')
 		iom_questionset = request.user.userquestionset_set.filter(qgroup='IOM').order_by('questionset')
 		moe_questionset = request.user.userquestionset_set.filter(qgroup='MOE').order_by('questionset')
+		# ioefreeset = QuestionIOE.objects.filter(questionset=150)
+		# moefreeset = QuestionMOE.objects.filter(questionset=150)
+		# iomfreeset = QuestionIOM.objects.filter(questionset=150)
+		# print ioefreeset.questionset
 
 		print len(ioe_questionset)
 		context={
@@ -161,6 +185,9 @@ def dashboard(request, id):
 			'iom_questionset':iom_questionset,
 			'moe_questionset':moe_questionset,
 			'firstname':user.first_name,
+			# 'ioefreeset':ioefreeset,
+			# 'moefreeset':moefreeset,
+			# 'iomfreeset':iomfreeset,
 
 		}
 		request.session['rechargeError']=None
@@ -194,7 +221,7 @@ def recharge(request):
 @login_required(login_url='login')
 def questionset(request,qgroup,qset):
 	if qgroup.strip() == 'IOE':
-		if len(request.user.userquestionset_set.filter(qgroup='IOE',questionset=qset))>0:
+		if len(request.user.userquestionset_set.filter(qgroup='IOE',questionset=qset))>0 or qset==str(150):
 			english_question = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')
 			first_group = english_question[:10]
 			second_group = english_question[10:20] 
@@ -208,24 +235,33 @@ def questionset(request,qgroup,qset):
 				'qgroup':qgroup,
 				'qset':qset,
 			}
-			return render(request,'questionset.html',context)
+			return render(request,'questionset_ioe.html',context)
 		else:
 			request.session['qsetError']="You don't have acces to this question"
 			return redirect(reverse('dashboard' ,args=(request.user.id,)))
 	if qgroup.strip() == 'IOM':
-		if(len(request.user.userquestionset_set.filter(qgroup='IOM',questionset=qset,status=False))>0):
+		if(len(request.user.userquestionset_set.filter(qgroup='IOM',questionset=qset,status=False))>0) or qset==str(150):
 			print qgroup,qset
-			return HttpResponse("Your group is "+qgroup+" and questionset is "+qset)
+			context = {
+				'qgroup':qgroup,
+				'qset':qset,
+			}
+			return render(request, 'questionset_iom.html', context)
 		else:
 			request.session['qsetError']="You don't have acces to this question"
 			return redirect(reverse('dashboard' ,args=(request.user.id,)))
 	if qgroup.strip() == 'MOE':
-		if(len(request.user.userquestionset_set.filter(qgroup='MOE',questionset=qset,status=False))>0):
+		if(len(request.user.userquestionset_set.filter(qgroup='MOE',questionset=qset,status=False))>0) or qset==str(150):
 			print qgroup,qset
-			return HttpResponse("Your group is "+qgroup+" and questionset is "+qset)
+			context = {
+				'qgroup':qgroup,
+				'qset':qset,
+			}
+			return render(request, 'questionset_moe.html', context)
 		else:
 			request.session['qsetError']="You don't have acces to this question"
 			return redirect(reverse('dashboard' ,args=(request.user.id,)))
+
 
 @login_required(login_url='login')
 def checkset(request, qgroup, qset):
@@ -237,32 +273,39 @@ def checkset(request, qgroup, qset):
 			wrong=[]
 			not_attempted = []
 			correct = []
-			physics_total = 10
+			total = 100
+			physics_total = 25
 			physics_attempted = 0
 			physics_correct = 0
 			physics_mark = 0
-			math_total = 10
+			math_total = 25
 			math_attempted = 0
 			math_correct = 0
 			math_mark = 0
-			chemistry_total = 10
+			chemistry_total = 16
 			chemistry_attempted = 0
 			chemistry_correct = 0
 			chemistry_mark = 0
-			english_total = 10
+			english_total = 18
 			english_attempted = 0
 			english_correct = 0
 			english_mark = 0
+			eaptitude_total = 16
+			eaptitude_attempted = 0
+			eaptitude_correct = 0
+			eaptitude_mark = 0
 			questionIOE = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')
-			for i in range(1,41):
+			for i in range(1,101):
 				if i<=10:
 					try:
 						if request.POST[str(i)]:
 							physics_attempted +=1
+
 							if request.POST[str(i)] == questionIOE[i-1].answer:
 								correct.append(i)
 								physics_correct += 1
-								physics_mark +=1								
+								physics_mark +=1	
+												
 							else:
 								wrong.append(i)
 
@@ -273,49 +316,140 @@ def checkset(request, qgroup, qset):
 					try:
 						if request.POST[str(i)]:
 							math_attempted +=1
+							
 							if request.POST[str(i)] == questionIOE[i-1].answer:
 								correct.append(i)
 								math_correct += 1
-								math_mark +=1								
+								math_mark +=1	
+													
 							else:
 								wrong.append(i)
 					except Exception as ex:
 						not_attempted.append(i)
 
-				elif i<=30:
+				elif i<=32:
 					try:
 						if request.POST[str(i)]:
 							chemistry_attempted +=1
+							
 							if request.POST[str(i)] == questionIOE[i-1].answer:
 								correct.append(i)
 								chemistry_correct += 1
-								chemistry_mark +=1								
+								chemistry_mark +=1	
+													
 							else:
 								wrong.append(i)
 					except Exception as ex:
 						not_attempted.append(i)
-				elif i<=40:
+				elif i<=46:
 					try:
 						if request.POST[str(i)]:
 							english_attempted +=1
+							
 							if request.POST[str(i)] == questionIOE[i-1].answer:
 								correct.append(i)
 								english_correct += 1
-								english_mark +=1								
+								english_mark +=1	
+													
 							else:
 								wrong.append(i)
 					except Exception as ex:
 						not_attempted.append(i)
-
+				elif i<=60:
+					try:
+						if request.POST[str(i)]:
+							eaptitude_attempted +=1
+							
+							if request.POST[str(i)] == questionIOE[i-1].answer:
+								correct.append(i)
+								eaptitude_correct += 1
+								eaptitude_mark +=1	
+													
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
+				elif i<=75:
+					try:
+						if request.POST[str(i)]:
+							physics_attempted +=1
+							
+							if request.POST[str(i)] == questionIOE[i-1].answer:
+								correct.append(i)
+								physics_correct += 1
+								physics_mark +=2	
+													
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
+				elif i<=90:
+					try:
+						if request.POST[str(i)]:
+							math_attempted +=1
+							
+							if request.POST[str(i)] == questionIOE[i-1].answer:
+								correct.append(i)
+								math_correct += 1
+								math_mark +=2	
+													
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
+				elif i<=94:
+					try:
+						if request.POST[str(i)]:
+							chemistry_attempted +=1
+							
+							if request.POST[str(i)] == questionIOE[i-1].answer:
+								correct.append(i)
+								chemistry_correct += 1
+								chemistry_mark +=2	
+													
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
+				elif i<=98:
+					try:
+						if request.POST[str(i)]:
+							english_attempted +=1
+							
+							if request.POST[str(i)] == questionIOE[i-1].answer:
+								correct.append(i)
+								english_correct += 1
+								english_mark +=2	
+													
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
+				elif i<=100:
+					try:
+						if request.POST[str(i)]:
+							eaptitude_attempted +=1
+							
+							if request.POST[str(i)] == questionIOE[i-1].answer:
+								correct.append(i)
+								eaptitude_correct += 1
+								eaptitude_mark +=2	
+													
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
 				else:
 					pass
+
 		
 			request.session['checked_questions'] = {'qgroup':qgroup,'qset':qset,'wrong':wrong,
 				'not_attempted':not_attempted,'correct':correct}
-			userquestionset = request.user.userquestionset_set.get(qgroup=qgroup, questionset=qset)
-			userquestionset.score = physics_mark+math_mark+chemistry_mark+english_mark
-			userquestionset.status = True 
-			userquestionset.save()
+			if qset != str(150):
+				userquestionset = request.user.userquestionset_set.get(qgroup=qgroup, questionset=qset)
+				userquestionset.score = physics_mark + math_mark + chemistry_mark + english_mark+eaptitude_mark
+				userquestionset.status = True 
+				userquestionset.save()
 			score = {
 				'qgroup':qgroup,
 				'qset': qset,
@@ -327,28 +461,38 @@ def checkset(request, qgroup, qset):
 				'math_attempted': math_attempted,
 				'math_correct': math_correct,
 				'math_mark': math_mark,
-				'chemistry_total': math_total,
-				'chemistry_attempted': math_attempted,
-				'chemistry_correct': math_correct,
-				'chemistry_mark': math_mark,
-				'english_total': math_total,
-				'english_attempted': math_attempted,
-				'english_correct': math_correct,
-				'english_mark': math_mark,
-				'total': physics_total + math_total + chemistry_total+ english_total,
-				'total_attempted': physics_attempted + math_attempted + chemistry_attempted + english_attempted,
-				'total_correct': physics_correct + math_correct + chemistry_correct + english_correct,
-				'total_mark': physics_mark + math_mark + chemistry_mark+ english_mark,
+				'chemistry_total': chemistry_total,
+				'chemistry_attempted': chemistry_attempted,
+				'chemistry_correct': chemistry_correct,
+				'chemistry_mark': chemistry_mark,
+				'english_total': english_total,
+				'english_attempted': english_attempted,
+				'english_correct': english_correct,
+				'english_mark': english_mark,
+				'eaptitude_total': eaptitude_total,
+				'eaptitude_attempted':eaptitude_attempted,
+				'eaptitude_correct':eaptitude_correct,
+				'eaptitude_mark':eaptitude_mark,
+				'total': total,
+				'total_attempted': physics_attempted + math_attempted + chemistry_attempted + english_attempted+eaptitude_attempted,
+				'total_correct': physics_correct + math_correct + chemistry_correct + english_correct+eaptitude_correct,
+				'total_mark': physics_mark + math_mark + chemistry_mark + english_mark+eaptitude_mark,
 			}
-			return render(request, 'result.html', score)
+			request.session["solution"] = "okay"
+			return render(request, 'result_ioe.html', score)
+
 		elif qgroup == 'IOM':
-			for questionno in wrong:
-				question = QuestionIOM.objects.filter(questionset=qset,questionno=questionno)
-				wrong_questions.append(question)
+			score = {
+				'qgroup':qgroup,
+				'qset': qset,
+			}
+			return render(request, 'result_iom.html', score)
 		elif qgroup == 'MOE':
-			for questionno in wrong:
-				question = QuestionMOE.objects.filter(questionset=qset,questionno=questionno)
-				wrong_questions.append(question)
+			score = {
+				'qgroup':qgroup,
+				'qset': qset,
+			}
+			return render(request, 'result_moe.html', score)
 		else:
 			pass
 		
@@ -420,55 +564,264 @@ def solution(request, qgroup, qset):
 @login_required(login_url='login')
 def rules(request, qgroup, qset):
 	if qgroup=='IOE':
-		context={
-			'title':'Rules',
-			'firstname':request.user.first_name,
-			'qgroup': qgroup,
-			'qset':qset,
+		if len(request.user.userquestionset_set.filter(qgroup='IOE',questionset=qset))>0 or qset==str(150):
+			context={
+				'title':'Rules',
+				'firstname':request.user.first_name,
+				'qgroup': qgroup,
+				'qset':qset,
 
-		}
-		return render(request,'rules_ioe.html', context)
+			}
+			return render(request,'rules_ioe.html', context)
+		else:
+			context = {
+				'error': "You don't have access to this question set",
+				'title':'Rules',
+				'firstname':request.user.first_name,
+				'qgroup': qgroup,
+				'qset':qset,
+			}
+			return render(request,'rules_ioe.html', context)
 	if qgroup=='IOM':
-		context={
-			'title':'Rules',
-			'firstname':request.user.first_name,
-			'qgroup': qgroup,
-			'qset':qset,
+		if len(request.user.userquestionset_set.filter(qgroup='IOM',questionset=qset))>0 or qset==str(150):
+			context={
+				'title':'Rules',
+				'firstname':request.user.first_name,
+				'qgroup': qgroup,
+				'qset':qset,
 
-		}
-		return render(request,'rules_iom.html', context)
+			}
+			return render(request,'rules_iom.html', context)
+		else:
+			context = {
+				'error': "You don't have access to this question set",
+				'title':'Rules',
+				'firstname':request.user.first_name,
+				'qgroup': qgroup,
+				'qset':qset,
+			}
+			return render(request,'rules_iom.html', context)
 	if qgroup=='MOE':
-		context={
-			'title':'Rules',
-			'firstname':request.user.first_name,
-			'qgroup': qgroup,
-			'qset':qset,
+		if len(request.user.userquestionset_set.filter(qgroup='IOE',questionset=qset))>0 or qset==str(150):
+			context={
+				'title':'Rules',
+				'firstname':request.user.first_name,
+				'qgroup': qgroup,
+				'qset':qset,
 
-		}
-		return render(request,'rules_moe.html', context)
+			}
+			return render(request,'rules_moe.html', context)
+		else:
+			context = {
+				'error': "You don't have access to this question set",
+				'title':'Rules',
+				'firstname':request.user.first_name,
+				'qgroup': qgroup,
+				'qset':qset,
+			}
+			return render(request,'rules_moe.html', context)
 
-#######################api#################
+
+def iomstart(request):
+	news = News.objects.filter(faculty__exact='IOM').order_by('-publishDate')[:5]
+	context = {
+		'title':'IOM Start',
+		'news':news
+	}
+	return render(request, 'iom_start.html', context)
+
+def ioestart(request):
+	news = News.objects.filter(faculty__exact='IOE').order_by('-publishDate')[:5]
+	context = {
+		'title':'IOE Start',
+		'news':news
+	}
+	return render(request, 'ioe_start.html', context)
+
+def moestart(request):
+	news = News.objects.filter(faculty__exact='MOE').order_by('-publishDate')[:5]
+	context = {
+		'title':'IOE Start',
+		'news':news
+	}
+	return render(request, 'moe_start.html', context)
+
+def ioesyllabus(request):
+	context = {
+	
+	}
+	return render(request, 'syllabus_ioe.html', context)
+
+def iomsyllabus(request):
+	context = {
+
+	}
+	return render(request, 'syllabus_iom.html', context)
+
+def forgotpassword(request):
+	pass
+
+def recoverpassword(request):
+	pass
+
+#######################--api--#################
+@csrf_exempt
+def api_register(request):
+	if request.method == 'POST':
+		username = request.POST['username']
+		email = request.POST['email']
+		firstname = request.POST['firstname']
+		lastname = request.POST['lastname']
+		password = request.POST['password']
+		college = request.POST['college']
+		faculty = request.POST['faculty']
+		phone = request.POST['contact']
+		test_email = None
+		test_username = None
+		try :
+			test_email = User.objects.get(email=email)
+		except Exception as e:
+			pass
+		if test_email != None:
+			return HttpResponse('224')
+		try :
+			test_username = User.objects.get(username=username)
+		except Exception as e:
+			pass
+		if test_username != None:
+			return HttpResponse('225')
+		user = User(username=username,email=email,first_name=firstname,last_name=lastname)
+		user.set_password(password)
+		user.save()
+		userprofile = UserProfile(user=user,college=college,faculty=faculty,phone=phone)
+		userprofile.save()
+		return HttpResponse('226')
+	else:
+		return HttpResponse('GFY')
+@csrf_exempt
+def api_login(request):
+	if request.method == 'POST':
+		username = request.POST['username']
+		password = request.POST['password']
+		# print request.META['HTTP_USERNAME']
+		# print request.META['HTTP_PASSWORD']
+		if '@' in username:
+			try:
+				username = User.objects.get(email=username).username
+			except Exception as e:
+				pass
+			
+		user = authenticate(username=username,password=password)
+		if user:
+			if user.is_active:
+				return HttpResponse('226')
+			else :
+				return HttpResponse('225')
+		else:
+			return HttpResponse('224')
+	else:
+		return HttpResponse('GFY')
+
+def api_dashboard(request):
+	username = request.META['HTTP_USERNAME']
+	password = request.META['HTTP_PASSWORD']
+
+	if '@' in username:
+		try:
+			username = User.objects.get(email=username).username
+		except Exception as e:
+			pass
+	user = authenticate(username=username, password=password)
+	if user:
+		if user.is_active:
+			ioe_set = []
+			iom_set = []
+			moe_set = []
+			ioe_questionset = request.user.userquestionset_set.filter(qgroup='IOE').order_by('questionset')
+			iom_questionset = request.user.userquestionset_set.filter(qgroup='IOM').order_by('questionset')
+			moe_questionset = request.user.userquestionset_set.filter(qgroup='MOE').order_by('questionset')
+			for qset in ioe_questionset:
+				ioe_set.append({'questionset':qset.questionset,'score':qset.score})
+			for qset in iom_questionset:
+				iom_set.append({'questionset':qset.questionset,'score':qset.score})
+			for qset in moe_questionset:
+				moe_set.append({'questionset':qset.questionset,'score':qset.score})
+			question_sets = {'ioe_set':ioe_set,'iom_set':iom_set,'moe_set':moe_set}
+			question_sets = json.dumps(question_sets)
+			return HttpResponse(question_sets)
+
+		else:
+			return HttpResponse("224")
+	else:
+		return HttpResponse("224")
+
 
 def api_questions(request,qgroup,qset):
-	if qgroup=='ioe':
-		questions = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')[:5]
-		# questionno = serializers.serialize("json", questions, fields=('question',))
-		question_set = []
-		# print questionno
+	username = request.META['HTTP_USERNAME']
+	password = request.META['HTTP_PASSWORD']
+
+	if '@' in username:
+		try:
+			username = User.objects.get(email=username).username
+		except Exception as e:
+			pass
 		
-		for question in questions:
-			answers = question.answerioe_set.all()
-			answer_set=[]
-			# answer = serializers.serialize("json", answers, fields=('answer','value'))
-			for answer in answers:
-				answer_set.append({'answer':answer.answer,'value':answer.value})
-			question_set.append({'question':question.question,'answer':answer_set})
-		print question_set
-		return HttpResponse(json.dumps(question_set))
-	elif qgroup=='iom':
-		return HttpResponse("Not done yet")
-	elif qgroup=='moe':
-		return HttpResponse("Not done yet")
+	user = authenticate(username=username,password=password)
+	if user:
+		if user.is_active:
+			if qgroup=='ioe':
+				questions = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')[:5]
+				# questionno = serializers.serialize("json", questions, fields=('question',))
+				question_set = []
+				# print questionno
+				
+				for question in questions:
+					answers = question.answerioe_set.all()
+					answer_set=[]
+					# answer = serializers.serialize("json", answers, fields=('answer','value'))
+					for answer in answers:
+						answer_set.append({'answer':answer.answer,'choice':answer.choice})
+					question_set.append({'question':question.question,'canswer':question.answer,'hint':question.hint,'answer':answer_set})
+				print question_set
+				return HttpResponse(json.dumps(question_set))
+			elif qgroup=='iom':
+				return HttpResponse("Not done yet")
+			elif qgroup=='moe':
+				return HttpResponse("Not done yet")
+		else :
+			return HttpResponse('GFY')
+	else:
+		return HttpResponse('GFY')
+
+@csrf_exempt
+def api_result(request,qgroup,qset):
+	username = request.META['HTTP_USERNAME']
+	password = request.META['HTTP_PASSWORD']
+
+	if '@' in username:
+		try:
+			username = User.objects.get(email=username).username
+		except Exception as e:
+			pass
+		
+	user = authenticate(username=username,password=password)
+	if user:
+		if user.is_active:
+			if request.method == 'POST':
+				userqset = UserQuestionSet.objects.get(user=user,qgroup=qgroup.upper(),questionset=qset)
+				score = request.POST['score']
+				userqset.score = score
+				userqset.save()
+				return HttpResponse('sucess, Your score is: '+score)
+			else:
+				return HttpResponse('GFY')
+
+
+		else :
+			return HttpResponse('GFY')
+	else:
+		return HttpResponse('GFY')
+	
 
 	
 

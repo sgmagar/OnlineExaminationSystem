@@ -1,0 +1,77 @@
+<script type = "text/javascript" >
+    history.pushState(null, null, 'result_moe.html');
+    window.addEventListener('popstate', function(event) {
+    history.pushState(null, null, 'result_moe.html');
+    });
+</script>
+{% extends 'base.html' %}
+{% load staticfiles %}
+<script type = "text/javascript" >
+    history.pushState(null, null, 'result_ioe.html');
+    window.addEventListener('popstate', function(event) {
+    history.pushState(null, null, 'result_ioe.html');
+    });
+</script>
+{% block content %}
+        
+    {% include 'navbar.html' %}
+    <section id="result" >
+            <div class="result-div col-md-8 center">
+                <h2>Scorecard</h2>
+                <div class="table-responsive">
+                    <table class="table table-condensed table-hover">
+                      <thead>
+                        <tr>
+                          <th>Subject</th>
+                          <th>Total Question</th>
+                          <th>Attempted</th>
+                          <th>Total Correct</th>
+                          <th>Total Marks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Physics</td>
+                          <td>{{ physics_total }}</td>
+                          <td>{{ physics_attempted }}</td>
+                          <td>{{ physics_correct }}</td>
+                          <td>{{ physics_mark }}</td>
+                        </tr>
+                        <tr>
+                          <td>Math</td>
+                          <td>{{ math_total }}</td>
+                          <td>{{ math_attempted }}</td>
+                          <td>{{ math_correct }}</td>
+                          <td>{{ math_mark }}</td>
+                        </tr>
+                        <tr>
+                          <td>Chemistry</td>
+                          <td>{{ chemistry_total }}</td>
+                          <td>{{ chemistry_attempted }}</td>
+                          <td>{{ chemistry_correct }}</td>
+                          <td>{{ chemistry_mark }}</td>
+                        </tr>
+                        <tr>
+                          <td>English</td>
+                          <td>{{ english_total }}</td>
+                          <td>{{ english_attempted }}</td>
+                          <td>{{ english_correct }}</td>
+                          <td>{{ english_mark }}</td>
+                        </tr>
+                        <tr>
+                          <td>Total</td>
+                          <td>{{ total }}</td>
+                          <td>{{ total_attempted }}</td>
+                          <td>{{ total_correct }}</td>
+                          <td>{{ total_mark }}</td>
+                        </tr>                        
+                      </tbody>
+                    </table>
+                </div>
+                <p><a href="{% url 'solution' qgroup qset %}" class="btn btn-primary"> View Solutions</a></p>
+            </div>
+        </section>
+    
+   {% include 'footer.html' %}
+
+{% endblock %}

@@ -5,71 +5,64 @@
         
     {% include 'navbar.html' %}
 
-        <section class= "heading-slider">
-            <div id="starting-slider" class="owl-carousel owl-theme">
-                
-                
-                <div class="item">
-                    <div class="slider-1">
-                        <div class="slider-inner">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="slider-inner-text">
-                                        <h1>Institute of Engineering</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illum dignissimos tempore ad, eos sint ullam </p>
-                                        <p><a href="{% url 'engineer' %}"><button class="btn btn-info"> Get Started&nbsp<i class="fa fa-caret-right"></i></button></a></p>
-                                    </div>  
-                                </div>
+<!-- Slider begins -->
+        <div class="fullwidthbanner-container revolution">
+            <div class="fullwidthbanner">
+              <ul>
+                <li data-transition="3dcurtain-vertical"> <img src="{% static 'img/slider4.jpg' %}" alt="" />
+                    <div class="mask">
+                        <div class="container slider-caption">
+                            <div class="row">
+                                <div class="slider-inner-text">
+                                    <h1>Institute of Engineering</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illum dignissimos tempore ad, eos sint ullam </p>
+                                    <p><a href="{% url 'ioestart' %}" class="btn btn-info hvr-icon-forward">Get Started</a></p>
+                                </div>  
                             </div>
                         </div>
                     </div>
-                </div>
+                </li>
+                <li data-transition="3dcurtain-vertical"> <img src="{% static 'img/slider3.jpg' %}" alt="" />
+                    <div class="mask">
+                        <div class="container slider-caption">
+                            <div class="row">
+                                <div class="slider-inner-text">
+                                    <h1>Institute Of Medicine</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illum dignissimos tempore ad, eos sint ullam </p>
+                                    <p><a href="{% url 'iomstart' %}" class="btn btn-info hvr-icon-forward">Get Started</a></p>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="item">
-                    <div class="slider-2">
-                        <div class="slider-inner">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="slider-inner-text">
-                                        <h1>Institute Of Medicine</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illum dignissimos tempore ad, eos sint ullam </p>
-                                        <p><a href="{% url 'doctor' %}"><button class="btn btn-info"> Get Started&nbsp<i class="fa fa-caret-right"></i></button></a></p>
-                                    </div>  
-                                </div>
+                </li>
+                <li data-transition="3dcurtain-vertical"> <img src="{% static 'img/slider1.jpg' %}" alt="" />
+                    <div class="mask">
+                        <div class="container slider-caption">
+                            <div class="row">
+                                <div class="slider-inner-text">
+                                    <h1>Ministry Of Education</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illum dignissimos tempore ad, eos sint ullam </p>
+                                    <p><a href="{% url 'moestart' %}" class="btn btn-info hvr-icon-forward">Get Started</a></p>
+                                </div>  
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="item">
-                    <div class="slider-3">
-                        <div class="slider-inner">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="slider-inner-text">
-                                        <h1>Ministry Of Education</h1>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis illum dignissimos tempore ad, eos sint ullam </p>
-                                        <p><a href="{% url 'doctor' %}"><button class="btn btn-info"> Get Started&nbsp<i class="fa fa-caret-right"></i></button></a></p>
-                                    </div>  
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-             
-            </div>
-                
-             
-            </div>
-        </section>
 
+                </li>
+              </ul>
+              
+            </div>
+            <!-- /.fullwidthbanner --> 
+        </div>
+        <!-- Slider ends -->
         <section class= "starting-text">
             <div class="container">
                 <div class="row">
                     <div class="welcome">
-                        <h2 class="welcome-title">Welcome To Our Online Mock Test</h2>
-                        <p class="welcome-txt">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-                        <a href="{% url 'about' %}"><button class="welcome-btn">Read More</button></a>  
+                        <h2 class="welcome-title wow animated fadeIn" data-wow-delay="0.4s">Welcome To Our Online Mock Test</h2>
+                        <p class="welcome-txt wow animated fadeIn" data-wow-delay="0.4s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                        <a href="{% url 'about' %}" class="welcome-btn wow animated fadeIn" data-wow-delay="0.4s">Read More</a>  
                     </div>
                 </div>
             </div>
@@ -79,10 +72,10 @@
             <div class= "container">
                 <div class= "row">
                     <div class= "col-lg-12 col-sm-12 col-xs-12">
-                        <h2 class= "headline text-center">
+                        <h2 class= "headline text-center wow animated fadeIn" data-wow-delay="0.4s">
                             Our Services
                         </h2>
-                        <p class="sub-headline text-center">
+                        <p class="sub-headline text-center wow animated fadeIn" data-wow-delay="0.4s">
                             Lorem ipsum dolor sit amet, consectetur
                         </p>
                     </div>
@@ -90,43 +83,43 @@
                 
                 <div class= "row">
                     <div class= "col-lg-4 col-sm-6 col-xs-12">
-                        <div class= "hservice">
+                        <div class= "hservice wow fadeInUp animated" data-wow-delay="0.6s">
                             <div class= "service-img">
                                 <img class= "img-responsive center-block" src="{% static 'img/service1.jpg' %}" alt="">
                             </div>
                             <div class= "service-description text-center">
                                 <h4 class= "service-heading">Institute Of Medicine</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae nisi nostrum sunt cum, consequuntur asperiores, impedit voluptate eveniet modi quas omnis.</p>
-                                <a href="{% url 'doctor' %}" class="rm-btn btn btn-primary">
-                                        Get Started <i class="fa fa-caret-right"></i></a>
+                                <a href="{% url 'iomstart' %}" class="rm-btn btn btn-primary hvr-icon-forward">
+                                        Get Started </a>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
                     <div class= "col-lg-4 col-sm-6 col-xs-12">
-                        <div class= "hservice">
+                        <div class= "hservice wow fadeInUp animated" data-wow-delay="0.7s">
                             <div class= "service-img">
                                 <img class= "img-responsive center-block" src="{% static 'img/service7.jpg' %}" alt="">
                             </div>
                             <div class= "service-description text-center">
                                 <h4 class= "service-heading">Institute of Engineering</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio nulla necessitatibus adipisci consequatur explicabo provident officiis fugit. Nihil dolorem officiis.</p>
-                                <a href="{% url 'engineer' %}" class="rm-btn btn btn-primary">
-                                        Get Started <i class="fa fa-caret-right"></i></a>
+                                <a href="{% url 'ioestart' %}" class="rm-btn btn btn-primary hvr-icon-forward">
+                                        Get Started </a>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
                     <div class= "col-lg-4 col-sm-6 col-xs-12">
-                        <div class= "hservice">
+                        <div class= "hservice wow fadeInUp animated" data-wow-delay="0.8s">
                             <div class= "service-img">
                                 <img class= "img-responsive center-block" src="{% static 'img/service3.jpg' %}" alt="">
                             </div>
                             <div class= "service-description text-center">
                                 <h4 class= "service-heading">Ministry Of Education</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias ipsum natus, odio quae! Ratione tempora accusantium explicabo tenetur, porro numquam.</p>
-                                <a href="{% url 'doctor' %}" class="rm-btn btn btn-primary">
-                                        Get Started <i class="fa fa-caret-right"></i></a>
+                                <a href="{% url 'moestart' %}" class="rm-btn btn btn-primary hvr-icon-forward">
+                                        Get Started </a>
                             </div>
                         </div>
                         <div class="clearfix"></div>

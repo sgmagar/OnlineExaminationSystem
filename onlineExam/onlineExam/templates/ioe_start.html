@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+        
+   	{% include 'navbar.html' %}
+    
+   		<div class="about container">
+			<section class="about-ioe col-md-9">
+				<div class="row">
+					<div class="col-md-9">
+						<h2 class="headline">Institute of Engineering (IOE)</h2>
+						<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+					</div>
+					<div class="col-md-3" style="padding-top:50px;">
+						<img src="{% static 'img/ioe-logo.png' %}" class="img img-responsive" alt="ioe-logo">
+					</div>
+					<div class="col-md-12">
+						<h2 class="headline">Entrance Information</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+						<p><strong>Subjects:</strong></p>
+						<p>Physics, Chemistry, Mathematics, English, Engineerin Apptitude</p>
+						<a href="{% url 'ioesyllabus' %}"><button class="btn btn-primary" >View IOE syllabus</button></a>
+					</div>
+					<div class="col-md-8">
+						<h2 class="headline">IOE Preparation on Mock Test</h2>
+						<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+						<p class="text-center"><a href="{% url 'login' %}" class="btn btn-primary start-now-btn">Start Now</a></p>
+					</div>
+					<div class="col-md-4" style="padding-top:20px;">
+						<img src="{% static 'img/join.png' %}" class="img img-responsive" alt="ioe-logo" style="height:250px;">
+					</div>
+				</div>
+			</section>
+			<aside class="side-bar col-md-3">
+				<div class="sidebar-div">
+					<h4><span>Latest News</span></h4>
+					<ul>
+						{% for news in news %}
+						<li>
+							<a href="{{ news.url }}" target="_blank">
+			                    {{ news }}&nbsp;&nbsp; {{ news.publishDate }}
+			                </a><br/>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="sidebar-div">
+					<h4><span>Quick Link</span></h4>
+					<ul>
+						<li>
+							<a href="http://ioe.edu.np/" target="_blank">Institute Of Engineering (IOE)</a>
+						</li>
+						<li>
+							<a href="http://www.iom.edu.np/" target="_blank">Institute Of Medicine (IOM)</a>
+						</li>
+						<li>
+							<a href="http://www.moe.gov.np/" target="_blank">Ministry of Education (MOE)</a>
+						</li>
+						<li>
+							<a href="#">Get Engineering Troop</a>
+						</li>
+					</ul>
+				</div>
+			</aside>
+
+		</div>
+   	{% include 'footer.html' %}
+
+{% endblock %}

@@ -1,0 +1,425 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+        
+    {% include 'navbar.html' %}
+   <section class="container" id="syllabus">
+			
+			<!-- <h3><strong>Marks Distribution</strong></h3>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+			<p>Here is subjectwise marks distribution</p>
+			<p><img src="assets/img/ioe-syllabus.png" class="img img-responsive" alt=""></p> -->
+			<div class="panel">
+				<div class="panel-heading">
+				    <h2 class="panel-title"><strong>Institute of Medicine Entrance Examination Syllabus</strong></h2>
+				</div>
+				<div class="panel-body">
+				    <ul class="nav nav-tabs">
+				      <li class="active"><a href="#md" data-toggle="tab">Marks Distribution</a></li>
+				      <li><a href="#physics" data-toggle="tab">Physics</a></li>
+				      <li><a href="#chemistry" data-toggle="tab">Chemistry</a></li>
+				      <li><a href="#botany" data-toggle="tab">Botany</a></li>
+				      <li><a href="#zoology" data-toggle="tab">Zoology</a></li>
+				      
+				    </ul>
+				    <div class="tab-content">
+				    	<!-------------------------------Marks Distribution Tab begins------------------------------------>
+				  		<div id="md" class="tab-pane fade in active">
+				  			<div class="col-md-12">
+				  				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+								<p>Here is subjectwise marks distribution</p>
+								<p><img src="assets/img/ioe-syllabus.png" class="img img-responsive" alt=""></p>
+				  			</div>
+				  		</div>
+				  		<!-------------------------------Marks Distribution Tab ends------------------------------------>
+
+				    	<!-------------------------------Phyiscs Tab begins------------------------------------>
+				  		<div id="physics" class="tab-pane fade in ">
+				          <div class="col-sm-3 pull-left">
+				            <ul class="nav nav-tabs nav-stacked">
+				              <li class="active"><a href="#mechanics" data-toggle="tab">Mechanics</a></li>
+				              <li><a href="#heat" data-toggle="tab">Heat and Thermodynamics</a></li>
+				              <li><a href="#optics" data-toggle="tab">Wave & Optics</a></li>
+				              <li><a href="#electricity" data-toggle="tab">Electricity & Magnetism</a></li>
+				              <li><a href="#modern" data-toggle="tab">Modern Physics</a></li>
+				      	    </ul>
+				          </div>
+				          <div class="col-sm-9 pull-right">
+				          	<div class="tab-content">
+				            	<div id="mechanics" class="tab-pane fade in active">
+					            	<ol>
+					            		<li>Fundamental physical quantities. Units and dimensions vectors addition and subtraction.
+					            		 Scalar and vector products of two vectors.</li>
+										<li>Kinematics: velocity and speed, acceleration – velocity time graph: equation of motion 
+										with uniform acceleration: projectile motion. Newton's laws of motion. Principle of 
+										conservation of linear momentum, work done by constant and variable force, energy and power.
+										 potentioal and kinetic energy, conservative and non-conservative forces, conservation of 
+										 energy, renewable and non-renewable sources of energy, elastic and inelastic collision.</li>
+										<li>Circular motion: Centripetal force, centrifugal force and its applications.</li>
+										<li>Gravitation: Newton's laws of gravitation, variation of acceleration due to gravity, 
+										gravitational field intensity, gravitational potential, potential energy in a gravitational
+										 field, geostationary satellites, orbital velocity, praking orbits, potential and kinetic 
+										 energy of satellites, escape velocity.</li>
+										<li>Rotational motion: Kinetic energy due to rotational motion, torque and couple, work done 
+										by a torque, moment of inertia; angular momentum and its conservation, K.E. of a rolling object.</li>
+										<li>Simple Harmonic Motion: simple pendulum, oscillating systems, spring and mass, P.E. and K.E. in
+										 oscillating systems.</li>
+										<li>Elasticity: molecular theory, stress, strain, Hook's law, Young's, shear and bulk modulii, energy
+										 stored in a stretched wire, force in a bar due to contraction or expansion.</li>
+										<li>Surface tension: molecular theory of surface tension, surface energy, excess pressure inside a spherical
+										 liquid surface, angle of contact and capillary action.</li>
+										<li>Viscosity: streamline, & turbulent flows, velocity gradient, Newton's formula, coefficient of 
+										viscosity, Poiseuille's formula, Stoke's law, methods of determination of coefficient of viscosity.</li>
+					            	</ol>
+					            </div>
+				              	<div id="heat" class="tab-pane fade">
+				                	<ol>
+				                		<li>Heat & temperature: thermal equilibrium heat capacity, principle of calorimetry, cooling
+				                		 laws, latent heat, thermal expansion of solid, liquid and gas, thermal stress, barometric 
+				                		 correction, absolute temperature, kinetic theory of gases, ideal gas equation.</li>
+										<li>Transmission of heat: conduction, temperature gradient, conductivity, convection, radiation,
+										 black body, Wien's displacement law, Stefan's law, Kirchhoff’s law.</li>
+										<li>Hygrometry: relative and absolute humidity, phase diagram and triple point.</li>
+										<li>Thermodynamics: heat and work, internal energy, first law of thermodynamics, heat 
+										capacities of a gas, isothermal, isobaric, isoscoric and adiabatic processes, second law 
+										of thermodynamics, Carnot's cycles, entropy</li>
+				                	</ol>
+				              	</div>
+				             	<div id="optics" class="tab-pane fade">
+				                	<ol>
+				                		<li>Reflection at plane and curved surfaces: refraction at plane surfaces, refractive 
+				                		indices, lateral shift, critical angle, total internal reflection and its applications 
+				                		including optical fiber, refraction through prism, converging and diverging lenses, lens 
+				                		maker's formula and combination of lenses, defects of vision, correcting lenses.</li>
+										<li>Dispersion of light: white light spectrum, dispersive power, chromatic aberration, 
+										achromatic combination of lenses, optical instrument: spectrometer, visual angle, angular 
+										magnification, simple and compound microscope, prism binoculars, astronomical and terrestrial 
+										telescopes.</li>
+										<li>Photometry: luminous flux, luminous intensity, illuminance, Lambert's consine law and 
+										hotometers.</li>
+										<li>Wave motion: free, damped and forced oscillation, resonance, longitudinal and transverse 
+										wave motion, Progressive wave: velocity of transverse wave in a stretched string, velocity of 
+										a longitudinal wave in a fluid, velocity of sound in air, Laplace's correction, effect of 
+										temperature, pressure and humidity on the velocity of sound, principle of superposition: 
+										stationary waves, waves in pipes, strings and rods, intensity and intensity level, loudness, 
+										pitch and quality, noise pollution; beats, Doppler's effect, electromagnetic waves: electromagnetic 
+										spectrum, Huygen's wave theory, reflection and refraction of light wave, interference of light, coherent 
+										sources, optical path difference, phase difference, constructive and destructive interference, Young's 
+										double slits experiment; diffraction of light: Fresnel and Fraunhoffer diffraction, Single slit Fraunhoffer 
+										diffraction, Polarization of light; Malus' law, Brewster's law and Polaroid.</li>
+				                	</ol>	
+				                </div>
+				              	<div id="electricity" class="tab-pane fade">
+				                	<ol>
+				                		<li>Electrostatics: electrostatic field: Coulomb's law, electric field, electric flux, Gauss's
+				                		 theorem, potential energy, electric potential, potential gradient, action of points, Van de 
+				                		 Graafs generator, capacitors, combination of capacitors, action of dielectric, relative permittivity
+				                		  and dielectric strength, energy of a charged capacitor, charging and discharging of capacitors.</li>
+										<li>Electric current: metallic conduction, potential difference, Ohm's law, Ohmic and nonOhmic 
+										conductors, resistance: resistivity, combination of resistors, Kirchhoffs laws and its application
+										, heating effect of electric current, Joule's laws, thermoelectric effect, thermocouple, chemical 
+										effect of electric current, electrolysis, Faraday's laws.</li>
+										<li>Magnetic field: lines of forces, magnetic field due to current, Biot Savart law, Helmholtz 
+										coils, magnetic moment of current loop, Ampere's theorem, force on conductor: force on moving 
+										charges, Hall effect, magnetic materials, magnetization, susceptibility, permeability, domain 
+										theory, hysteresis, dia, para, and ferro-magnetism.</li>
+										<li>Electromagnetic induction: self induction, mutual induction, energy stored in magnetic field 
+										of a coil, A.C. and D.C. generator, RMS value and peak value of the A.C. current; A.C. through L.R. 
+										and C in series: power in A.C. circuit; transformer.</li>
+				                	</ol>	
+				                </div>
+				              	<div id="modern" class="tab-pane fade">
+				                	<ol>
+				                		<li>Electron: Millikan's oil drop experiment, gaseous discharge, cathode rays; motion of electron in 
+				                		electric field and magnetic field, thermionic emission of electrons, specific charge of electron (e/m),
+				                		 cathode ray oscilloscope, photons: photoelectric effect.</li>
+										<li>Atoms: Bohrs theory of H-atom; energy levels; excitation and ionization energies; production
+										 of laser; its properties and uses, production of X-rays; properties and uses of Xrays; de Broglie's
+										  wave, Nucleus: atomic number; mass number and isotopes; mass energy relation; mass defect and 
+										  binding energy. Radioactivity: properties of alpha, beta and gamma rays, G.M. tube; absorption of 
+										  beta particles and gamma rays; laws of radioactive disintegration; half-life and mean-life; artificial
+										   disintegration; nuclear reaction; nuclear fission and fusion; radio isotopes; radiation hazards and 
+										   safety measures.</li>
+										<li>Electronics: conductor, semiconductor and insulator, junction diode, rectifier, transistor, CE amplifier</li>
+				                	</ol>
+				                </div>
+				            </div>
+				          </div>
+				        </div>
+				        <!-------------------------------- Physics Tab ends --------------------------------------->
+
+				        <!-------------------------------Chemistry Tab begins------------------------------------>
+				  		<div id="chemistry" class="tab-pane fade in">
+				          <div class="col-sm-3 pull-left">
+				            <ul class="nav nav-tabs nav-stacked">
+				              <li class="active"><a href="#general" data-toggle="tab">General & Physical Chemistry</a></li>
+				              <li><a href="#organic" data-toggle="tab">Organic Chemistry</a></li>
+				              <li><a href="#in-organic" data-toggle="tab">Inorganic Chemistry</a></li>
+				      	    </ul>
+				          </div>
+				          <div class="col-sm-9 pull-right">
+				          	<div class="tab-content">
+				            	<div id="general" class="tab-pane fade in active">
+				                	<ol>
+				                		<li>Language of Chemistry Symbols and formulae, atoms and molecules, elements and compounds</li>
+				                		<li>States of Matter Molecular interpretation of three states of matter Gaseous state: Gas laws: Goyle's Law; Charles' Law, Kelvin scale of temperature; universal gas constant; Dalton's Law of partial pressure, Graham's law of diffusion, kinetic theory of gases (no derivation), deviation of real gas from ideal behaviour, calculations involving gas laws. Liquid state: properties of liquids, solution, concentration of solution, concept of molarity, solubility, effect of temperature on solubility, solubility curve, viscosity and surface tension. Solid state: Properties of solids, classification of solids based on different binding forces, crystals, crystal latrice, seven types of crystal systems.</li>
+				                		<li>Laws of Stoichiometry and Avogadro's Hypothesis Laws of stoichiometry: Law of conservation of mass, law of constant proportions, law of multiple proportions, law of reciprocal proportions, Gay Lussac's law of gaseous volumes, chemical calculations based on stoichiometry. Atomic and molecular masses, empirical and molecular formula, Avogadro's hypothesis, important deductions from Avogadro's hypothesis, Avogadro's number, mole concept, determination of chemical formulae from percent composition, problems based on chemical equations.</li>
+				                		<li>Atomic Structure: The subatomic particles, the electrons and nucleons (protons and neutrons), their masses and charges, the atomic mass unit, Dalton's atomic theory, Rutherford's experiment, Bohr's model, interpretation of hydrogen spectra on the basis of Bohr's model, elementary idea of quantum mechanical model of atom, de Broglie relation, Heisenberg uncertainty principle, quantum numbers, atomic orbital, shapes of s and p orbitals, Pauli's exclusion principle, Hund's rule of maximum multiplicity; Aufbau principle, quantum designation of electrons, electronic configuration of atoms in the ground state up to Z=30, Isotopes and fractional atomic weights, nuclear fission and fusion, radioactive disintegration and half life.</li>
+				                		<li>Chemical Bonding Valency, octet rule, chemical bonds and Lewis structure, ionic bonds, covalent bond, electronegativity and ionic character of covalent bond, coordinate covalent bond, idea of metallic bonds, intermolecular forces, van der Waal's forces, hydrogen bonding, importance of hydrogen bonding, VSEPR theory and shapes of BeF2, BF3, CH4, H2Q, NH3, PF5, and SF6.</li>
+				                		<li>Oxidation & Reduction Electronic concept of oxidation and reduction reactions, oxidation number, balancing redox reactions by oxidation number and ion-electron methods.</li>
+				                		<li>Periodic Table Mendeleev's periodic table, modern periodic law and long form of periodic table, types of elements on the basis of periodic table, periodic trends in ionization energy, electron affinity, atomic radii, electronegavity and valency.</li>
+				                		<li>Acids, Bases and Salts Classical definition, Arrhenius concept of acids, bases and salts, Bronsted-Lowry concept, Lewis concept, hydrogen ion concentration and pH, calculation of pH of strong acids, neutralization, hydrolysis of salts.</li>
+				                		<li>Volumetric Analysis Equivalent weight of elements and compounds (acids, bases and salts), standard solution, primary and secondary standards, different ways of expressing concentration of solution, normality eqution, titration based on neutralization and redox reactions, indicator, titration curve and selection of acid base indicator, solving problems on acidimetry and alkalimetry involving normality and molarity.</li>
+				                		<li>Electrochemistry Electrolytic and metallic conduction, Arrhenius theory of ionization, Faraday's laws mechanism of electrolysis and criteria of product formation electrode potential, standard electrode potential, EMF of a galvanic cell and the use of electrode potential to predict a chemical reaction, commercial batteries.</li>
+				                		<li>Chemical Kinetics Rate of reaction, rate law and rate constant, order and molecularity, half life period, factors affecting the rate of reaction (particle size, concentration, temperature and catalyst, concept of activation energy and idea of photochemical reaction.</li>
+				                		<li>Chemical Equilibrium Equilibrium in physical processes, features of dynamic equilibrium, equilibrium constant, Kp and Kc, relation between Kp and Kc, LeChatelier's principle: effect of pressure, concentration, temperature and catalyst on chemical equilibrium, equilibrium involving ions, ionization of weak electrolytes (Ostwald's dilution law), degree of ionization and ionization constant, solubility and solubility product, common ion effect and their applications.</li>
+				                		<li>Chemical Thermodynamics Language of thermo-chemistry, standard heats of formation and combustion, heat of neutralization, Hess's law, energy changes in chemical reactions, spontaneous processes, second law of thermodynamics, entropy and its physical concept, entropy and criteria of spontaneity in terms of entropy change of universe, entropy change in phase transformations, Gibb's free energy and the direction of chemical change, standard free energy change and equilibrium constant, free energy and useful work.</li>
+				                	</ol>
+				                </div>
+				              	<div id="organic" class="tab-pane fade">
+				                	<ol>
+				                		<li>Non-metals Hydrogen: Unique position in periodic table, isotopes, preparation, properties and uses. Oxygen and ozone: Preparation, properties and uses of oxygen, classification of oxides, preparation, properties and uses of ozone, structure of ozone, hole in the ozone layer. Water: Structure of water, solvent properties of water, hard and soft water, detergents and water pollution, heavy water. Carbon: Allotropes of carbon including fullerence, preparation, properties and uses of CO and CO2, poisoning by CO. Nitrogen: Nitrogen cycle, preparation, properties and uses of nitrogen, preparation, properties and uses of ammonia, principle of manufacture of ammonia by Haber process, structure of ammonia, principle of manufacture of nitric acid by Ostwald process, properties and structure of and uses of nitric acid, structure of oxides of nitrogen. Salphur: Allotropes of sulphur, preparation, properties and uses of H2S, SO2, principle of manufacture of sulphuric acid by contact process properties and uses of sulphuric acid, sulpher dioxide and year pollution, acid rain Phosphorus: Allotropes of phosphorus, phosphien and phosphate fertilizer. Halogen and halogen acids: Preparation, properties and uses, comparative study of HCL, HBr and HI, test of halides and tincture of iodine. Noble gases: Introduction, isolation and uses of noble gases, compounds of xenon – xenon fluorides.</li>
+				                		<li>Metals Metals and metallurgy: Introduction, distinction between metals and non-metals, metalloid, electrochemical series and occurrence of metal, metallurgical principle and metallurgical terms. Alkali and alkaline earth metals: Pariodic discussion, general characteristics of alkali and alkaline earth metals, principle of extraction of sodium (Down's process), properties and uses of sodium, principle of manufacture of sodium carbonate, sodium hydroxide, and their properties and uses, biological importance of sodium and potassium, preparation, properties and uses of quicklime, plaster of Paris and bleaching powder, chemistry of magnesium hydroxide and Epsom salt. Coinage metals: Introduction, occurrence, extraction and properties of copper, chemistry of compounds of copper and silver (CuO, Cu2O, CuSO4, 5H2O, AgNO3, and AgCl), purity of gold (carats and fineness). Heavy metals: (zinc, iron, mercury and lead): Occurrence, extraction and properties of zinc, iron and mercury, manufacture of steel, heat treatment of steel, stainless steel, rusting of iron, galvanization, chemistry of compounds of iron, zinc and mercury and lead (FeCl3, FeCl3, 6H2O, FeSO4, 7H2O, Zno, ZnSO4, 7H2O, Hg2Cl2, HgCl2, PbO. and Pb3O4), Mercury pollution and mercury poisoning.</li>
+				                	</ol>
+				                </div>
+				              	<div id="in-organic" class="tab-pane fade">
+				                	<ol>
+				                		<li>Organic Chemistry: some basic principles Introduction: Definition, sources and importance of organic compounds, detection of N, S and halogens in organic compounds. Bonding in organic compounds: Tetracovalency of carbon, hybridization (sp, sp-2, sp3 ), sigma and pi - bonds. Electronic displacement in covalent bond: inductive effect, electromeric effect, mesomeric effect and resonance. Fission in covalent bond: Hemolytic and heterolytic fission, electrophiles and nucleophiles, carbocation and carbonions. Formula of organic compounds: Empirical, molecular and structura, functional groups, homologous series, isomerism (structural & stereoisomerism), nomenclature of organic compounds.</li>
+				                		<li>Hydrocarbons Classification of hydrocarbons, sources of hydrocarbons, nomenclature. Alkanes: Nomenclature, preparation, properties and uses of alkanes, octane number, preparation and properties of methane. Alkenes: Nomenclature, preparation, properties and uses of alkenes, Markovnikov's rule and peroxide effect, preparation, properties and uses of ethane. Alkynes: Preparation, properties and uses of ethyne, acidic character of ethyne.</li>
+				                		<li>Organic halogen compounds Alkyl halides: Nomenclature, nature of C-X bond, properties and uses of alkyl halides. Chloroform: Preparation, properties and uses.</li>
+				                		<li>Alcohols Classification, nomenclature, distinction between 10 , 20 and 30 alcohols, industrial preparation of ethanol (hydration of ethane and fermentation) prpperties of alcohols.</li>
+				                		<li>Ethers Nomenclature, important methods of preparation of diethyl ether, chemical and physical properties and uses of diethyl eather.</li>
+				                		<li>Carbonyl compounds Structures and nomenclature, preparation, properties and uses of formaldehyde, acetaldehyde and acetone, aldol condensation, Cannizzaro reaction.</li>
+				                		<li>Carboxylic Acids Structures and nomenclature, preparation, properties and uses of formic and acetic acid, derivatives of carboxylic acid: acid chlorides, acid anhydrides, ester and amides.</li>
+				                		<li>Amines Structures, classification, nomenclature, distinction and separation of primary, secondary and tertiary amines, chemical and physical properties and uses of ethylamine.</li>
+				                		<li>Aromatic Hydrocarbons Benzene: Structure of benzene, nomenclature and structure of substituted benzene, properties and uses of benzene. Aniline: Preparation, properties and uses. Nitrobenzene: Preparation, properties and uses. Phenol: Preparation, properties and uses.</li>
+				                		<li>Carbohydrates, proteins, nucleic Acids, and Lipids Carbohydrates: Classification of carbohydrates, structures of glucose and fructose, functions of carbohydrates. Protein: Amino acids and peptide bonds, classification of proteins, denaturation and hydrolysis of protein, functions of proteins. Nucleic acids: Types and constituents of nucleic acids, functions of nucleic acids. Lipids: Lipids and triglycerides, phospholipids.</li>
+				                		<li>Polymers, Pesticides, Dyes and Drugs Polymers: Polymerization (addition and condensation), classification of polymers, and some important synthetic polymers (polyethylene, PVC, polystyrene, Teflon, polyester, Terylene (Dacron), nylon 66. Pesticides: Introduction, DDT, Malathion and pheromones. Dyes: Classification of dyes with examples (based on chemical constitution and mode of application). Drugs: General introduction to drugs: Antiseptic, analgesic, antipyretic, antacids, and tranquilizers.</li>
+				                	</ol>
+				                </div>
+				            </div>
+				          </div>
+				        </div>
+				        <!-------------------------------- Chemistry Tab ends --------------------------------------->
+
+
+				        <!-------------------------------Botany Tab begins------------------------------------>
+				  		<div id="botany" class="tab-pane fade in">
+				          <div class="col-sm-3 pull-left">
+				            <ul class="nav nav-tabs nav-stacked">
+				              <li class="active"><a href="#structure" data-toggle="tab">Structure, reproduction and Economic Importance of:</a></li>
+				              <li><a href="#morphology" data-toggle="tab">Plant Morphology</a></li>
+				              <li><a href="#taxonomy" data-toggle="tab">Taxonomy of Angiosperms</a></li>
+				              <li><a href="#anatomy" data-toggle="tab">Plant Anatomy</a></li>
+				              <li><a href="#physiology" data-toggle="tab">Plant Physiology</a></li>
+				              <li><a href="#cell" data-toggle="tab" class="go-up">Cell Biology</a></li>
+				              <li><a href="#genetics" data-toggle="tab" class="go-up">Genetics</a></li>
+				              <li><a href="#developmental" data-toggle="tab" class="go-up">Developmental Biology</a></li>
+				              <li><a href="#ecology" data-toggle="tab" class="go-up">Ecology and Biodiversity Conservation</a></li>
+				              <li><a href="#application" data-toggle="tab" class="go-up">Application of Biology</a></li>
+				      	    </ul>
+				          </div>
+				          <div class="col-sm-9 pull-right">
+				          	<div class="tab-content">
+				            	<div id="structure" class="tab-pane fade in active">
+				            		<ol>
+				            			<li>Bacteria, Virus and Lichens.</li>
+				            			<li>Algae: Nostoc and Spirogyra
+										<li>Fungi: Mucor and Agaricus</li>
+										<li>Broyophyta: Marchania and Funaria</li>
+										<li>Pteridophyta: Fern (Pteridium)</li>
+										<li>Gymnosperm: Pinus and Cyca</li>
+				            		</ol>
+				                </div>
+				              	<div id="morphology" class="tab-pane fade">
+				              		<ol>
+				            			<li>Parts of a typical flowering plant (Mustard)
+										<li>Leaf: morphology and modification</li>
+										<li>Root: Regions of root, Types amd Modification</li>
+										<li>Stem: Types and Modification</li>
+										<li>Flower: Parts</li>
+										<li>Fruits: Types</li>
+										<li>Seeds: Dicot, Monocot</li>
+				            		</ol>
+				              		
+				                </div>
+				              	<div id="taxonomy" class="tab-pane fade">
+				              		<ol>
+				            			<li>Basic concept of taxonomy and binominal nomenclature</li>
+										<li>Characteristics and Economic importance of the following families: Cruciferae, Solanaceae, Gramineae and Liliaceae</li>
+				            		</ol>
+				                </div>
+				              	<div id="anatomy" class="tab-pane fade">
+				              		<ol>
+				            			<li>Types of tissues, Primary internal structure of root, stem and leaf of monocoat and dicot, Secondary growth of dicot stem</li>
+				            		</ol>
+				                </div>
+				                <div id="physiology" class="tab-pane fade">
+				              		<ol>
+				            			<li>Water relations (difussion, osmosis, absorption, transpiration and ascent of sap)</li>
+										<li>Photosynthesis</li>
+										<li>Respiration</li>
+										<li>Growth hormones</li>
+				            		</ol>
+				                </div>
+				              	<div id="cell" class="tab-pane fade">
+				              		<ol>
+				            			<li>Cell as a unit of life, structure of prokaryotic and eukaryotic cell, cell organelles and their function.</li>
+										<li>Biochemically important molecules (carbohydrates, proteins, amino acids nucleic acid and lipids)</li>
+										<li>Cell division (Mitosis, meiosis and their significance)</li>
+				            		</ol>
+				                </div>
+				              	<div id="genetics" class="tab-pane fade">
+				              		<ol>
+				            			<li>Mendelism, Mendel’s Laws of Inheritance</li>
+										<li>Concept of incomplete dominance and co-dominance</li>
+										<li>Genetic materials (RNA and DNA) gene pool, crossing over, sex linked inheritance and mutation.</li>
+				            		</ol>
+				                </div>
+				              	<div id="developmental" class="tab-pane fade">
+				              		<ol>
+				            			<li>Reproduction and development in angiosperms
+										<li>Vegetative propagations</li>
+										<li>Micro and mega-sporogenesis, micro and megagametogenesis</li>
+										<li>Pollination, fertilization and development of dicot and monocot embryo.</li>
+				            		</ol>
+				                </div>
+				              	<div id="ecology" class="tab-pane fade">
+				              		<ol>
+				            			<li>Plant adaptation (hydrophytes, mesophytes and xerophuytes)</li>
+										<li>Types of forest in Nepal</li>
+										<li>Biodiversity conservation, endangered species of plants and wildfire, causes of extinction</li>
+										<li>Abiotic and biotic factors, food chain, food web, trophic level, pond and grassland ecosystems.
+										<li>Ecological imbalances and its consequences: a. Green house effect b. Depletion of ozone layer c. Acid rain d. Pollution: Air, Water, Soil, their sources of pollution, effects and control measures.</li>
+				            		</ol>
+				                </div>
+				              	
+				                <div id="application" class="tab-pane fade">
+				              		<ol>
+				            			<li>ntroduction of biotechnology
+										<li>Principles of plant and animal breeding</li>
+										<li>Biofertilizers</li>
+										<li>Antibiotics, Vaccines</li>
+										<li>Tissue and Organ transplantation</li>
+										<li>Test tube baby</li>
+										<li>Fermentation</li>
+										<li>Genetic engineering and tissue culture.</li>
+				            		</ol>
+				                </div>
+
+				            </div>
+				          </div>
+				        </div>
+				        <!-------------------------------- Botany Tab ends --------------------------------------->
+
+				        <!-------------------------------Zoology Tab begins------------------------------------>
+				  		<div id="zoology" class="tab-pane fade in">
+				          <div class="col-sm-3 pull-left">
+				            <ul class="nav nav-tabs nav-stacked">
+				              <li class="active"><a href="#introduction" data-toggle="tab">Introduction</a></li>
+				              <li><a href="#diversity" data-toggle="tab">Animal Diversity and their classification</a></li>
+				              <li><a href="#bof" data-toggle="tab">Biology of the following</a></li>
+				              <li><a href="#disease" data-toggle="tab">Human Diseases</a></li>
+				              <li><a href="#bones" data-toggle="tab">Babbitt Bones</a></li>
+				              <li><a href="#mammal" data-toggle="tab">Endocrinology of Mammal</a></li>
+				              <li><a href="#tissues" data-toggle="tab" class="go-up">Animal Tissues</a></li>
+				              <li><a href="#abehavior" data-toggle="tab" class="go-up">Animal Behavior</a></li>
+				              <li><a href="#ddaptation" data-toggle="tab" class="go-up">Animal Adaptation</a></li>
+				              <li><a href="#evolution" data-toggle="tab" class="go-up">Evolution</a></li>
+				              <li><a href="#d-biology" data-toggle="tab" class="go-up">Developmental Biology</a></li>
+				      	    </ul>
+				          </div>
+				          <div class="col-sm-9 pull-right">
+				          	<div class="tab-content" id="here">
+				            	<div id="introduction" class="tab-pane fade in active">
+				            		<ol>
+				            			<li>Scope and branches of biology, its relation with other subjects</li>
+										<li>Life and its origin, Oparin and Halden’s theory, Miller Urey Experiments</li>
+										<li>Life components (Organic and inorganic)</li>
+				            		</ol>
+				                </div>
+				              	<div id="diversity" class="tab-pane fade">
+				              		<ol>
+				              			<li>General characteristics and its classification up to class with examples of the following: Protozoa, Porifera, Coelenterata, Platyhelminthes, Aschelminthes, Annelida, Arthropoda, Mollusca, Echinodermata and chordata.</li>
+				              		</ol>
+				                </div>
+				              	<div id="bof" class="tab-pane fade">
+				              		<ol>
+				              			<li>Plasmodium vivax: Habit and habitat, structure (Sporozoite), Life-cycle and control of malaria</li>
+										<li>Paramecium Caudatum: Habit and habitat, structure, reproduction (Binary fission and conjugation with its significance)</li>
+										<li>Pheretima posthuma: Habit and habitat, structure, digestive, nervous and reproductive system and economic importqance of earthworms.</li>
+										<li>Rana tigrina: Habit and habitat, structure, digestive, nervous, respiratory, circulatory, excretory and reproductive systems. Histology of the related organs.</li>
+										<li>Mammal (Rabbit / Man): Skin, respiratory, digestive, nervous, circulatory, excretory and reproductive systems. Histology of the related organs, human blood groups and sense organs (Eye and Ear)</li>
+				              		</ol>
+				                </div>
+				              	<div id="disease" class="tab-pane fade">
+				              		<ol>
+				              			<li>Socially significant: Drug abuse, Alcoholism and smoking.
+										<li>Communicable: Typhoid, tuberculosis, Ascariasis, Girardiasis and AIDS.</li>
+										<li>Non-communicable: Cancer.</li>
+				              		</ol>
+				                </div>
+				              	<div id="bones" class="tab-pane fade">
+				              		<ol>
+				              			<li>Appendicular and axial</li>
+				              		</ol>
+				                </div>
+				              	<div id="mammal" class="tab-pane fade">
+				              		<ol>
+				              			<li>Pituitary, thyroid and parathyroid, adrenal, islets of langerhans</li>
+				              		</ol>
+				                </div>
+				              	<div id="tissues" class="tab-pane fade">
+				              		<ol>
+				              			<li>Epithelial, Connective, Muscular and Nervous</li>
+				              		</ol>
+				                </div>
+				              	<div id="abehavior" class="tab-pane fade">
+				              		<ol>
+				              			<li>Reflex action
+										<li>Taxes</li>
+										<li>Leadership</li>
+										<li>Migration of fishes and birds: Habit and habitat, structure, digestive, nervous and reproductive.</li>
+				              		</ol>
+				                </div>
+				              	<div id="ddaptation" class="tab-pane fade">
+				              		<ol>
+				              			<li>Aquatic
+										<li>Amphibians</li>
+										<li>Terrestrial</li>
+										<li>Volant (aerial)</li>
+										<li>Desert and parastitic</li>
+				              		</ol>
+				                </div>
+				              	<div id="evolution" class="tab-pane fade">
+				              		<ol>
+				              			<li>Definition, Organic evolution
+										<li>History, theories of organic evolution (Lamarckism, Darwinism, Neo-Darwinism)</li>
+										<li>Evidence of organic evolution (morphological, embryological, anatomical, palentological, chemical and genetical)</li>
+										<li>Human evolution</li>
+				              		</ol>
+				                </div>
+				              	<div id="d-biology" class="tab-pane fade">
+				              		<ol>
+				              			<li>Development of frog (Embryonic and post embryonic development)</li>
+				              		</ol>
+				                </div>
+				            </div>
+				          </div>
+				        </div>
+				        <!-- ------------------------------ Zoology Tab ends ------------------------------------- -->
+
+
+
+
+				    	
+
+				    </div>
+				</div>
+			</div>
+		</section>
+
+   {% include 'footer.html' %}
+
+{% endblock %}

@@ -5,15 +5,17 @@ from django.contrib.auth.models import User
 
 class News(models.Model):
 	FACULTY_CHOICES = (
-			('Doctor','Doctor'),
-			('Engineer','Engineer'),
+			('IOE','IOE'),
+			('MOE','MOE'),
+			('IOM','IOM'),
 		)
-	faculty = models.CharField(max_length=10,choices=FACULTY_CHOICES)
-	news = models.TextField()
+	faculty = models.CharField(max_length=4, default='IOE', choices=FACULTY_CHOICES)
+	newstitle = models.CharField(max_length=200, default='None')
+	url= models.URLField( default=None)
 	publishDate = models.DateField(auto_now=True)
 
 	def __unicode__(self):
-		return self.news
+		return self.newstitle
 
 class UserProfile(models.Model):
 	user = models.OneToOneField(User)
@@ -77,7 +79,7 @@ class QuestionIOE(models.Model):
 			('Math','Math'),
 			('English','English'),
 			('Chemistry','Chemistry'),
-			('Drawing','Drawing'),
+			('E-Aptitude','Engineering Aptitude Test'),
 		)
 	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)
 	TYPE_CHOICES=(
@@ -85,7 +87,7 @@ class QuestionIOE(models.Model):
 			('Long','Long'),
 		)
 	qtype = models.CharField(default='Short',max_length=6, choices=TYPE_CHOICES)
-	question = models.TextField(default=None, max_length=200)
+	question = models.TextField(default=None)
 	ANSWER_CHOICES=(
 			('a','a'),
 			('b','b'),
@@ -94,6 +96,8 @@ class QuestionIOE(models.Model):
 		)
 	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	qfile = models.ImageField(default=None,blank=True, upload_to="IOE/question/%y/%m/%d/%H/%M/%S")
+	hint = models.TextField(default=None)
+	
 
 	def __unicode__(self):
 		return str(self.questionset)+" "+str(self.questionno)+" "+ self.subject+"\t"+self.question
@@ -136,7 +140,7 @@ class QuestionIOM(models.Model):
 		)
 	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	qfile = models.ImageField(default=None,blank=True, upload_to="IOE/question/%y/%m/%d/%H/%M/%S")
-
+	hint = models.TextField(default=None)
 	def __unicode__(self):
 		return str(self.questionset)+" "+str(self.questionno)+" "+ self.subject+"\t"+self.question
 
@@ -150,7 +154,6 @@ class AnswerIOM(models.Model):
 		)
 	choice = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	answer = models.CharField(max_length=200, default=None)
-	
 	afile = models.ImageField(default=None,blank=True, upload_to="IOE/answer/%y/%m/%d/%H/%M/%S")
 
 class QuestionMOE(models.Model):
@@ -178,7 +181,7 @@ class QuestionMOE(models.Model):
 		)
 	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	qfile = models.ImageField(default=None,blank=True, upload_to="IOE/question/%y/%m/%d/%H/%M/%S")
-
+	hint = models.TextField(default=None)
 	def __unicode__(self):
 		return str(self.questionset)+" "+str(self.questionno)+" "+ self.subject+"\t"+self.question
 

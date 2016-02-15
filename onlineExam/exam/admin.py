@@ -7,7 +7,7 @@ from .models import *;
 
 # Register your models here.
 class NewsAdmin(admin.ModelAdmin):
-	search_fields=['news']
+	search_fields=['newstitle']
 	ordering=('-publishDate',)
 
 class UserProfileInline(admin.StackedInline):

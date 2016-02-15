@@ -19,16 +19,7 @@
 											<ul id="{{ question.questionno }}" class="list-group">
 											<li class="list-group-item">{{ question.questionno }}.
 											{{ question.question }} {% if question.qfile != "" %}<img src="/media/{{ question.qfile }}">{% endif %}</li>
-											{% if qgroup == 'IOE' %}
-												<li class="list-group-item">
-													{% for answer in question.answerioe_set.all|dictsort:'choice' %}
-														
-														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
-														
-													{% endfor %}
-												</li>
-											{% endif %}
-
+											
 											{% if qgroup == 'IOM' %}
 												<li class="list-group-item">
 													{% for answer in question.answeriom_set.all|dictsort:'choice' %}
@@ -38,15 +29,7 @@
 													{% endfor %}
 												</li>
 											{% endif %}
-											{% if qgroup == 'MOE' %}
-												<li class="list-group-item">
-													{% for answer in question.answermoe_set.all|dictsort:'choice' %}
-														
-														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
-													{% endfor %}  
-												</li>
-											
-											{% endif %}
+										
 											</ul>
 										
 										{% endfor %}
@@ -57,16 +40,7 @@
 											<ul id="{{ question.questionno }}" class="list-group">
 											<li class="list-group-item">{{ question.questionno }}.
 											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
-											{% if qgroup == 'IOE' %}
-												<li class="list-group-item">
-													{% for answer in question.answerioe_set.all|dictsort:'choice' %}
-														
-														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
-														
-													{% endfor %}
-												</li>
-											{% endif %}
-
+											
 											{% if qgroup == 'IOM' %}
 												<li class="list-group-item">
 													{% for answer in question.answeriom_set.all|dictsort:'choice' %}
@@ -76,15 +50,7 @@
 													{% endfor %}
 												</li>
 											{% endif %}
-											{% if qgroup == 'MOE' %}
-												<li class="list-group-item">
-													{% for answer in question.answermoe_set.all|dictsort:'choice' %}
-														
-														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
-													{% endfor %}  
-												</li>
 											
-											{% endif %}
 											</ul>
 										
 										{% endfor %}
@@ -96,15 +62,6 @@
 											<ul id="{{ question.questionno }}" class="list-group">
 											<li class="list-group-item">{{ question.questionno }}.
 											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
-											{% if qgroup == 'IOE' %}
-												<li class="list-group-item">
-													{% for answer in question.answerioe_set.all|dictsort:'choice' %}
-														
-														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
-														
-													{% endfor %}
-												</li>
-											{% endif %}
 
 											{% if qgroup == 'IOM' %}
 												<li class="list-group-item">
@@ -115,15 +72,7 @@
 													{% endfor %}
 												</li>
 											{% endif %}
-											{% if qgroup == 'MOE' %}
-												<li class="list-group-item">
-													{% for answer in question.answermoe_set.all|dictsort:'choice' %}
-														
-														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
-													{% endfor %}  
-												</li>
 											
-											{% endif %}
 											</ul>
 										
 										{% endfor %}
@@ -134,16 +83,7 @@
 											<ul id="{{ question.questionno }}" class="list-group">
 											<li class="list-group-item">{{ question.questionno }}.
 											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
-											{% if qgroup == 'IOE' %}
-												<li class="list-group-item">
-													{% for answer in question.answerioe_set.all|dictsort:'choice' %}
-														
-														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
-														
-													{% endfor %}
-												</li>
-											{% endif %}
-
+											
 											{% if qgroup == 'IOM' %}
 												<li class="list-group-item">
 													{% for answer in question.answeriom_set.all|dictsort:'choice' %}
@@ -153,15 +93,7 @@
 													{% endfor %}
 												</li>
 											{% endif %}
-											{% if qgroup == 'MOE' %}
-												<li class="list-group-item">
-													{% for answer in question.answermoe_set.all|dictsort:'choice' %}
-														
-														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
-													{% endfor %}  
-												</li>
 											
-											{% endif %}
 											</ul>
 										
 										{% endfor %}
@@ -177,8 +109,8 @@
                         <div class="col-md-3">
                         	<div class="status">
                         		<p>Time Left: <span id="time"></span></p>
-                        		<p>Questions Attempted : <p id="attempt"></p></p>
-                        		<p>Questions Left : <p id="left"></p></p>
+                        		<p>Questions Attempted : <p id="attempt" ></p></p>
+                        		<p>Questions Left : <p id="left" ></p></p>
                         	</div>
                         	
                         </div>
@@ -267,7 +199,7 @@
 			for(i=0; i<a.length;i++){
 				if(a[i]!= undefined){
 					var link = "#"+a[i].toString();
-					left.innerHTML += "<a href=\""+link+"\" >"+a[i]+"</a>"+"  ";	
+					left.innerHTML += "<a href=\""+link+"\" style=\"color:#fff;\" >"+a[i]+"</a>"+"  ";	
 				}
 			}
 		}
@@ -277,7 +209,7 @@
 			for(i=0; i<a.length;i++){
 				if(a[i]!= undefined){
 					var link = "#"+a[i].toString();
-					attempt.innerHTML += "<a href=\""+link+"\" >"+a[i]+"</a>"+"  ";	
+					attempt.innerHTML += "<a href=\""+link+"\" style=\"color:#fff;\" >"+a[i]+"</a>"+"  ";	
 				}
 			}
 		}

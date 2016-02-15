@@ -1,3 +1,9 @@
+<script type = "text/javascript" >
+    history.pushState(null, null, 'result_ioe.html');
+    window.addEventListener('popstate', function(event) {
+    history.pushState(null, null, 'result_ioe.html');
+    });
+</script>
 {% extends 'base.html' %}
 {% load staticfiles %}
 
@@ -46,6 +52,13 @@
                           <td>{{ english_attempted }}</td>
                           <td>{{ english_correct }}</td>
                           <td>{{ english_mark }}</td>
+                        </tr>
+                         <tr>
+                          <td>Engineering Aptitude</td>
+                          <td>{{ eaptitude_total }}</td>
+                          <td>{{ eaptitude_attempted }}</td>
+                          <td>{{ eaptitude_correct }}</td>
+                          <td>{{ eaptitude_mark }}</td>
                         </tr>
                         <tr>
                           <td>Total</td>

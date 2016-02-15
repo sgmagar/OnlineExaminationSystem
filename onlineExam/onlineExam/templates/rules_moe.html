@@ -12,7 +12,8 @@
 			
 			<hr/>
 			<div class="col-md-12 rules">
-				<h3>Examination Note</h3>
+				{% if error != None %}<div class="alert alert-danger"> {{ error }}</div>{% endif %}
+				<h3>Examination Note MOE</h3>
 				<ul>
 					<li>You have to check radio button on correct option.</li>
 					<li>There will be no negative marking.</li>

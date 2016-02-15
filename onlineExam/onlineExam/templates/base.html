@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <title>{{ title }}</title>
+
+    <!-- Revolutionary Slider -->
+    <link href="{% static 'css/slider-style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/settings.css' %}" rel="stylesheet">
+    <link href="{% static 'type/fontello.css' %}" rel="stylesheet">
     <!-- Bootstrap Core CSS -->
     <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
     <!-- <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
@@ -19,6 +24,7 @@
     <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
     <link href="{% static 'css/owl.transitions.css' %}" rel="stylesheet">
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
 
@@ -36,15 +42,22 @@
 	{% endblock %}
 
 	<script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
-    <script src="{% static 'js/wow.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="{% static 'js/jquery-1.9.1.min.js' %}"></script>
-    <script src="{% static 'owl-carousel/owl.carousel.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/slider-scripts.js' %}"></script>
+  <script src="{% static 'js/jquery.themepunch.plugins.min.js' %}"></script> 
+  <script src="{% static 'js/jquery.themepunch.revolution.min.js' %}"></script> 
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/wow.min.js' %}"></script>
+  
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  
+  <script src="{% static 'owl-carousel/owl.carousel.js' %}"></script>
+  <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+</script>
 
-    <script>
+  <script>
     $(document).ready(function() {
       $("#owl-demo").owlCarousel({
 
@@ -182,6 +195,14 @@
           
           $('html, body').animate({scrollTop: 0}, 300);
         });
+
+        // Animate the scroll to top
+        $('.go-up').click(function(event) {
+          event.preventDefault();
+          
+          $('html, body').animate({scrollTop: 0}, 300);
+        });
+      
     </script>
     
     {% block script %}

@@ -36,8 +36,22 @@ urlpatterns = [
     url(r'^checkset/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', checkset, name='checkset'),
     url(r'^solution/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', solution, name='solution'),
     url(r'^rules/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', rules, name='rules'),
+
+    url(r'^ioe-start', ioestart, name='ioestart'),
+    url(r'^iom-start', iomstart, name='iomstart'),
+    url(r'^moe-start', moestart, name='moestart'),
+    url(r'^ioe-syllabus', ioesyllabus, name='ioesyllabus'),
+    url(r'^iom-syllabus', iomsyllabus, name='iomsyllabus'),
+    url(r'^iom-syllabus', iomsyllabus, name='iomsyllabus'),
+    url(r'^forgot-password', forgotpassword, name='forgotpassword'),
+    url(r'^recover-password', recoverpassword, name='recoverpassword'),
+
     #api urls
+    url(r'^api/register', api_register),
+    url(r'^api/login', api_login),
+    url(r'^api/dashboard', api_dashboard),
     url(r'api/questions/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', api_questions),
+    url(r'api/result/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', api_result),
 ]
 
 if settings.DEBUG:

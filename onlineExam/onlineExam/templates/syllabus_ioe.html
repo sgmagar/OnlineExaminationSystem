@@ -1,0 +1,287 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+        
+    {% include 'navbar.html' %}
+    <section class="container" id="syllabus">
+			
+			<!-- <h3><strong>Marks Distribution</strong></h3>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+			<p>Here is subjectwise marks distribution</p>
+			<p><img src="assets/img/ioe-syllabus.png" class="img img-responsive" alt=""></p> -->
+			<div class="panel">
+				<div class="panel-heading">
+				    <h2 class="panel-title"><strong>Institute of Engineering Entrance Examination Syllabus</strong></h2>
+				</div>
+				<div class="panel-body">
+				    <ul class="nav nav-tabs">
+				      <li class="active"><a href="#md" data-toggle="tab">Marks Distribution</a></li>
+				      <li><a href="#physics" data-toggle="tab">Physics</a></li>
+				      <li><a href="#chemistry" data-toggle="tab">Chemistry</a></li>
+				      <li><a href="#math" data-toggle="tab">Math</a></li>
+				      <li><a href="#english" data-toggle="tab">English</a></li>
+				      <li><a href="#eap" data-toggle="tab">Engineering Aptitude Test</a></li>
+				      
+				    </ul>
+				    <div class="tab-content">
+				    	<!-------------------------------Phyiscs Tab begins------------------------------------>
+				  		<div id="physics" class="tab-pane fade in ">
+				          <div class="col-sm-3 pull-left">
+				            <ul class="nav nav-tabs nav-stacked">
+				              <li class="active"><a href="#mechanics" data-toggle="tab">Mechanics</a></li>
+				              <li><a href="#heat" data-toggle="tab">Heat</a></li>
+				              <li><a href="#optics" data-toggle="tab">Optics</a></li>
+				              <li><a href="#sound" data-toggle="tab">Sound</a></li>
+				              <li><a href="#electricity" data-toggle="tab">Electricity</a></li>
+				              <li><a href="#ape" data-toggle="tab">Atomic Physics & Electronics</a></li>
+				      	    </ul>
+				          </div>
+				          <div class="col-sm-9 pull-right">
+				          	<div class="tab-content">
+				            	<div id="mechanics" class="tab-pane fade in active">
+					                <ol>
+					                	<li>Dimensions</li>
+										<li>Equations of motion, Motion of a projectile. Laws of motion.Addition and subtraction of vectors. Relative velocity. Equilibrium of forces. Moments.</li>
+										<li>Centre of mass. Centre of gravity. Solid friction. Work, power and energy. Conservation of energy.</li>
+										<li>Angular speed. Centripetal force. Moment of inertia. Torque on a body. Angular momentum. Rotational kinetic energy.</li>
+										<li>Laws of gravitation. Gravitational intensity, Gravitational potential. Velocity of escape.</li>
+										<li>Simple harmonic motion. Energy of SHM. Hooke’s Law. Breaking stress. Modules of elasticity. Energy stored in stretched wire.</li>
+										<li>Surface tension phenomenon. Surface energy. Capillarity. Fluid pressure. Pascal law of transmission of fluid pressure. Archimedes' principle. Flotation Stokes' law. Terminal velocity</li>
+					                </ol>
+			              		</div>
+				              	<div id="heat" class="tab-pane fade">
+				              		<ol>
+					                	<li>Heat and temperature. Temperature scale. Measurement of heat energy.</li>
+										<li>Specific heat capacity. Latent heat. Saturated and Unsaturated vapour. Relative humidity and dew point.</li>
+										<li>First law of thermodynamics. Reversible isothermal and adiabatic changes. Gas laws. Kinetic theory of gases.</li>
+										<li>Second Law of thermodynamics. Carnot's engine. Transfer of Heat.</li>
+										<li>Conduction, convection and radiation. Expansion of solid, liquid and gas.</li>
+									</ol>
+				              	</div>
+				             	<div id="optics" class="tab-pane fade">
+				                	<ol>
+					                	<li>Formation of images by plane and curved mirrors. Refraction of light through plane surfaces. Total internal reflection. Critical angle. Refraction through prism. Maximum and minimum deviation.</li>
+										<li>Formation of images by lenses. Dispersion. Achromatic combination of lenses visual angle. Angular magnification. Defect of vision. Telescope and microscope.</li>
+										<li>Wave theory of light: introduction to Huygen's principle and its application interference 
+										diffraction and polarization of light.</li>
+									</ol>
+				              	</div>
+				              	<div id="sound" class="tab-pane fade">
+				                	<ol>
+					                	<li>Damped vibration. Forced oscillation. Resonance. Progressive waves, Principle of superposition.</li>
+										<li>Velocity of sound in solid, liquid and gas: Laplaces correction. Characteristics of Sound wave. Beat phenomenon. Doppler effect. Stationary waves. Waves in pipes. Waves in String.</li>
+									</ol>
+				              	</div>
+				              	<div id="electricity" class="tab-pane fade">
+				                	<ol>
+					                	<li>Electric Charge. Gold leaf electroscope. Charging by induction Faraday's ice pail experiment. Coulomb's law. Permitivity.</li>
+										<li>Electric field. Gauss's law and its application. electric potential. Capacitors. Ohm's Law. Resistance – combination of resistances. emf. Kirchhoff's law and its application.</li>
+										<li>Heating effect of current. Thermoelectricity. Chemical effect of current. Potentiometer. Wheatstone bridge. Galvanometer. Conversion of galvanometer into voltmeter and ammeter.</li>
+										<li>Magnetic Field. Earth's magnetism. Magnetic Flux. Force on a current carrying conductor. Ampere's law, Biot-Savart's law and their applications. Solenoid. Electromagnetic induction. AC circuits</li>
+									</ol>
+				              	</div>
+				              	<div id="ape" class="tab-pane fade">
+				                	<ol>
+					                	<li>Discharge electricity through gases. Cathode rays. Electronic mass and charge Bohr's theory of atomic structure. Energy level. X-rays.</li>
+										<li>Photoelectric effect Radioactivity. Nuclear – fission and fusion.Semiconductors. Junction Transistor.</li>
+									</ol>
+				              	</div>
+				            </div>
+				          </div>
+				        </div>
+				        <!-------------------------------- Physics Tab ends --------------------------------------->
+
+				        <!-------------------------------Chemistry Tab begins------------------------------------>
+				  		<div id="chemistry" class="tab-pane fade in">
+				          <div class="col-sm-3 pull-left">
+				            <ul class="nav nav-tabs nav-stacked">
+				              <li class="active"><a href="#loc" data-toggle="tab">Language of Chemistry & Physical Chemistry</a></li>
+				              <li><a href="#non-metals" data-toggle="tab">Non-metals</a></li>
+				              <li><a href="#metals" data-toggle="tab">Metals</a></li>
+				              <li><a href="#organic" data-toggle="tab">Organic Chemistry</a></li>
+				      	    </ul>
+				          </div>
+				          <div class="col-sm-9 pull-right">
+				          	<div class="tab-content">
+				            	<div id="loc" class="tab-pane fade in active">
+				                	<ol>
+				                		<li>Symbol, formulate valency and chemical questions</li>
+										<li>Problems based on chemical equations (relation with weight and weight, and weight and volume)</li>
+										<li>Atomic Structure: Study of Cathode rays, and discovery of electrons, Rutheford's X-ray scattering experiment and discovery of nucleus. Rutherford model of atom., Bohr model of atom, Elementary concept of quantum numbers, Electron configuration of the elements.</li>
+										<li>Electronics Theory to Valency: Octet rule, Electrovalency, covalency and coordinate valency, General characteristics ionic and covalent compounds</li>
+										<li>Oxidation and Reduction: Classical definitions, Electronic interpretations of oxidation and reduction, Balancing of redox equations by oxidation number method</li>
+										<li>Periodic Classification of Elements: Mendeleev's periodic law, anomalies of Mendeleev's periodic table, Modern periodic Law, Periodic Properties viz. ionization potential, electronegativity and atomic radii, and their variation in the periodic table</li>
+										<li>Equivalent Weight and Atomic Weight: Concept of equivalent weight, and its determination by hydrogen displacement method and oxide method, Concept of atomic weight, equivalent weight and valency, determination of atomic weight using Dulong and Petit's rule</li>
+										<li>Molecular Weight and Mole: Avogardo's hypothesis and its deductions, Avogadro number and concept of mole, Determination of molecular weight by Victor Meyer's method; Electro–Chemistry; Electrolytes and non-electrolytes, strong electrolytes and weak electrolytes, Faraday's laws of electrolysis, Solubility product principle and its applications in qualitative analysis</li>
+										<li>Theories of Acids and Bases: Arrhenius theory, Bronsted and Lowry theory, Lewis theory; Volumetric Analysis Equivalent weights of acids, base and salts, Principles of acidimetry and alkalimetry, pH and pH scale</li>
+				                	</ol>
+				              	</div>
+				              	<div id="non-metals" class="tab-pane fade">
+				                	<ol>
+				                		<li>Non-metals Water : Hard water and soft water, Causes and removal of hardness of water</li>
+										<li>Nitrogen and its Compounds: Nitrogen cycle, Preparation of ammonia and nitric acid in the lab, and their properties, Manufacture of ammonia and nitric acid, Sulphur and its Compound.</li>
+										<li>Allotropy of sulphur, Preparation of hydrogen sulphide, sulphure dioxide in the lab, and their properties, Manufacture of sulphuric acid by contact process</li>
+										<li>Halogens and Their Compound: Position of halogens in the periodic table, Preparation of chlorine and hydrogen chloride in the lab, and their properties.</li>
+				                	</ol>
+				              	</div>
+				              	<div id="metals" class="tab-pane fade">
+				                	<ol>
+				                		<li>Compounds of Metals: General methods of preparation and properties of oxides, hydroxides, chlorides, nitrates, sulphates and carbonates of metals.</li>
+										<li>Sodium: Extraction of Sodium (Down's process), Manufacture of caustic soda sodium carbonate.</li>
+										<li>Copper: Extraction of copper from copper pyrite, Manufacture of Blue vitriol.</li>
+										<li>Zinc: Extraction of zinc from zinc blend, Galvanization.</li>
+										<li>Iron: Extraction of cast iron from hematite, Cast iron, steel and wrought iron, Types of steel, Manufacture of steel.</li>
+				                	</ol>
+				              	</div>
+				              	<div id="organic" class="tab-pane fade">
+				                	<ol>
+				                		<li>Sources and Purification of organic Compounds: Characteristics of organic compounds, Sources of organic compounds, Purification of organic compounds;
+										<li>Classification and nomenclature of organic Compounds: Functional group, homologous series, and isomerism (structural only), Classification of organic compounds, Common names, and I.U.P.A.C. naming system</li>
+										<li>Saturated and unsaturated Hydrocarbons & Aromatic compound</li>
+										<li>Preparation and properties of methane, Preparation and properties of ethylene and acetylene</li>
+										<li>Alkyl Halides: Preparation and properties of ethyl iodide;</li>
+										<li>Aromatic Compounds: Structure of benzene, Preparation of benzene in the laboratory, Properties of benzene</li>
+				                	</ol>
+				              	</div>
+				            </div>
+				          </div>
+				        </div>
+				        <!-------------------------------- Chemistry Tab ends --------------------------------------->
+
+				        <!-------------------------------Math Tab begins------------------------------------>
+				  		<div id="math" class="tab-pane fade in">
+				          <div class="col-sm-3 pull-left">
+				            <ul class="nav nav-tabs nav-stacked">
+				              <li class="active"><a href="#set" data-toggle="tab">Set & Function</a></li>
+				              <li><a href="#algebra" data-toggle="tab">Algebra</a></li>
+				              <li><a href="#trigonometry" data-toggle="tab">trigonometry</a></li>
+				              <li><a href="#geometry" data-toggle="tab">Coordinate Geometry</a></li>
+				              <li><a href="#calculus" data-toggle="tab">Calcus</a></li>
+				              <li><a href="#vectors" data-toggle="tab">Vectors</a></li>
+				      	    </ul>
+				          </div>
+				          <div class="col-sm-9 pull-right">
+				          	<div class="tab-content">
+				            	<div id="set" class="tab-pane fade in active">
+				                	<ol>
+				                		<li>Set and relations, Functions and graphs, Algebraic, Trigonometric, Exponential, Logarithmic and hyperbolic functions and their inverses.</li>
+				                	</ol>
+				              	</div>
+				              	<div id="algebra" class="tab-pane fade">
+				                	<ol>
+				                		<li>Determinats, matrices, Inverse of a matrix, uses of complex numbers, Polynomial equations, sequence and series, Permutation and combination, Binomial theorem, exponential, Logarithmic serie</li>
+				                	</ol>
+				              	</div>
+				              	<div id="trigonometry" class="tab-pane fade">
+				                	<ol>
+				                		<li>Trigonometric equations and general values, Inverse trigonometric functions, Principal values, Properties of triangles; Centroid, incentre, Orthocentre and circumcentre and their properties.</li>
+				                	</ol>
+				              	</div>
+				              	<div id="geometry" class="tab-pane fade">
+				                	<ol>
+				                		<li>Coordinates in a plane, Straight lines, Pair of lines, Circles, Conic sections: Parabola, ellipse and hyperbola. Standard equations and simple properties, Coordinates in space, Plane and its equation.</li>
+				                	</ol>
+				              	</div>
+				              	<div id="calculus" class="tab-pane fade">
+				                	<ol>
+				                		<li>Limit and continuity of functions, Derivatives and application of derivative – Tangent and normal, Rate of change,differentials dy and actual change Dy. Maxima and Minima of a function.; Antiderivatives (Integrations): rules of Integration, Standard Integrals, Definite integral as the limit of a sum. Application to areas under a curve and area between two curves</li>
+				                	</ol>
+				              	</div>
+				              	<div id="vectors" class="tab-pane fade">
+				                	<ol>
+				                		<li>Vectors in space, addition of vectors. Linear combination of vectors, Linearly dependent and independent set of vectors, Scalar and vector product of two vectors, simple applications.</li>
+				                	</ol>
+				              	</div>
+				            </div>
+				          </div>
+				        </div>
+				        <!-------------------------------- Math Tab ends --------------------------------------->
+
+				        <!-------------------------------English Tab begins------------------------------------>
+				  		<div id="english" class="tab-pane fade in">
+				          <div class="col-sm-3 pull-left">
+				            <ul class="nav nav-tabs nav-stacked">
+				              <li class="active"><a href="#comprehension" data-toggle="tab">Comprehension of reading Passages</a></li>
+				              <li><a href="#grammer" data-toggle="tab">Grammer</a></li>
+				      	    </ul>
+				          </div>
+				          <div class="col-sm-9 pull-right">
+				          	<div class="tab-content">
+				            	<div id="comprehension" class="tab-pane fade in active">
+				                	<ol>
+				                		<li>Comprehension of reading passages on a variety of topics and style with special references to (i) General English and (ii) Technical English.</li>
+				                	</ol>
+				              	</div>
+				              	<div id="grammer" class="tab-pane fade">
+				                	<ol>
+				                		<li>Parts of Speech, Basic Grammatical Patterns / Structures, Tense and Aspect, Conditional sentences, Verbals: infinitives, Participles and Gerunds, Direct and Indirect Speech, Active and Passive Voice , Kinds of Sentences, Transformation of sentences, Concord /Agreement, Vocabulary, Use of Prepositions, Idiomatic expressions, Punctuation, Phonemes and phonetic symbols, Word Stress.</li>
+				                	</ol>
+				              	</div>
+				            </div>
+				          </div>
+				        </div>
+				        <!-------------------------------- English Tab ends --------------------------------------->
+
+
+
+						<!-------------------------------Engineering Aptitude Test Tab begins------------------------------------>
+				  		<div id="eap" class="tab-pane fade in">
+				          <div class="col-sm-3 pull-left">
+				            <ul class="nav nav-tabs nav-stacked">
+				              <li class="active"><a href="#architectural" data-toggle="tab">Architectural Aspects</a></li>
+				              <li><a href="#mechanical" data-toggle="tab">Mechanical Aspects</a></li>
+				              <li><a href="#civil" data-toggle="tab">Civil Aspects</a></li>
+				              <li><a href="#electrical" data-toggle="tab">Electrical Aspects</a></li>
+				              <li><a href="#computer" data-toggle="tab">Electronics and Computer Aspects</a></li>
+				      	    </ul>
+				          </div>
+				          <div class="col-sm-9 pull-right">
+				          	<div class="tab-content">
+				            	<div id="architectural" class="tab-pane fade in active">
+					                <ol>
+					                	<li>Concept of Polygons (Triangle, Square, Pentagon, Hexagon, Octagon), Circle, Inscribing and Circumscribing Circle; Arcs and Tangents; Introduction to Geometrical Solids (Cylinder, Cone, Prism and Pyramid) Orthographic Views of Lines and Surface (Horizontal, Vertical and Inclulined), Orthographic Views of Geometrical Solids, Objects consisting of Plane Surfaces, Curved Surfaces and Rectangular/cylindrical holes.</li>
+					                </ol>
+			              		</div>				         
+				             	<div id="mechanical" class="tab-pane fade">
+				                	<ol>
+					                	<li>Two-Stroke and Four Stroke Engines, Petrol and Diesel Engines, Renewal Energy</li>
+					                </ol>
+				              	</div>
+				              	<div id="civil" class="tab-pane fade">
+				                	<ol>
+					                	<li>Traffic Signals, Cement, Aggregates, Bricks and Stones.</li>
+					                </ol>
+				              	</div>
+				              	<div id="electrical" class="tab-pane fade">
+				                	<ol>
+					                	<li>Series and Parallel Electric Circuits, Energy Resources, Transformers, Electrical Energy Generation, Measurement of Electric Current, Voltage and Power</li>
+					                </ol>
+				              	</div>
+				              	<div id="computer" class="tab-pane fade">
+				                	<ol>
+					                	<li>Number System, Diode and Transistor, Logic Gates, Memory, CPU, Input/output Devices, Operating Systems, Internet and Email.</li>
+					                </ol>
+				              	</div>
+				            </div>
+				          </div>
+				        </div>
+				        <!-------------------------------- Engineering Aptitude Test Tab ends ------------------------------------>
+				    	
+
+				    	<!-------------------------------Marks Distribution Tab begins------------------------------------>
+				  		<div id="md" class="tab-pane fade in active">
+				  			<div class="col-md-12">
+				  				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+								<p>Here is subjectwise marks distribution</p>
+								<p><img src="assets/img/ioe-syllabus.png" class="img img-responsive" alt=""></p>
+				  			</div>
+				  		</div>
+
+				    </div>
+				</div>
+			</div>
+		</section>
+   {% include 'footer.html' %}
+
+{% endblock %}

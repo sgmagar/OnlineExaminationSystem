@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+        
+    {% include 'navbar.html' %}
+
+    <section id="dashboard-question">
+			    <div class="container">
+                      <div class="row">
+                      	<form action="{% url 'checkset' qgroup qset %}" method="POST">{% csrf_token %}
+
+                        <div class="col-md-9 questions">
+                          <div id="owl-demo" class="owl-carousel">
+                          
+			                    <div class="item">
+				                    	{% for question in first_group %}  
+					                   
+											<ul id="{{ question.questionno }}" class="list-group">
+											<li class="list-group-item">{{ question.questionno }}.
+											{{ question.question }} {% if question.qfile != "" %}<img src="/media/{{ question.qfile }}">{% endif %}</li>
+											
+											{% if qgroup == 'MOE' %}
+												<li class="list-group-item">
+													{% for answer in question.answermoe_set.all|dictsort:'choice' %}
+														
+														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
+													{% endfor %}  
+												</li>
+											
+											{% endif %}
+											</ul>
+										
+										{% endfor %}
+									</div>
+									<div class="item">
+				                    	{% for question in second_group %}  
+					                   	
+											<ul id="{{ question.questionno }}" class="list-group">
+											<li class="list-group-item">{{ question.questionno }}.
+											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
+											
+											{% if qgroup == 'MOE' %}
+												<li class="list-group-item">
+													{% for answer in question.answermoe_set.all|dictsort:'choice' %}
+														
+														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
+													{% endfor %}  
+												</li>
+											
+											{% endif %}
+											</ul>
+										
+										{% endfor %}
+										
+									</div>
+									<div class="item">
+				                    	{% for question in third_group %}  
+					                   	
+											<ul id="{{ question.questionno }}" class="list-group">
+											<li class="list-group-item">{{ question.questionno }}.
+											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
+										
+											{% if qgroup == 'MOE' %}
+												<li class="list-group-item">
+													{% for answer in question.answermoe_set.all|dictsort:'choice' %}
+														
+														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
+													{% endfor %}  
+												</li>
+											
+											{% endif %}
+											</ul>
+										
+										{% endfor %}
+									</div>
+									<div class="item">
+				                    	{% for question in fourth_group %}  
+					                   	
+											<ul id="{{ question.questionno }}" class="list-group">
+											<li class="list-group-item">{{ question.questionno }}.
+											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
+											
+											{% if qgroup == 'MOE' %}
+												<li class="list-group-item">
+													{% for answer in question.answermoe_set.all|dictsort:'choice' %}
+														
+														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
+													{% endfor %}  
+												</li>
+											
+											{% endif %}
+											</ul>
+										
+										{% endfor %}
+										<input type="submit"  id= 'submit' class="btn btn-primary" value="Submit" />
+	                        			</form>
+									</div>
+								</div>
+							</div>
+                            
+                          
+                        
+
+                        <div class="col-md-3">
+                        	<div class="status">
+                        		<p>Time Left: <span id="time"></span></p>
+                        		<p>Questions Attempted : <p id="attempt" ></p></p>
+                        		<p>Questions Left : <p id="left" ></p></p>
+                        	</div>
+                        	
+                        </div>
+
+                    
+                    </div>
+			</div>
+
+		</section>
+   {% include 'footer.html' %}
+
+{% endblock %}
+
+{% block script %}
+	<script type="text/javascript">
+		var tim;
+
+		var hour = 2
+        var min = 0;
+        var sec = 0;
+        var f = new Date();
+        f1();
+        function f1() {
+            f2();
+            document.getElementById("time").innerHTML = hour+":"+min+":" + sec;
+             
+          
+        }
+        function f2() {
+            if (parseInt(sec) > 0) {
+                sec = parseInt(sec) - 1;
+                document.getElementById("time").innerHTML = hour+":"+min+":" + sec;
+                tim = setTimeout("f2()", 1000);
+            }
+            else {
+                if (parseInt(sec) == 0) {
+                	min = parseInt(min) - 1;
+                	if(min<0){
+                		min=0;
+                	}
+                    if (parseInt(min) == 0) {
+                    	hour = parseInt(hour) - 1;
+	                    if (parseInt(hour) < 0) {
+	                        clearTimeout(tim);
+	                        $('#submit').click();
+	                        // location.href = "default5.aspx";
+	                    }
+	                    else {
+	                        min = 60;
+	                        document.getElementById("time").innerHTML = hour+":"+min+":" + sec;
+	                        tim = setTimeout("f2()", 1000);
+	                    }
+                        
+                    }
+                    else {
+                        sec = 60;
+                        document.getElementById("time").innerHTML = hour+":"+min+":" + sec;
+                        tim = setTimeout("f2()", 1000);
+                    }
+
+                }
+               
+            }
+        }
+        var left = document.getElementById("left");
+        var attempt = document.getElementById("attempt");
+		var unans_question = [];
+		var ans_question = [];
+		for(i=1; i<=40; i++){
+			unans_question.push(i);
+			$('input:radio[name="'+i+'"]').change(function(){
+				if($(this).is(':checked')){
+					var num = parseInt($(this).attr('name'));
+					delete(unans_question[unans_question.indexOf(num)]);
+					if ($.inArray(num, ans_question) == -1){
+						ans_question.push(num);
+					}
+					displayleft(unans_question);
+					displayattempt(ans_question);
+				}
+			});
+		}
+		displayleft(unans_question);
+		function displayleft (a) {
+			left.innerHTML = '';
+			for(i=0; i<a.length;i++){
+				if(a[i]!= undefined){
+					var link = "#"+a[i].toString();
+					left.innerHTML += "<a href=\""+link+"\" style=\"color:#fff;\" >"+a[i]+"</a>"+"  ";	
+				}
+			}
+		}
+
+		function displayattempt (a){
+			attempt.innerHTML = '';
+			for(i=0; i<a.length;i++){
+				if(a[i]!= undefined){
+					var link = "#"+a[i].toString();
+					attempt.innerHTML += "<a href=\""+link+"\" style=\"color:#fff;\" >"+a[i]+"</a>"+"  ";	
+				}
+			}
+		}
+
+		$(window).scroll(function() {
+               
+                $('nav').removeClass('navbar-fixed-top');
+
+               
+        });
+        
+        
+	</script>
+{% endblock %}

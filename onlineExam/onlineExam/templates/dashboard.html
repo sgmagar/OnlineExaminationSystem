@@ -27,7 +27,7 @@
                                                         <h2>IOE Mock Test</h2>
                                                         <p>You can take one test for Free!</p>
                                                         <p>
-                                                            <a href="rules.php" class="btn btn-default btn-lg">Start Free Test</a>
+                                                            <a href="{% url 'rules' 'IOE' '150' %}" class="btn btn-default btn-lg">Start Free Test</a>
                                                         </p>
                                                     </div>  
                                                 </div>        
@@ -62,7 +62,7 @@
 										    			{% if ioe_questionset|length > 0 %}
 										    				
 										    				{% for qset in ioe_questionset %}
-										    					<div class="question-set"><a href="{% url 'questionset' qset.qgroup qset.questionset %}" class="btn btn-default" >Question Set {{ qset.questionset|stringformat:"i" }}</a>{% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
+										    					<div class="question-set"><a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >Question Set {{ qset.questionset|stringformat:"i" }}</a>{% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
 										    				{% endfor %}
 										    			{% endif %}
                                                         
@@ -80,7 +80,7 @@
                                                         <h2>IOM Mock Test</h2>
                                                         <p>You can take one test for Free!</p>
                                                         <p>
-                                                            <a href="rules.php" class="btn btn-default btn-lg">Start Free Test</a>
+                                                            <a href="{% url 'rules' 'IOM' '150' %}" class="btn btn-default btn-lg">Start Free Test</a>
                                                         </p>
                                                     </div>  
                                                 </div>        
@@ -116,7 +116,7 @@
 										    			{% if iom_questionset|length > 0 %}
 										    				
 										    				{% for qset in iom_questionset %}
-										    					<div class="question-set"><a href="{% url 'questionset' qset.qgroup qset.questionset %}" class="btn btn-default" >Question Set {{ qset.questionset|stringformat:"i" }}</a>{% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
+										    					<div class="question-set"><a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >Question Set {{ qset.questionset|stringformat:"i" }}</a>{% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
 										    				{% endfor %}
 										    			{% endif %}
                                                     </div>
@@ -133,7 +133,7 @@
                                                         <h2>MOE Mock Test</h2>
                                                         <p>You can take one test for Free!</p>
                                                         <p>
-                                                            <a href="rules.php" class="btn btn-default btn-lg">Start Free Test</a>
+                                                            <a href="{% url 'rules' 'MOE' '150' %}" class="btn btn-default btn-lg">Start Free Test</a>
                                                         </p>
                                                     </div>  
                                                 </div>        
@@ -169,7 +169,7 @@
 										    			{% if moe_questionset|length > 0 %}
 										    				
 										    				{% for qset in moe_questionset %}
-										    					<div class="question-set"><a href="{% url 'questionset' qset.qgroup qset.questionset %}" class="btn btn-default" >Question Set {{ qset.questionset|stringformat:"i" }}</a>{% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
+										    					<div class="question-set"><a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >Question Set {{ qset.questionset|stringformat:"i" }}</a>{% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
 										    				{% endfor %}
 										    			{% endif %}
                                                     </div>
