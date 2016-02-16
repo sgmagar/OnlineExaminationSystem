@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from datetime import datetime, timedelta
+
 # Create your models here.
 
 class News(models.Model):
@@ -42,6 +44,17 @@ class Key(models.Model):
 	status = models.BooleanField(default=False)
 	def __unicode__(self):
 		return self.key
+def get_expiry():
+		return datetime.now() + timedelta(hours=1)
+class PassChgKey(models.Model):
+	key = models.CharField(blank=False, max_length=30)
+	email = models.EmailField(default=None)
+	expiry = models.DateTimeField(default=get_expiry)
+
+
+	def __unicode__(self):
+		return self.key
+
 
 class Faq(models.Model):
 	question = models.TextField(default=None)

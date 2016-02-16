@@ -69,6 +69,7 @@ TEMPLATES = [
         },
     },
 ]
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 WSGI_APPLICATION = 'onlineExam.wsgi.application'
 
@@ -113,3 +114,10 @@ STATICFILES_DIRS=(os.path.join(BASE_DIR,'onlineExam','static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media_root')
+
+# Email Settings to send email
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'elanor2050@gmail.com'
+EMAIL_HOST_PASSWORD = 'lordofthering'

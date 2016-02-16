@@ -4,24 +4,172 @@
 		"selected_items":
 		[
 			[
-				"engli",
-				"english_mark"
+				"H",
+				"HttpResponse"
 			],
 			[
-				"chems",
-				"chemistry_correct"
+				"use",
+				"userqset"
+			],
+			[
+				"questi",
+				"questionset"
+			],
+			[
+				"Uset",
+				"UserQuestionSet"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"ques",
+				"question_sets"
+			],
+			[
+				"moe",
+				"moe_set"
+			],
+			[
+				"iom",
+				"iom_set"
+			],
+			[
+				"qu",
+				"questionset"
+			],
+			[
+				"ioe",
+				"ioe_set"
+			],
+			[
+				"us",
+				"username"
+			],
+			[
+				"HT",
+				"HTTP_PASSWORD"
+			],
+			[
+				"HTTP_",
+				"HTTP_PASSWORD"
+			],
+			[
+				"HTTP",
+				"HTTP_USERNAME"
+			],
+			[
+				"ex",
+				"except"
+			],
+			[
+				"ts",
+				"test_username"
+			],
+			[
+				"api",
+				"apiregister"
+			],
+			[
+				"conta",
+				"contact"
+			],
+			[
+				"test",
+				"test_username"
+			],
+			[
+				"firs",
+				"firstname"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"fir",
+				"firstname"
+			],
+			[
+				"pas",
+				"password"
+			],
+			[
+				"fil",
+				"filter"
+			],
+			[
+				"res",
+				"result_ioe"
+			],
+			[
+				"eap",
+				"eaptitude_mark"
+			],
+			[
+				"eapt",
+				"eaptitude_correct"
+			],
+			[
+				"en",
+				"english_attempted"
 			],
 			[
 				"chem",
 				"chemistry_attempted"
 			],
 			[
-				"eng",
-				"english_total"
+				"math",
+				"math_attempted"
 			],
 			[
-				"en",
+				"physi",
+				"physics_attempted"
+			],
+			[
+				"engli",
+				"english_correct"
+			],
+			[
+				"tota",
+				"total"
+			],
+			[
+				"phy",
+				"physics_mark"
+			],
+			[
+				"eng",
 				"english_mark"
+			],
+			[
+				"to",
+				"total_mark"
+			],
+			[
+				"tot",
+				"total_mark"
+			],
+			[
+				"toat",
+				"total_attempted"
+			],
+			[
+				"total",
+				"total_mark"
+			],
+			[
+				"Ques",
+				"QuestionIOM"
+			],
+			[
+				"Que",
+				"QuestionMOE"
+			],
+			[
+				"chems",
+				"chemistry_correct"
 			],
 			[
 				"chemis",
@@ -30,14 +178,6 @@
 			[
 				"thi",
 				"third_group"
-			],
-			[
-				"ques",
-				"questionno"
-			],
-			[
-				"qu",
-				"questionIOE"
 			],
 			[
 				"chec",
@@ -60,14 +200,6 @@
 				"qgroup"
 			],
 			[
-				"math",
-				"math_mark"
-			],
-			[
-				"total",
-				"total_mark"
-			],
-			[
 				"mat",
 				"math_attempted"
 			],
@@ -80,16 +212,8 @@
 				"english_mark"
 			],
 			[
-				"user",
-				"userquestionset"
-			],
-			[
 				"str",
 				"str"
-			],
-			[
-				"tota",
-				"total_mark"
 			],
 			[
 				"st",
@@ -132,14 +256,6 @@
 				"FaqAdmin"
 			],
 			[
-				"firs",
-				"first_group"
-			],
-			[
-				"fil",
-				"fields"
-			],
-			[
 				"ac",
 				"accept-charset	Attr"
 			],
@@ -160,20 +276,12 @@
 				"qsetError"
 			],
 			[
-				"use",
-				"userquestionset_set"
-			],
-			[
 				"rech",
 				"rechargeError"
 			],
 			[
 				"op",
 				"option	Tag"
-			],
-			[
-				"re",
-				"request"
 			],
 			[
 				"C",
@@ -282,10 +390,6 @@
 			[
 				"no",
 				"not"
-			],
-			[
-				"to",
-				"total"
 			],
 			[
 				"cro",
@@ -410,176 +514,62 @@
 			[
 				"recei",
 				"recipientWebsite"
-			],
-			[
-				"don",
-				"donorCountry"
-			],
-			[
-				"dor",
-				"donorType"
-			],
-			[
-				"max",
-				"max_length"
-			],
-			[
-				"Url",
-				"URLField"
-			],
-			[
-				"Te",
-				"TextField"
-			],
-			[
-				"de",
-				"default"
-			],
-			[
-				"De",
-				"DecimalField"
-			],
-			[
-				"adi",
-				"aid_amount"
-			],
-			[
-				"sub",
-				"subcategory"
-			],
-			[
-				"subca",
-				"subcategory"
-			],
-			[
-				"order",
-				"order_by"
-			],
-			[
-				"subcat",
-				"subcat_total"
-			],
-			[
-				"nat",
-				"nat_corporates"
-			],
-			[
-				"nat_",
-				"nat_government"
-			],
-			[
-				"Go",
-				"Government"
-			],
-			[
-				"Int",
-				"International"
-			],
-			[
-				"gof",
-				"gofundme_csv"
-			],
-			[
-				"gofu",
-				"gofundme"
-			],
-			[
-				"da",
-				"date_created"
-			],
-			[
-				"Info",
-				"infographics"
-			],
-			[
-				"ai",
-				"aidsdetails"
-			],
-			[
-				"tes",
-				"testname1"
-			],
-			[
-				"res",
-				"result"
-			],
-			[
-				"si",
-				"signup_client"
-			],
-			[
-				"sign",
-				"signup_client"
-			],
-			[
-				"db",
-				"db_connection"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "onlineExam/exam/models.py",
-			"settings":
-			{
-				"buffer_size": 5838,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "onlineExam/exam/admin.py",
-			"settings":
-			{
-				"buffer_size": 3444,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "onlineExam/onlineExam/views.py",
 			"settings":
 			{
-				"buffer_size": 14388,
+				"buffer_size": 23657,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/media/saurav/UUI2/mock-test/solutions.php",
+			"file": "onlineExam/onlineExam/templates/password_forgot.html",
 			"settings":
 			{
-				"buffer_size": 3579,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "onlineExam/onlineExam/templates/solution.html",
+			"file": "onlineExam/onlineExam/templates/password_recover.html",
 			"settings":
 			{
-				"buffer_size": 4124,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "onlineExam/onlineExam/templates/result.html",
+			"contents": "from django.db import models\nfrom django.contrib.auth.models import User\n\n# Create your models here.\n\nclass News(models.Model):\n	FACULTY_CHOICES = (\n			('IOE','IOE'),\n			('MOE','MOE'),\n			('IOM','IOM'),\n		)\n	faculty = models.CharField(max_length=4, default='IOE', choices=FACULTY_CHOICES)\n	newstitle = models.CharField(max_length=200, default='None')\n	url= models.URLField( default=None)\n	publishDate = models.DateField(auto_now=True)\n\n	def __unicode__(self):\n		return self.newstitle\n\nclass UserProfile(models.Model):\n	user = models.OneToOneField(User)\n	college = models.CharField(blank=True, max_length=40)\n	FACULTY_CHOICES = (\n			('E','Engineer'),\n			('D','Doctor'),\n		)\n	faculty = models.CharField(default='E',max_length=1, choices=FACULTY_CHOICES)\n	phone = models.CharField(default=None,max_length=20)\n	joined_date = models.DateField(auto_now=True)\n\n	def __unicode__(self):\n		return self.user.username\n\nclass Key(models.Model):\n	key = models.CharField(blank=False, max_length=40)\n	GROUP_CHOICES=(\n		('IOE','IOE'),\n		('IOM','IOM'),\n		('MOE','MOE'),\n	)\n	group = models.CharField(default='IOE', max_length=3, choices=GROUP_CHOICES)\n	status = models.BooleanField(default=False)\n	def __unicode__(self):\n		return self.key\n\nclass FPKey(models.Model):\n	key = models.CharField(blank=False, max_length=30)\n	expiry = models.DateTimeField()\n\nclass Faq(models.Model):\n	question = models.TextField(default=None)\n	answer = models.TextField(default=None)\n\n	def __unicode__(self):\n		return self.question\n\nclass ContactUs(models.Model):\n	name = models.CharField(max_length=40)\n	email = models.EmailField()\n	message = models.TextField()\n\n\nclass UserQuestionSet(models.Model):\n	user = models.ForeignKey(User)\n	GROUP_CHOICES=(\n		('IOE','IOE'),\n		('IOM','IOM'),\n		('MOE','MOE'),\n	)\n	qgroup = models.CharField(default='IOE',max_length=4, choices=GROUP_CHOICES)\n	questionset=models.IntegerField()\n	status = models.BooleanField(default=False)\n	score = models.IntegerField(default=0,blank=True)\n\n	def __unicode__(self):\n		return unicode(self.questionset)\n\nclass QuestionIOE(models.Model):\n	questionset = models.IntegerField()\n	questionno = models.IntegerField()\n	SUBJECT_CHOICES=(\n			('Physics','Physics'),\n			('Math','Math'),\n			('English','English'),\n			('Chemistry','Chemistry'),\n			('E-Aptitude','Engineering Aptitude Test'),\n		)\n	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)\n	TYPE_CHOICES=(\n			('Short','Short'),\n			('Long','Long'),\n		)\n	qtype = models.CharField(default='Short',max_length=6, choices=TYPE_CHOICES)\n	question = models.TextField(default=None)\n	ANSWER_CHOICES=(\n			('a','a'),\n			('b','b'),\n			('c','c'),\n			('d','d'),\n		)\n	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)\n	qfile = models.ImageField(default=None,blank=True, upload_to=\"IOE/question/%y/%m/%d/%H/%M/%S\")\n	hint = models.TextField(default=None)\n	\n\n	def __unicode__(self):\n		return str(self.questionset)+\" \"+str(self.questionno)+\" \"+ self.subject+\"\\t\"+self.question\n\nclass AnswerIOE(models.Model):\n	question = models.ForeignKey(QuestionIOE)\n	ANSWER_CHOICES=(\n			('a','a'),\n			('b','b'),\n			('c','c'),\n			('d','d'),\n		)\n	choice = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)\n	answer = models.CharField(max_length=200, default=None)\n	\n	afile = models.ImageField(default=None,blank=True, upload_to=\"IOE/answer/%y/%m/%d/%H/%M/%S\")\n\nclass QuestionIOM(models.Model):\n	questionset = models.IntegerField()\n	questionno = models.IntegerField()\n	SUBJECT_CHOICES=(\n			('Physics','Physics'),\n			('Math','Math'),\n			('English','English'),\n			('Chemistry','Chemistry'),\n			('Drawing','Drawing'),\n		)\n	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)\n	TYPE_CHOICES=(\n			('Short','Short'),\n			('Long','Long'),\n		)\n	qtype = models.CharField(default='Short',max_length=6, choices=TYPE_CHOICES)\n	question = models.TextField(default=None, max_length=200)\n	ANSWER_CHOICES=(\n			('a','a'),\n			('b','b'),\n			('c','c'),\n			('d','d'),\n		)\n	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)\n	qfile = models.ImageField(default=None,blank=True, upload_to=\"IOE/question/%y/%m/%d/%H/%M/%S\")\n	hint = models.TextField(default=None)\n	def __unicode__(self):\n		return str(self.questionset)+\" \"+str(self.questionno)+\" \"+ self.subject+\"\\t\"+self.question\n\nclass AnswerIOM(models.Model):\n	question = models.ForeignKey(QuestionIOM)\n	ANSWER_CHOICES=(\n			('a','a'),\n			('b','b'),\n			('c','c'),\n			('d','d'),\n		)\n	choice = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)\n	answer = models.CharField(max_length=200, default=None)\n	afile = models.ImageField(default=None,blank=True, upload_to=\"IOE/answer/%y/%m/%d/%H/%M/%S\")\n\nclass QuestionMOE(models.Model):\n	questionset = models.IntegerField()\n	questionno = models.IntegerField()\n	SUBJECT_CHOICES=(\n			('Physics','Physics'),\n			('Math','Math'),\n			('English','English'),\n			('Chemistry','Chemistry'),\n			('Drawing','Drawing'),\n		)\n	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)\n	TYPE_CHOICES=(\n			('Short','Short'),\n			('Long','Long'),\n		)\n	qtype = models.CharField(default='Short',max_length=6, choices=TYPE_CHOICES)\n	question = models.TextField(default=None, max_length=200)\n	ANSWER_CHOICES=(\n			('a','a'),\n			('b','b'),\n			('c','c'),\n			('d','d'),\n		)\n	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)\n	qfile = models.ImageField(default=None,blank=True, upload_to=\"IOE/question/%y/%m/%d/%H/%M/%S\")\n	hint = models.TextField(default=None)\n	def __unicode__(self):\n		return str(self.questionset)+\" \"+str(self.questionno)+\" \"+ self.subject+\"\\t\"+self.question\n\nclass AnswerMOE(models.Model):\n	question = models.ForeignKey(QuestionMOE)\n	ANSWER_CHOICES=(\n			('a','a'),\n			('b','b'),\n			('c','c'),\n			('d','d'),\n		)\n	choice = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)\n	answer = models.CharField(max_length=200, default=None)\n	\n	afile = models.ImageField(default=None,blank=True, upload_to=\"IOE/answer/%y/%m/%d/%H/%M/%S\")\n\n\n\n\n# Question:\n# questionset,qusetionno,subect,type,quesiton_text,type,file\n\n# answer:\n# 	question, answer,check,file\n	\n",
+			"file": "onlineExam/exam/models.py",
+			"file_size": 6052,
+			"file_write_time": 130999945351286638,
 			"settings":
 			{
-				"buffer_size": 2647,
+				"buffer_size": 6165,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "onlineExam/onlineExam/templates/questionset.html",
+			"contents": "",
+			"file": "/home/saurav/Documents/Django/TDD/functional_tests.py",
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
-				"buffer_size": 10894,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "onlineExam/onlineExam/templates/footer.html",
+			"file": "onlineExam/onlineExam/urls.py",
 			"settings":
 			{
-				"buffer_size": 2099,
+				"buffer_size": 2823,
 				"line_ending": "Unix"
 			}
 		},
@@ -587,7 +577,15 @@
 			"file": "onlineExam/onlineExam/templates/base.html",
 			"settings":
 			{
-				"buffer_size": 6314,
+				"buffer_size": 7045,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "onlineExam/onlineExam/templates/questionset_ioe.html",
+			"settings":
+			{
+				"buffer_size": 7591,
 				"line_ending": "Unix"
 			}
 		},
@@ -595,34 +593,31 @@
 			"file": "onlineExam/onlineExam/templates/dashboard.html",
 			"settings":
 			{
-				"buffer_size": 16240,
+				"buffer_size": 16282,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "onlineExam/onlineExam/templates/navbar.html",
+			"file": "onlineExam/onlineExam/templates/solution.html",
 			"settings":
 			{
-				"buffer_size": 4018,
+				"buffer_size": 4206,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<!DOCTYPE html>\n\n<html>\n\n	<!-- Head part -->\n	<?php include_once('includes/header.php'); ?>\n	\n	<body>\n		<!-- Navigation part -->\n		<?php include_once('includes/navigation2.php'); ?>\n\n        <!-- Dashboard begins -->\n        <section id=\"dashboard\">\n    \n                <div class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-md-12\">\n                            <!-- tab table begins -->\n                            <div class=\"tabtable\"> \n                                    <ul class=\"nav nav-tabs\">\n                                    <li class=\"active\"><a href=\"#tab1\" data-toggle=\"tab\">IOE</a></li>\n                                    <li class=\"active2\"><a href=\"#tab2\" data-toggle=\"tab\">IOM</a></li>\n                                    <li class=\"active2\"><a href=\"#tab3\" data-toggle=\"tab\">MOE</a></li>\n                                    </ul>\n                                    <div class=\"tab-content\">\n                                        <div class=\"tab-pane active\" id=\"tab1\">\n                                            <!-- IOE div starts -->\n                                            <div class=\"container\">\n                                                <div class=\"row\">\n                                                    <div class=\"col-md-6 center\">\n                                                        <p><center><img src=\"assets/img/ioe-logo.png\" class=\"img img-responsive img-circle\" alt=\"profile-pic\" style=\"width:128px; height:128px;\" ></center></p>\n                                                        <h2>IOE Mock Test</h2>\n                                                        <p>You can take one test for Free!</p>\n                                                        <p>\n                                                            <a href=\"rules.php\" class=\"btn btn-default btn-lg\">Start Free Test</a>\n                                                        </p>\n                                                    </div>  \n                                                </div>        \n                                                <div class=\"row test-description\">\n                                    \n                                                    <div class=\"col-md-9 center\">\n                                                        <div class=\"col-md-4\" style=\"border-right:2px solid #D0DEE1; border-left:2px solid #D0DEE1;\">\n                                                            <h2 style=\"margin-bottom:0px;\">100</h2>\n                                                            <p>Questions</p>\n                                                        </div>\n                                                        <div class=\"col-md-4\" style=\"border-right:2px solid #D0DEE1;\">\n                                                            <h2 style=\"margin-bottom:0px;\">2 hours</h2>\n                                                            <p>Total Time</p>\n                                                        </div>\n                                                        <div class=\"col-md-4\" style=\"border-right:2px solid #D0DEE1;\">\n                                                            <h2 style=\"margin-bottom:0px;\">5</h2>\n                                                            <p>Subjects</p>\n                                                        </div>\n                                                        \n                                                    </div>\n                                                </div>\n                                            </div>\n\n                                            <div class=\"container-fluid go-premium\">\n                                                <div class=\"row\">\n                                                    <div class=\"col-md-8 center\">\n                                                        <h2>Go Premium</h2>\n                                                        <p>To practice more sets of question, Go premium. You can recharge Rs 100 and practice 10 Sets of question.</p>\n                                                        <div class=\"question-set\">\n                                                            <a href=\"#\" class=\"btn btn-default\"><span class=\"fa fa-lock\"></span>&nbsp;&nbsp;Question Set 1</a>\n                                                        </div>\n                                                        <div class=\"question-set\">\n                                                            <a href=\"#\" class=\"btn btn-default\"><span class=\"fa fa-lock\"></span>&nbsp;&nbsp;Question Set 2</a>\n                                                        </div>\n                                                        <div class=\"question-set\">\n                                                            <a href=\"#\" class=\"btn btn-default\"><span class=\"fa fa-lock\"></span>&nbsp;&nbsp;Question Set 3</a>\n                                                        </div>\n                                                        <div class=\"question-set\">\n                                                            <a href=\"#\" class=\"btn btn-default\"><span class=\"fa fa-lock\"></span>&nbsp;&nbsp;Question Set 4</a>\n                                                        </div>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                            <!-- IOE div ends -->\n                                        </div>\n                                        <div class=\"tab-pane active\" id=\"tab2\">\n                                            <!-- IOM div starts -->\n                                            <div class=\"container\">\n                                                <div class=\"row\">\n                                                    <div class=\"col-md-6 center\">\n                                                        <p><center><img src=\"assets/img/iom-logo.png\" class=\"img img-responsive img-circle\" alt=\"profile-pic\" style=\"width:128px; height:128px;\" ></center></p>\n                                                        <h2>IOM Mock Test</h2>\n                                                        <p>You can take one test for Free!</p>\n                                                        <p>\n                                                            <a href=\"rules.php\" class=\"btn btn-default btn-lg\">Start Free Test</a>\n                                                        </p>\n                                                    </div>  \n                                                </div>        \n                                                <div class=\"row test-description\">\n                                    \n                                                    <div class=\"col-md-9 center\">\n                                                        <div class=\"col-md-4\" style=\"border-right:2px solid #D0DEE1; border-left:2px solid #D0DEE1;\">\n                                                            <h2 style=\"margin-bottom:0px;\">100</h2>\n                                                            <p>Questions</p>\n                                                        </div>\n                                                        <div class=\"col-md-4\" style=\"border-right:2px solid #D0DEE1;\">\n                                                            <h2 style=\"margin-bottom:0px;\">2 hours</h2>\n                                                            <p>Total Time</p>\n                                                        </div>\n                                                        <div class=\"col-md-4\" style=\"border-right:2px solid #D0DEE1;\">\n                                                            <h2 style=\"margin-bottom:0px;\">5</h2>\n                                                            <p>Subjects</p>\n                                                        </div>\n                                                        \n                                                    </div>\n                                                </div>\n                                            </div>\n\n                                            <div class=\"container-fluid go-premium\">\n                                                <div class=\"row\">\n                                                    <div class=\"col-md-8 center\">\n                                                        <h2>Go Premium</h2>\n                                                        <p>To practice more sets of question, Go premium. You can recharge Rs 100 and practice 10 Sets of question.</p>\n                                                        <div class=\"question-set\">\n                                                            <a href=\"#\" class=\"btn btn-default\"><span class=\"fa fa-lock\"></span>&nbsp;&nbsp;Question Set 1</a>\n                                                        </div>\n                                                        <div class=\"question-set\">\n                                                            <a href=\"#\" class=\"btn btn-default\"><span class=\"fa fa-lock\"></span>&nbsp;&nbsp;Question Set 2</a>\n                                                        </div>\n                                                        <div class=\"question-set\">\n                                                            <a href=\"#\" class=\"btn btn-default\"><span class=\"fa fa-lock\"></span>&nbsp;&nbsp;Question Set 3</a>\n                                                        </div>\n                                                        <div class=\"question-set\">\n                                                            <a href=\"#\" class=\"btn btn-default\"><span class=\"fa fa-lock\"></span>&nbsp;&nbsp;Question Set 4</a>\n                                                        </div>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                            <!-- IOM div ends -->\n                                        </div>\n                                        <div class=\"tab-pane\" id=\"tab3\">\n                                            <!-- MOE div starts -->\n                                            <div class=\"container\">\n                                                <div class=\"row\">\n                                                    <div class=\"col-md-6 center\">\n                                                        <p><center><img src=\"assets/img/moe-logo.png\" class=\"img img-responsive img-circle\" alt=\"profile-pic\" style=\"width:128px; height:128px;\" ></center></p>\n                                                        <h2>MOE Mock Test</h2>\n                                                        <p>You can take one test for Free!</p>\n                                                        <p>\n                                                            <a href=\"rules.php\" class=\"btn btn-default btn-lg\">Start Free Test</a>\n                                                        </p>\n                                                    </div>  \n                                                </div>        \n                                                <div class=\"row test-description\">\n                                    \n                                                    <div class=\"col-md-9 center\">\n                                                        <div class=\"col-md-4\" style=\"border-right:2px solid #D0DEE1; border-left:2px solid #D0DEE1;\">\n                                                            <h2 style=\"margin-bottom:0px;\">100</h2>\n                                                            <p>Questions</p>\n                                                        </div>\n                                                        <div class=\"col-md-4\" style=\"border-right:2px solid #D0DEE1;\">\n                                                            <h2 style=\"margin-bottom:0px;\">2 hours</h2>\n                                                            <p>Total Time</p>\n                                                        </div>\n                                                        <div class=\"col-md-4\" style=\"border-right:2px solid #D0DEE1;\">\n                                                            <h2 style=\"margin-bottom:0px;\">5</h2>\n                                                            <p>Subjects</p>\n                                                        </div>\n                                                        \n                                                    </div>\n                                                </div>\n                                            </div>\n\n                                            <div class=\"container-fluid go-premium\">\n                                                <div class=\"row\">\n                                                    <div class=\"col-md-8 center\">\n                                                        <h2>Go Premium</h2>\n                                                        <p>To practice more sets of question, Go premium. You can recharge Rs 100 and practice 10 Sets of question.</p>\n                                                        <div class=\"question-set\">\n                                                            <a href=\"#\" class=\"btn btn-default\"><span class=\"fa fa-lock\"></span>&nbsp;&nbsp;Question Set 1</a>\n                                                        </div>\n                                                        <div class=\"question-set\">\n                                                            <a href=\"#\" class=\"btn btn-default\"><span class=\"fa fa-lock\"></span>&nbsp;&nbsp;Question Set 2</a>\n                                                        </div>\n                                                        <div class=\"question-set\">\n                                                            <a href=\"#\" class=\"btn btn-default\"><span class=\"fa fa-lock\"></span>&nbsp;&nbsp;Question Set 3</a>\n                                                        </div>\n                                                        <div class=\"question-set\">\n                                                            <a href=\"#\" class=\"btn btn-default\"><span class=\"fa fa-lock\"></span>&nbsp;&nbsp;Question Set 4</a>\n                                                        </div>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                            <!-- MOE div ends -->\n                                        </div>\n                                    </div>\n                            </div>\n                            <!-- tab table ends -->\n                        </div>\n                    </div>\n                </div>\n\n                \n            \n        </section>\n        <!-- Dashboard ends -->\n\n\n		<!-- Footer -->\n		<?php include_once('includes/footer.php'); ?>\n	</body>\n</html>",
-			"file": "/media/saurav/1E1EC4CC1EC49DE1/mock-test/dashboard.php",
-			"file_size": 15433,
-			"file_write_time": 130989574506925380,
+			"file": "onlineExam/onlineExam/templates/login.html",
 			"settings":
 			{
-				"buffer_size": 15227,
-				"line_ending": "Windows"
+				"buffer_size": 2037,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "onlineExam/onlineExam/static/css/main.css",
+			"file": "onlineExam/onlineExam/templates/forgot_password.html",
 			"settings":
 			{
-				"buffer_size": 30226,
+				"buffer_size": 178,
 				"line_ending": "Unix"
 			}
 		}
@@ -675,25 +670,61 @@
 	},
 	"expanded_folders":
 	[
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/exam",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates"
 	],
 	"file_history":
 	[
-		"/media/saurav/UUI2/mock-test/includes/navigation.php",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/register.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/questionset_ioe.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/result_ioe.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/result_iom.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/result_moe.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/solution.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/questionset_iom.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/questionset_moe.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/moe_start.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/rules_ioe.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/rules_iom.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/rules_moe.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/syllabus_ioe.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/base.html",
+		"/media/saurav/UUI2/mock-test/includes/footer.php",
+		"/media/saurav/UUI2/mock-test/index.php",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/syllabus_iom.html",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/urls.py",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/iom_start.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/ioe_start.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/home.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/navbar.html",
+		"/media/saurav/UUI2/mock-test/iom-syllabus.php",
+		"/media/saurav/UUI2/mock-test/ioe-syllabus.php",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/syllabus_moe.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/static/css/main.css",
+		"/media/saurav/UUI2/mock-test/includes/header.php",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/exam/models.py",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/exam/admin.py",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/views.py",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/static/js/slider-scripts.js",
+		"/media/saurav/UUI2/mock-test/assets/css/main.css",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/login.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/footer.html",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/result.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/questionset.html",
+		"/media/saurav/1E1EC4CC1EC49DE1/mock-test/dashboard.php",
+		"/media/saurav/UUI2/mock-test/moe.php",
+		"/media/saurav/UUI2/mock-test/iom.php",
+		"/media/saurav/UUI2/mock-test/ioe.php",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/dashboard.html",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/news.html",
+		"/media/saurav/UUI2/mock-test/solutions.php",
+		"/media/saurav/UUI2/mock-test/includes/navigation.php",
 		"/media/saurav/Data1/mock-test/result.php",
 		"/media/saurav/Data1/mock-test/includes/footer.php",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/about.html",
 		"/media/saurav/UUI2/mock-test/about.php",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/navbar.html",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.0)/onlineExam/onlineExam/templates/dashboard.html",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/home.html",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/dashboard.html",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/static/css/main.css",
 		"/media/saurav/Data1/mock-test/assets/css/main.css",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/dashboard_med.html",
 		"/media/saurav/Data1/mock-test/dashboard-engineer.php",
@@ -701,32 +732,18 @@
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/contact.html",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/settings.py",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/faq.html",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/base.html",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/questionset.html",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/rules_iom.html",
 		"/media/saurav/UUI2/mock-test/faq.php",
 		"/media/saurav/UUI2/mock-test/question.php",
-		"/media/saurav/UUI2/mock-test/includes/footer.php",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/rules_moe.html",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/rules_ioe.html",
 		"/media/saurav/UUI2/mock-test/rules.php",
-		"/media/saurav/UUI2/mock-test/includes/header.php",
 		"/media/saurav/UUI2/mock-test/dashboard.php",
 		"/media/saurav/UUI2/mock-test/contact.php",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/login.html",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/register.html",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/views.py",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/forms.py",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/exam/admin.py",
 		"/media/saurav/UUI2/mock-test/login.php",
 		"/media/saurav/UUI2/mock-test/signup.php",
-		"/media/saurav/UUI2/mock-test/index.php",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/exam/__init__.py",
 		"/home/saurav/Documents/GitDjango/Django/user_login/userLogin/userLogin/settings.py",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/classes.html",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/static/css/style.css",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/news.html",
-		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/footer.html",
 		"/home/saurav/Documents/Django/Online_Quiz/online_quiz/quiz/templates/quiz/index.html",
 		"/home/saurav/Documents/Taranga/Taranga/deliveryVan/VehicleTrackingSystem/templates/userLogin/login.html",
 		"/home/saurav/Documents/nepal_relief/nepal-relief-fund/nepalfund/nepalfund/templates/index.html",
@@ -786,30 +803,7 @@
 		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/templates/survey.html",
 		"/home/saurav/Documents/Django/try-django/src/newsletter/views.py",
 		"/home/saurav/Documents/Django/try-django/src/templates/base.html",
-		"/home/saurav/Documents/Django/try-django/src/templates/navbar.html",
-		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/index.php",
-		"/home/saurav/Documents/Django/try-django/src/templates/head_css.html",
-		"/home/saurav/Documents/Django/try-django/src/newsletter/templates/home.html",
-		"/home/saurav/Documents/Django/innoseva/templates/layout.html",
-		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/views.py",
-		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/templates/base.html",
-		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/urls.py",
-		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/settings_dev.py",
-		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/manage.py",
-		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/settings.py",
-		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/about.php",
-		"/home/saurav/Documents/For BLOG/Nodejs/nodejs+mongodb/index.js",
-		"/home/saurav/Documents/For BLOG/Nodejs/customEvents/index.js",
-		"/home/saurav/Documents/upwork/projects/vehicleTracking/VehicleTrackingSystem/index.js",
-		"/home/saurav/Documents/For BLOG/Nodejs/login and sign up /loginsuccess.html",
-		"/home/saurav/Documents/For BLOG/Nodejs/login and sign up /login.html",
-		"/home/saurav/Documents/For BLOG/Nodejs/login and sign up /signup.html",
-		"/home/saurav/Documents/For BLOG/Nodejs/login and sign up /index.js",
-		"/home/saurav/Documents/upwork/projects/vehicleTracking/VehicleTrackingSystem/templates/userLogin/signup.html",
-		"/home/saurav/Documents/For BLOG/Blog Template/blog.css",
-		"/home/saurav/Documents/For BLOG/Blog Template/index.html",
-		"/home/saurav/Documents/For BLOG/Blog Template/contact.html",
-		"/home/saurav/Documents/For BLOG/Nodejs/simple express server/index.js"
+		"/home/saurav/Documents/Django/try-django/src/templates/navbar.html"
 	],
 	"find":
 	{
@@ -827,6 +821,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"dashbo",
+			"}}\">",
+			"url",
 			"						{{",
 			"a:",
 			"nav",
@@ -861,24 +858,139 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "onlineExam/exam/models.py",
+					"file": "onlineExam/onlineExam/views.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5838,
+						"buffer_size": 23657,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2237,
-								2237
+								19204,
+								19204
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 9814.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "onlineExam/onlineExam/templates/password_forgot.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "onlineExam/onlineExam/templates/password_recover.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "onlineExam/exam/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1331,
+								1331
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/saurav/Documents/Django/TDD/functional_tests.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -886,142 +998,57 @@
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 990.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "onlineExam/exam/admin.py",
+					"buffer": 5,
+					"file": "onlineExam/onlineExam/urls.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3444,
+						"buffer_size": 2823,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3442,
-								3442
+								2169,
+								2169
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 533.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "onlineExam/onlineExam/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14388,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8753,
-								8753
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 4488.0,
+						"translation.y": 348.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/media/saurav/UUI2/mock-test/solutions.php",
+					"buffer": 6,
+					"file": "onlineExam/onlineExam/templates/base.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3579,
+						"buffer_size": 7045,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3495,
-								3495
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 364.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "onlineExam/onlineExam/templates/solution.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4124,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3245,
-								3245
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1083.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "onlineExam/onlineExam/templates/result.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2647,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1986,
-								1986
+								2795,
+								2795
 							]
 						],
 						"settings":
@@ -1031,27 +1058,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 135.0,
+						"translation.y": 495.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "onlineExam/onlineExam/templates/questionset.html",
+					"buffer": 7,
+					"file": "onlineExam/onlineExam/templates/questionset_ioe.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10894,
+						"buffer_size": 7591,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9827,
-								9827
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1059,37 +1086,7 @@
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 4083.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "onlineExam/onlineExam/templates/footer.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2099,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								912,
-								912
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
+						"translation.y": 1755.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 10,
@@ -1097,49 +1094,19 @@
 				},
 				{
 					"buffer": 8,
-					"file": "onlineExam/onlineExam/templates/base.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6314,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4967,
-								4967
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1710.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
 					"file": "onlineExam/onlineExam/templates/dashboard.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16240,
+						"buffer_size": 16282,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5312,
-								5312
+								10539,
+								10539
 							]
 						],
 						"settings":
@@ -1149,100 +1116,97 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 45.0,
+						"translation.y": 2298.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "onlineExam/onlineExam/templates/solution.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4206,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1167,
+								1167
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
 					"buffer": 10,
-					"file": "onlineExam/onlineExam/templates/navbar.html",
+					"file": "onlineExam/onlineExam/templates/login.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4018,
+						"buffer_size": 2037,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1808,
-								1808
+								775,
+								775
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 360.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
 					"buffer": 11,
-					"file": "/media/saurav/1E1EC4CC1EC49DE1/mock-test/dashboard.php",
+					"file": "onlineExam/onlineExam/templates/forgot_password.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15227,
+						"buffer_size": 178,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1092,
-								1092
+								178,
+								178
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 122.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "onlineExam/onlineExam/static/css/main.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 30226,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								30224,
-								30224
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 22260.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]

@@ -13,6 +13,8 @@ SessionStore = import_module(settings.SESSION_ENGINE).SessionStore
 session = SessionStore()
 
 from django.core import serializers
+from django.core.mail import send_mail
+import random
 import json
 
 from exam.models import *
@@ -23,6 +25,7 @@ from django.views.decorators.csrf import csrf_exempt
 def home(request):
 	request.session['rechargeError']=None
 	request.session['qsetError']=None
+	request.session['key'] = None
 	if request.user.is_authenticated():
 		return redirect(reverse('dashboard', args=(request.user.id,)))
 
@@ -80,6 +83,9 @@ def engineer(request):
 	return render(request,'news.html',context)
 
 def register(request):
+	request.session['rechargeError']=None
+	request.session['qsetError']=None
+	request.session['key'] = None
 	if request.method == 'POST':
 		userform = UserForm(request.POST)
 		profileform = UserProfileForm(request.POST)
@@ -125,6 +131,9 @@ def register(request):
 	return render(request,'register.html',context)
 
 def login_view(request):
+	request.session['rechargeError']=None
+	request.session['qsetError']=None
+	request.session['key'] = None
 	if request.method == 'POST':
 		username = request.POST['username']
 		password = request.POST['password']
@@ -659,10 +668,68 @@ def iomsyllabus(request):
 	return render(request, 'syllabus_iom.html', context)
 
 def forgotpassword(request):
-	pass
+	if request.method == 'POST':
+		# print request.POST['email']
+		try:
+			user = User.objects.get(email=request.POST['email'])
+			if user != None:
+				key = str(int(random.random()*100000000))
+				message='<h1>Password Change Key</h1><br/>As you had requested for changing password your key is here: <br/><b>'+key+'</b>'
+				send_mail('Notification: Your password change key is here', '',
+	                'someone@email.com', [request.POST['email'],], fail_silently=False, html_message=message)
+				passchg = PassChgKey.objects.create(key=key, email=request.POST['email'])
+				passchg.save()
+				return redirect(reverse('recoverpassword'))
+			else:
+				context = {
+					'error': 'Email does not exist. Please Provide a valid email.'
+				}
+				return render(request, 'password_forgot.html', context)
+		except Exception as e:
+			context = {
+					'error': 'Email does not exist. Please Provide a valid email.'
+				}
+			return render(request, 'password_forgot.html', context)
+	return render(request, 'password_forgot.html')
 
 def recoverpassword(request):
-	pass
+	if request.method == 'POST':
+		try:
+			key = PassChgKey.objects.get(key=request.POST['key'])
+			if key != None:
+				request.session['key'] = key
+				return redirect(reverse('changepassword'))
+			else:
+				context = {
+					'error': 'Incorrect key'
+				}
+				return render(request, 'password_recover.html', context)
+		except Exception as e:
+			context = {
+					'error': 'Incorrect key'
+				}
+			return render(request, 'password_recover.html', context)
+	return render(request, 'password_recover.html')
+
+def changepassword(request):
+	if request.session['key']:
+		if request.method == 'POST':
+			password1 = request.POST['password1']
+			password2 = request.POST['password2']
+			if password1 == password2:
+				user = User.objects.get(email= request.session['key'].email)
+				user.set_password(password1)
+				user.save()
+				request.session['key']=None
+				return redirect(reverse('login'))
+			else:
+				context={
+					'error': 'Password don\'t match'
+				}
+				return render(request,'password_change.html',context)
+		return render(request,'password_change.html')
+	else:
+		return redirect(reverse('recoverpassword'))
 
 #######################--api--#################
 @csrf_exempt
@@ -823,5 +890,13 @@ def api_result(request,qgroup,qset):
 		return HttpResponse('GFY')
 	
 
-	
+# calling function to delete the password change keys
+import threading
+from datetime import datetime
+
+def removekey():
+	PassChgKey.objects.filter(expiry__lt=datetime.now()).delete()
+	threading.Timer(60, removekey).start()
+
+removekey()
 

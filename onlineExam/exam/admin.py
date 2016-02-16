@@ -41,6 +41,12 @@ class KeyAdmin(admin.ModelAdmin):
 
 	ordering=('-status',)
 
+class PassChgKeyAdmin(admin.ModelAdmin):
+	search_fields=['key']
+	list_display=['key','email','expiry']
+
+	ordering=('-expiry',)
+
 class UserQuestionSetAdmin(admin.ModelAdmin):
 	search_fields=['user']
 	list_display=['user','questionset','status','score']
@@ -104,3 +110,4 @@ admin.site.register(QuestionMOE,QuestionMOEAdmin)
 
 admin.site.register(Faq, FaqAdmin)
 admin.site.register(ContactUs, ContactUsAdmin)
+admin.site.register(PassChgKey,PassChgKeyAdmin)
