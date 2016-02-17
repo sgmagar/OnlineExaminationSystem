@@ -87,6 +87,120 @@
 													{% endfor %}
 												</li>
 											{% endif %}
+											</ul>
+										
+										{% endfor %}
+									</div>
+									<div class="item">
+				                    	{% for question in fifth_group %}  
+					                   	
+											<ul id="{{ question.questionno }}" class="list-group">
+											<li class="list-group-item">{{ question.questionno }}.
+											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
+											{% if qgroup == 'IOE' %}
+												<li class="list-group-item">
+													{% for answer in question.answerioe_set.all|dictsort:'choice' %}
+														
+														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
+														
+													{% endfor %}
+												</li>
+											{% endif %}
+											</ul>
+										
+										{% endfor %}
+									</div>
+									<div class="item">
+				                    	{% for question in sixth_group %}  
+					                   	
+											<ul id="{{ question.questionno }}" class="list-group">
+											<li class="list-group-item">{{ question.questionno }}.
+											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
+											{% if qgroup == 'IOE' %}
+												<li class="list-group-item">
+													{% for answer in question.answerioe_set.all|dictsort:'choice' %}
+														
+														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
+														
+													{% endfor %}
+												</li>
+											{% endif %}
+											</ul>
+										
+										{% endfor %}
+									</div>
+									<div class="item">
+				                    	{% for question in seventh_group %}  
+					                   	
+											<ul id="{{ question.questionno }}" class="list-group">
+											<li class="list-group-item">{{ question.questionno }}.
+											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
+											{% if qgroup == 'IOE' %}
+												<li class="list-group-item">
+													{% for answer in question.answerioe_set.all|dictsort:'choice' %}
+														
+														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
+														
+													{% endfor %}
+												</li>
+											{% endif %}
+											</ul>
+										
+										{% endfor %}
+									</div>
+									<div class="item">
+				                    	{% for question in eighth_group %}  
+					                   	
+											<ul id="{{ question.questionno }}" class="list-group">
+											<li class="list-group-item">{{ question.questionno }}.
+											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
+											{% if qgroup == 'IOE' %}
+												<li class="list-group-item">
+													{% for answer in question.answerioe_set.all|dictsort:'choice' %}
+														
+														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
+														
+													{% endfor %}
+												</li>
+											{% endif %}
+											</ul>
+										
+										{% endfor %}
+									</div>
+									<div class="item">
+				                    	{% for question in nineth_group %}  
+					                   	
+											<ul id="{{ question.questionno }}" class="list-group">
+											<li class="list-group-item">{{ question.questionno }}.
+											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
+											{% if qgroup == 'IOE' %}
+												<li class="list-group-item">
+													{% for answer in question.answerioe_set.all|dictsort:'choice' %}
+														
+														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
+														
+													{% endfor %}
+												</li>
+											{% endif %}
+											</ul>
+										
+										{% endfor %}
+									</div>
+									<div class="item">
+				                    	{% for question in tenth_group %}  
+					                   	
+											<ul id="{{ question.questionno }}" class="list-group">
+											<li class="list-group-item">{{ question.questionno }}.
+											{{ question.question }} {% if question.qfile != "" %}<img src1="/media/{{ question.qfile }}">{% endif %}</li>
+											{% if qgroup == 'IOE' %}
+												<li class="list-group-item">
+													{% for answer in question.answerioe_set.all|dictsort:'choice' %}
+														
+														{{ answer.choice }})&nbsp;<input type="radio" name={{ question.questionno|stringformat:"i" }} value={{ answer.choice }} />&nbsp;{{ answer.answer }}<br/>
+														
+													{% endfor %}
+												</li>
+											{% endif %}
 
 											</ul>
 										

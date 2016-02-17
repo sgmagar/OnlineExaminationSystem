@@ -1,0 +1,19 @@
+1. IOM
+	physics: 1-20
+	chemistry: 21-50
+	Zoology:50-80
+	Botany: 81-100
+2. MOE
+	physics: 1-30
+	chemistry: 31-60
+	zoology: 61-80
+	Botany: 81-100 
+
+changed:
+	models.py
+	views.py
+	questionset_ioe.html
+	questionset_iom.html
+	questionset_moe.html
+	result_moe.html
+	result_iom.html

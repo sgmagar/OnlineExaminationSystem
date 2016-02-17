@@ -94,7 +94,7 @@ class QuestionIOE(models.Model):
 			('Chemistry','Chemistry'),
 			('E-Aptitude','Engineering Aptitude Test'),
 		)
-	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)
+	subject = models.CharField(default='Physics',max_length=12, choices=SUBJECT_CHOICES)
 	TYPE_CHOICES=(
 			('Short','Short'),
 			('Long','Long'),
@@ -133,12 +133,11 @@ class QuestionIOM(models.Model):
 	questionno = models.IntegerField()
 	SUBJECT_CHOICES=(
 			('Physics','Physics'),
-			('Math','Math'),
-			('English','English'),
 			('Chemistry','Chemistry'),
-			('Drawing','Drawing'),
+			('Zoology','Zoology'),
+			('Botany','Botany'),
 		)
-	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)
+	subject = models.CharField(default='Physics',max_length=12, choices=SUBJECT_CHOICES)
 	TYPE_CHOICES=(
 			('Short','Short'),
 			('Long','Long'),
@@ -174,12 +173,11 @@ class QuestionMOE(models.Model):
 	questionno = models.IntegerField()
 	SUBJECT_CHOICES=(
 			('Physics','Physics'),
-			('Math','Math'),
-			('English','English'),
 			('Chemistry','Chemistry'),
-			('Drawing','Drawing'),
+			('Zoology','Zoology'),
+			('Botany','Botany'),
 		)
-	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)
+	subject = models.CharField(default='Physics',max_length=12, choices=SUBJECT_CHOICES)
 	TYPE_CHOICES=(
 			('Short','Short'),
 			('Long','Long'),

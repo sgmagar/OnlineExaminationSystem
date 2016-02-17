@@ -219,11 +219,12 @@ def recharge(request):
 			# print request.session['rechargeError']
 		else:
 			qset = user.userquestionset_set.filter(qgroup=group).count()
-			for i in range(1,11):
-				userquestionset=UserQuestionSet.objects.create(user=user,qgroup=group,questionset=qset+i)
-				userquestionset.save()
-			key[0].status=True
-			key[0].save()
+			if qset <=50:
+				for i in range(1,11):
+					userquestionset=UserQuestionSet.objects.create(user=user,qgroup=group,questionset=qset+i)
+					userquestionset.save()
+				key[0].status=True
+				key[0].save()
 
 
 	return redirect(reverse('dashboard', args=(request.user.id,)))
@@ -231,16 +232,28 @@ def recharge(request):
 def questionset(request,qgroup,qset):
 	if qgroup.strip() == 'IOE':
 		if len(request.user.userquestionset_set.filter(qgroup='IOE',questionset=qset))>0 or qset==str(150):
-			english_question = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')
-			first_group = english_question[:10]
-			second_group = english_question[10:20] 
-			third_group = english_question[20:30]
-			fourth_group = english_question[30:40]
+			question = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')
+			first_group = question[:10]
+			second_group = question[10:20] 
+			third_group = question[20:30]
+			fourth_group = question[30:40]
+			fifth_group = question[40:50]
+			sixth_group = question[50:60]
+			seventh_group = question[60:70]
+			eighth_group = question[70:80]
+			nineth_group = question[80:90]
+			tenth_group = question[90:100]
 			context={
 				'first_group':first_group,
 				'second_group':second_group,
 				'third_group':third_group,
 				'fourth_group':fourth_group,
+				'fifth_group': fifth_group,
+				'sixth_group': sixth_group,
+				'seventh_group': seventh_group,
+				'eighth_group': eighth_group,
+				'nineth_group': nineth_group,
+				'tenth_group': tenth_group,
 				'qgroup':qgroup,
 				'qset':qset,
 			}
@@ -250,23 +263,63 @@ def questionset(request,qgroup,qset):
 			return redirect(reverse('dashboard' ,args=(request.user.id,)))
 	if qgroup.strip() == 'IOM':
 		if(len(request.user.userquestionset_set.filter(qgroup='IOM',questionset=qset,status=False))>0) or qset==str(150):
-			print qgroup,qset
-			context = {
+			question = QuestionIOM.objects.filter(questionset=qset).order_by('questionno')
+			first_group = question[:10]
+			second_group = question[10:20] 
+			third_group = question[20:30]
+			fourth_group = question[30:40]
+			fifth_group = question[40:50]
+			sixth_group = question[50:60]
+			seventh_group = question[60:70]
+			eighth_group = question[70:80]
+			nineth_group = question[80:90]
+			tenth_group = question[90:100]
+			context={
+				'first_group':first_group,
+				'second_group':second_group,
+				'third_group':third_group,
+				'fourth_group':fourth_group,
+				'fifth_group': fifth_group,
+				'sixth_group': sixth_group,
+				'seventh_group': seventh_group,
+				'eighth_group': eighth_group,
+				'nineth_group': nineth_group,
+				'tenth_group': tenth_group,
 				'qgroup':qgroup,
 				'qset':qset,
 			}
-			return render(request, 'questionset_iom.html', context)
+			return render(request,'questionset_iom.html',context)
 		else:
 			request.session['qsetError']="You don't have acces to this question"
 			return redirect(reverse('dashboard' ,args=(request.user.id,)))
 	if qgroup.strip() == 'MOE':
 		if(len(request.user.userquestionset_set.filter(qgroup='MOE',questionset=qset,status=False))>0) or qset==str(150):
-			print qgroup,qset
-			context = {
+			question = QuestionMOE.objects.filter(questionset=qset).order_by('questionno')
+			first_group = question[:10]
+			second_group = question[10:20] 
+			third_group = question[20:30]
+			fourth_group = question[30:40]
+			fifth_group = question[40:50]
+			sixth_group = question[50:60]
+			seventh_group = question[60:70]
+			eighth_group = question[70:80]
+			nineth_group = question[80:90]
+			tenth_group = question[90:100]
+			context={
+				'first_group':first_group,
+				'second_group':second_group,
+				'third_group':third_group,
+				'fourth_group':fourth_group,
+				'fifth_group': fifth_group,
+				'sixth_group': sixth_group,
+				'seventh_group': seventh_group,
+				'eighth_group': eighth_group,
+				'nineth_group': nineth_group,
+				'tenth_group': tenth_group,
 				'qgroup':qgroup,
 				'qset':qset,
 			}
-			return render(request, 'questionset_moe.html', context)
+			return render(request,'questionset_moe.html',context)
 		else:
 			request.session['qsetError']="You don't have acces to this question"
 			return redirect(reverse('dashboard' ,args=(request.user.id,)))
@@ -278,7 +331,127 @@ def checkset(request, qgroup, qset):
 	if request.method == 'POST':
 		print request.POST
 		
-		if qgroup == 'IOE':
+		if qgroup == 'IOM':
+			wrong=[]
+			not_attempted = []
+			correct = []
+			total = 100
+			physics_total = 20
+			physics_attempted = 0
+			physics_correct = 0
+			physics_mark = 0
+			chemistry_total = 30
+			chemistry_attempted = 0
+			chemistry_correct = 0
+			chemistry_mark = 0
+			zoology_total = 30
+			zoology_attempted = 0
+			zoology_correct = 0
+			zoology_mark = 0
+			botany_total = 20
+			botany_attempted = 0
+			botany_correct = 0
+			botany_mark = 0
+			questionIOM = QuestionIOM.objects.filter(questionset=qset).order_by('questionno')
+			for i in range(1,101):
+				if i<=20:
+					try:
+						if request.POST[str(i)]:
+							physics_attempted +=1
+
+							if request.POST[str(i)] == questionIOM[i-1].answer:
+								correct.append(i)
+								physics_correct += 1
+								physics_mark +=1	
+												
+							else:
+								wrong.append(i)
+
+					except Exception as ex:
+						not_attempted.append(i)
+
+				elif i<=50:
+					try:
+						if request.POST[str(i)]:
+							chemistry_attempted +=1
+							
+							if request.POST[str(i)] == questionIOM[i-1].answer:
+								correct.append(i)
+								chemistry_correct += 1
+								chemistry_mark +=1	
+													
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
+
+				elif i<=80:
+					try:
+						if request.POST[str(i)]:
+							zoology_attempted +=1
+							
+							if request.POST[str(i)] == questionIOM[i-1].answer:
+								correct.append(i)
+								zoology_correct += 1
+								zoology_mark +=1	
+													
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
+				elif i<=100:
+					try:
+						if request.POST[str(i)]:
+							botany_attempted +=1
+							
+							if request.POST[str(i)] == questionIOM[i-1].answer:
+								correct.append(i)
+								botany_correct += 1
+								botany_mark +=1	
+													
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
+				else:
+					pass
+
+		
+			request.session['checked_questions'] = {'qgroup':qgroup,'qset':qset,'wrong':wrong,
+				'not_attempted':not_attempted,'correct':correct}
+			if qset != str(150):
+				userquestionset = request.user.userquestionset_set.get(qgroup=qgroup, questionset=qset)
+				userquestionset.score = physics_mark + chemistry_mark + zoology_mark + botany_mark
+				userquestionset.status = True 
+				userquestionset.save()
+			score = {
+				'qgroup':qgroup,
+				'qset': qset,
+				'physics_total': physics_total,
+				'physics_attempted': physics_attempted,
+				'physics_correct': physics_correct,
+				'physics_mark': physics_mark,
+				'chemistry_total': chemistry_total,
+				'chemistry_attempted': chemistry_attempted,
+				'chemistry_correct': chemistry_correct,
+				'chemistry_mark': chemistry_mark,
+				'zoology_total': zoology_total,
+				'zoology_attempted': zoology_attempted,
+				'zoology_correct': zoology_correct,
+				'zoology_mark': zoology_mark,
+				'botany_total': botany_total,
+				'botany_attempted': botany_attempted,
+				'botany_correct': botany_correct,
+				'botany_mark': botany_mark,
+				'total': total,
+				'total_attempted': physics_attempted + chemistry_attempted + zoology_attempted + botany_attempted,
+				'total_correct': physics_correct + chemistry_correct + zoology_correct + botany_correct,
+				'total_mark': physics_mark + chemistry_mark + zoology_mark + botany_mark,
+			}
+			request.session["solution"] = "okay"
+			return render(request, 'result_iom.html', score)
+
+		elif qgroup == 'IOE':
 			wrong=[]
 			not_attempted = []
 			correct = []
@@ -489,18 +662,124 @@ def checkset(request, qgroup, qset):
 			}
 			request.session["solution"] = "okay"
 			return render(request, 'result_ioe.html', score)
+		if qgroup == 'MOE':
+			wrong=[]
+			not_attempted = []
+			correct = []
+			total = 100
+			physics_total = 30
+			physics_attempted = 0
+			physics_correct = 0
+			physics_mark = 0
+			chemistry_total = 30
+			chemistry_attempted = 0
+			chemistry_correct = 0
+			chemistry_mark = 0
+			zoology_total = 20
+			zoology_attempted = 0
+			zoology_correct = 0
+			zoology_mark = 0
+			botany_total = 20
+			botany_attempted = 0
+			botany_correct = 0
+			botany_mark = 0
+			questionMOE = QuestionMOE.objects.filter(questionset=qset).order_by('questionno')
+			for i in range(1,101):
+				if i<=30:
+					try:
+						if request.POST[str(i)]:
+							physics_attempted +=1
 
-		elif qgroup == 'IOM':
+							if request.POST[str(i)] == questionMOE[i-1].answer:
+								correct.append(i)
+								physics_correct += 1
+								physics_mark +=1	
+												
+							else:
+								wrong.append(i)
+
+					except Exception as ex:
+						not_attempted.append(i)
+
+				elif i<=60:
+					try:
+						if request.POST[str(i)]:
+							chemistry_attempted +=1
+							
+							if request.POST[str(i)] == questionMOE[i-1].answer:
+								correct.append(i)
+								chemistry_correct += 1
+								chemistry_mark +=1	
+													
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
+
+				elif i<=80:
+					try:
+						if request.POST[str(i)]:
+							zoology_attempted +=1
+							
+							if request.POST[str(i)] == questionMOE[i-1].answer:
+								correct.append(i)
+								zoology_correct += 1
+								zoology_mark +=1	
+													
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
+				elif i<=100:
+					try:
+						if request.POST[str(i)]:
+							botany_attempted +=1
+							
+							if request.POST[str(i)] == questionMOE[i-1].answer:
+								correct.append(i)
+								botany_correct += 1
+								botany_mark +=1	
+													
+							else:
+								wrong.append(i)
+					except Exception as ex:
+						not_attempted.append(i)
+				else:
+					pass
+
+		
+			request.session['checked_questions'] = {'qgroup':qgroup,'qset':qset,'wrong':wrong,
+				'not_attempted':not_attempted,'correct':correct}
+			if qset != str(150):
+				userquestionset = request.user.userquestionset_set.get(qgroup=qgroup, questionset=qset)
+				userquestionset.score = physics_mark + chemistry_mark + zoology_mark + botany_mark
+				userquestionset.status = True 
+				userquestionset.save()
 			score = {
 				'qgroup':qgroup,
 				'qset': qset,
+				'physics_total': physics_total,
+				'physics_attempted': physics_attempted,
+				'physics_correct': physics_correct,
+				'physics_mark': physics_mark,
+				'chemistry_total': chemistry_total,
+				'chemistry_attempted': chemistry_attempted,
+				'chemistry_correct': chemistry_correct,
+				'chemistry_mark': chemistry_mark,
+				'zoology_total': zoology_total,
+				'zoology_attempted': zoology_attempted,
+				'zoology_correct': zoology_correct,
+				'zoology_mark': zoology_mark,
+				'botany_total': botany_total,
+				'botany_attempted': botany_attempted,
+				'botany_correct': botany_correct,
+				'botany_mark': botany_mark,
+				'total': total,
+				'total_attempted': physics_attempted + chemistry_attempted + zoology_attempted + botany_attempted,
+				'total_correct': physics_correct + chemistry_correct + zoology_correct + botany_correct,
+				'total_mark': physics_mark + chemistry_mark + zoology_mark + botany_mark,
 			}
-			return render(request, 'result_iom.html', score)
-		elif qgroup == 'MOE':
-			score = {
-				'qgroup':qgroup,
-				'qset': qset,
-			}
+			request.session["solution"] = "okay"
 			return render(request, 'result_moe.html', score)
 		else:
 			pass
@@ -550,7 +829,7 @@ def solution(request, qgroup, qset):
 			return render(request, 'solution.html', context)
 		elif request.session['checked_questions']['qgroup'] == 'MOE':
 			questionMOE = QuestionMOE.objects.filter(questionset=qset).order_by('questionno')
-			for question in questionIOE:
+			for question in questionMOE:
 				if question.questionno in request.session['checked_questions']['wrong']:
 					question.status = 'wrong'
 				elif question.questionno in request.session['checked_questions']['not_attempted']:
@@ -666,6 +945,11 @@ def iomsyllabus(request):
 
 	}
 	return render(request, 'syllabus_iom.html', context)
+def moesyllabus(request):
+	context = {
+
+	}
+	return render(request, 'syllabus_moe.html', context)
 
 def forgotpassword(request):
 	if request.method == 'POST':
