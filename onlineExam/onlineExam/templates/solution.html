@@ -53,7 +53,7 @@
 									  	{% for answer in question.answeriom_set.all %}
 									  		{% if question.answer == answer.choice %}
 									  			<p>Answer: {% autoescape off %}{{ answer.answer }}{% endautoescape %} </p>
-									   			<p>Solution:{{% autoescape off %}{ answer.hint }}{% endautoescape %} </p> 
+									   			<p>Solution:{% autoescape off %}{{ answer.hint }}{% endautoescape %} </p> 
 									  		{% endif %}
 									  	{% endfor %}
 								   </div>
@@ -78,8 +78,8 @@
 									  <div class="faq-a">
 									  	{% for answer in question.answermoe_set.all %}
 									  		{% if question.answer == answer.choice %}
-									  			<p>Answer: {{% autoescape off %}{{ answer.answer }}{% endautoescape %} </p>
-									   			<p>Solution:{{% autoescape off %} {{ answer.hint }}{% endautoescape %} </p> 
+									  			<p>Answer: {% autoescape off %}{{ answer.answer }}{% endautoescape %} </p>
+									   			<p>Solution:{% autoescape off %} {{ answer.hint }}{% endautoescape %} </p> 
 									  		{% endif %}
 									  	{% endfor %}
 								   </div>
