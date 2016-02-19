@@ -53,6 +53,9 @@ urlpatterns = [
     url(r'^api/dashboard', api_dashboard),
     url(r'api/questions/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', api_questions),
     url(r'api/result/(?P<qgroup>\w{0,30})/(?P<qset>[0-9]+)/', api_result),
+    url(r'^api/forgot-password/', api_forgotpassword),
+    url(r'^api/recover-password/', api_recoverpassword),
+    url(r'^api/change-password/', api_changepassword),
 ]
 
 if settings.DEBUG:

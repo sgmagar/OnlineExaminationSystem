@@ -1199,7 +1199,55 @@ def api_result(request,qgroup,qset):
 			return HttpResponse('GFY')
 	else:
 		return HttpResponse('GFY')
-	
+
+@csrf_exempt
+def api_forgotpassword(request):
+	if request.method == 'POST':
+		# print request.POST['email']
+		try:
+			user = User.objects.get(email=request.POST['email'])
+			if user != None:
+				key = str(int(random.random()*100000000))
+				message='<h1>Password Change Key</h1><br/>As you had requested for changing password your key is here: <br/><b>'+key+'</b>'
+				send_mail('Notification: Your password change key is here', '',
+	                'someone@email.com', [request.POST['email'],], fail_silently=False, html_message=message)
+				passchg = PassChgKey.objects.create(key=key, email=request.POST['email'])
+				passchg.save()
+				print user
+				return HttpResponse('226')
+			else:
+				return HttpResponse('224')
+		except Exception as e:
+			return HttpResponse('224')
+	return HttpResponse('GFY')
+@csrf_exempt
+def api_recoverpassword(request):
+	if request.method == 'POST':
+		try:
+			key = PassChgKey.objects.get(key=request.POST['key'])
+			if key != None:
+				response = {'code':'226','email':key.email}
+				response = json.dumps(response)
+				return HttpResponse(response)
+			else:
+				return HttpResponse('224')
+		except Exception as e:
+			return HttpResponse('224')
+	return HttpResponse('GFY')
+@csrf_exempt
+def api_changepassword(request):
+	email = request.META['HTTP_EMAIL']
+	if request.method == 'POST':
+		password = request.POST['password']
+		user = User.objects.get(email= email)
+		user.set_password(password)
+		user.save()
+		return HttpResponse('226')
+	else:
+		return HttpResponse('GFY')
+
+
+
 
 # calling function to delete the password change keys
 import threading
