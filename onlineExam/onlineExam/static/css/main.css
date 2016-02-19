@@ -1025,21 +1025,34 @@ li.socials-icons
 }
 #dashboard .go-premium{
     background:#E9EAEA;
+    padding-top: 50px;
 }
 #dashboard .go-premium .btn-default{
     background-color: #FFFFFF;
     color: #000;
-    padding: 4% 30%;
+    padding: 2% 30%;
     margin-top: 5px;
     margin-bottom: 30px;
+
 }
 #dashboard .go-premium .btn-default:hover{
     background-color: #46A1B4;
     color: #FFFFFF;
 }
-#dashboard .go-premium a{
+#dashboard .go-premium .btn-default:hover .set-no,#dashboard .go-premium .btn-default:hover .marks{
+    background-color: #46A1B4;
+    color: #FFFFFF;
+}
+#dashboard .go-premium .set-no{
     font-size: 20px;
 }
+#dashboard .go-premium .marks{
+    font-size: 14px;
+    color: #46A1B4;
+    font-weight: 600;
+    /*color: red;*/
+}
+
 .rules{
     margin-bottom: 30px;
 }

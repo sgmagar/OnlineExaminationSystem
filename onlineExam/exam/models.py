@@ -152,7 +152,7 @@ class QuestionIOM(models.Model):
 		)
 	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	qfile = models.ImageField(default=None,blank=True, upload_to="IOE/question/%y/%m/%d/%H/%M/%S")
-	hint = models.TextField(default=None)
+	hint = models.TextField(default=None, blank=True)
 	def __unicode__(self):
 		return str(self.questionset)+" "+str(self.questionno)+" "+ self.subject+"\t"+self.question
 
@@ -192,7 +192,7 @@ class QuestionMOE(models.Model):
 		)
 	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	qfile = models.ImageField(default=None,blank=True, upload_to="IOE/question/%y/%m/%d/%H/%M/%S")
-	hint = models.TextField(default=None)
+	hint = models.TextField(default=None, blank=True)
 	def __unicode__(self):
 		return str(self.questionset)+" "+str(self.questionno)+" "+ self.subject+"\t"+self.question
 

@@ -58,13 +58,143 @@
                                                         <p>To practice more sets of question, Go premium. You can recharge Rs 100 and practice 10 Sets of question.</p>
                                                         {% if rechargeError != None %}<div class="alert alert-danger"> {{rechargeError}}</div>{% endif %}
 														<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p>
-														{% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
-										    			{% if ioe_questionset|length > 0 %}
-										    				
-										    				{% for qset in ioe_questionset %}
-										    					<div class="question-set"><a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >Question Set {{ qset.questionset|stringformat:"i" }}</a>{% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
-										    				{% endfor %}
-										    			{% endif %}
+                                                        {% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
+                                                        <div class="tabtable"> 
+                                                            <ul class="nav nav-tabs">
+                                                            {% if ioe_questionset_1|length > 0 %}
+                                                                <li class="active"><a href="#ioe-set1" data-toggle="tab">Group 1</a></li>
+                                                            {% endif %}
+                                                            {% if ioe_questionset_2|length > 0 %}
+                                                                <li class="active2"><a href="#ioe-set2" data-toggle="tab">Group 2</a></li>
+                                                            {% endif %}
+                                                            {% if ioe_questionset_3|length > 0 %}
+                                                                <li class="active2"><a href="#ioe-set3" data-toggle="tab">Group 3</a></li>
+                                                            {% endif %}
+                                                            {% if ioe_questionset_4|length > 0 %}
+                                                                <li class="active2"><a href="#ioe-set4" data-toggle="tab">Group 4</a></li>
+                                                            {% endif %}
+                                                            {% if ioe_questionset_5|length > 0 %}
+                                                                <li class="active2"><a href="#ioe-set5" data-toggle="tab">Group 5</a></li>
+                                                            {% endif %}
+                                                            </ul>
+                                                            <div class="tab-content">
+                                                                {% if ioe_questionset_1|length > 0 %}
+                                                                    <div class="tab-pane active" id="ioe-set1">
+                                                                    {% for qset in ioe_questionset_1 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default text-left" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                    {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if ioe_questionset_2|length > 0 %}
+                                                                    <div class="tab-pane active2" id="ioe-set2">
+                                                                    {% for qset in ioe_questionset_2 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if ioe_questionset_3|length > 0 %}
+                                                                    <div class="tab-pane active2" id="ioe-set3">
+                                                                    {% for qset in ioe_questionset_3 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if ioe_questionset_4|length > 0 %}
+                                                                    <div class="tab-pane active2" id="ioe-set4">
+                                                                    {% for qset in ioe_questionset_4 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if ioe_questionset_5|length > 0 %}
+                                                                    <div class="tab-pane active2" id="ioe-set5">
+                                                                    {% for qset in ioe_questionset_5 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                
+                                                                
+
+                                                            </div>
+                                                        </div> 
+														
+										    			
                                                         
                                                     </div>
                                                 </div>
@@ -113,12 +243,141 @@
 															<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p>
 															
                                                         {% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
-										    			{% if iom_questionset|length > 0 %}
-										    				
-										    				{% for qset in iom_questionset %}
-										    					<div class="question-set"><a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >Question Set {{ qset.questionset|stringformat:"i" }}</a>{% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
-										    				{% endfor %}
-										    			{% endif %}
+										    			<div class="tabtable"> 
+                                                            <ul class="nav nav-tabs">
+                                                            {% if iom_questionset_1|length > 0 %}
+                                                                <li class="active"><a href="#iom-set1" data-toggle="tab">Group 1</a></li>
+                                                            {% endif %}
+                                                            {% if iom_questionset_2|length > 0 %}
+                                                                <li class="active2"><a href="#iom-set2" data-toggle="tab">Group 2</a></li>
+                                                            {% endif %}
+                                                            {% if iom_questionset_3|length > 0 %}
+                                                                <li class="active2"><a href="#iom-set3" data-toggle="tab">Group 3</a></li>
+                                                            {% endif %}
+                                                            {% if iom_questionset_4|length > 0 %}
+                                                                <li class="active2"><a href="#iom-set4" data-toggle="tab">Group 4</a></li>
+                                                            {% endif %}
+                                                            {% if iom_questionset_5|length > 0 %}
+                                                                <li class="active2"><a href="#iom-set5" data-toggle="tab">Group 5</a></li>
+                                                            {% endif %}
+                                                            </ul>
+                                                            <div class="tab-content">
+                                                                {% if iom_questionset_1|length > 0 %}
+                                                                    <div class="tab-pane active" id="iom-set1">
+                                                                    {% for qset in iom_questionset_1 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default text-left" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                    {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if iom_questionset_2|length > 0 %}
+                                                                    <div class="tab-pane active2" id="iom-set2">
+                                                                    {% for qset in iom_questionset_2 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if iom_questionset_3|length > 0 %}
+                                                                    <div class="tab-pane active2" id="iom-set3">
+                                                                    {% for qset in iom_questionset_3 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if iom_questionset_4|length > 0 %}
+                                                                    <div class="tab-pane active2" id="iom-set4">
+                                                                    {% for qset in iom_questionset_4 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if iom_questionset_5|length > 0 %}
+                                                                    <div class="tab-pane active2" id="iom-set5">
+                                                                    {% for qset in iom_questionset_5 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                
+                                                                
+
+                                                            </div>
+                                                        </div> 
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -166,12 +425,141 @@
 															<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p>
 															
                                                         {% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
-										    			{% if moe_questionset|length > 0 %}
-										    				
-										    				{% for qset in moe_questionset %}
-										    					<div class="question-set"><a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >Question Set {{ qset.questionset|stringformat:"i" }}</a>{% if qset.status == True %} &nbsp;&nbsp;{{ qset.score|stringformat:"i" }}{% endif %}</div>
-										    				{% endfor %}
-										    			{% endif %}
+										    			<div class="tabtable"> 
+                                                            <ul class="nav nav-tabs">
+                                                            {% if moe_questionset_1|length > 0 %}
+                                                                <li class="active"><a href="#moe-set1" data-toggle="tab">Group 1</a></li>
+                                                            {% endif %}
+                                                            {% if moe_questionset_2|length > 0 %}
+                                                                <li class="active2"><a href="#moe-set2" data-toggle="tab">Group 2</a></li>
+                                                            {% endif %}
+                                                            {% if moe_questionset_3|length > 0 %}
+                                                                <li class="active2"><a href="#moe-set3" data-toggle="tab">Group 3</a></li>
+                                                            {% endif %}
+                                                            {% if moe_questionset_4|length > 0 %}
+                                                                <li class="active2"><a href="#moe-set4" data-toggle="tab">Group 4</a></li>
+                                                            {% endif %}
+                                                            {% if moe_questionset_5|length > 0 %}
+                                                                <li class="active2"><a href="#moe-set5" data-toggle="tab">Group 5</a></li>
+                                                            {% endif %}
+                                                            </ul>
+                                                            <div class="tab-content">
+                                                                {% if moe_questionset_1|length > 0 %}
+                                                                    <div class="tab-pane active" id="moe-set1">
+                                                                    {% for qset in moe_questionset_1 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default text-left" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                    {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if moe_questionset_2|length > 0 %}
+                                                                    <div class="tab-pane active2" id="moe-set2">
+                                                                    {% for qset in moe_questionset_2 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if moe_questionset_3|length > 0 %}
+                                                                    <div class="tab-pane active2" id="moe-set3">
+                                                                    {% for qset in moe_questionset_3 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if moe_questionset_4|length > 0 %}
+                                                                    <div class="tab-pane active2" id="moe-set4">
+                                                                    {% for qset in moe_questionset_4 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if moe_questionset_5|length > 0 %}
+                                                                    <div class="tab-pane active2" id="moe-set5">
+                                                                    {% for qset in moe_questionset_5 %}
+                                                                            <div class="question-set">
+                                                                            <a href="{% url 'rules' qset.qgroup qset.questionset %}" class="btn btn-default" >
+                                                                            <p class="set-no">
+                                                                            {% if qset.status == False %}
+                                                                                <span class="fa fa-lock"></span>&nbsp;
+                                                                            {% endif %}
+                                                                            Question Set {{ qset.questionset|stringformat:"i" }}
+                                                                            </p>
+
+                                                                            {% if qset.status == True %}
+                                                                                <p class="marks">
+                                                                                Previous marks : {{ qset.score|stringformat:"i" }}
+                                                                                </p>
+                                                                            {% endif %}
+                                                                            </a>
+                                                                            </div>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                
+                                                                
+
+                                                            </div>
+                                                        </div> 
+                                                        
                                                     </div>
                                                 </div>
                                             </div>

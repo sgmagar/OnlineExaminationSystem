@@ -180,6 +180,21 @@ def dashboard(request, id):
 		ioe_questionset = request.user.userquestionset_set.filter(qgroup='IOE').order_by('questionset')
 		iom_questionset = request.user.userquestionset_set.filter(qgroup='IOM').order_by('questionset')
 		moe_questionset = request.user.userquestionset_set.filter(qgroup='MOE').order_by('questionset')
+		ioe_questionset_1 = ioe_questionset[:10]
+		ioe_questionset_2 = ioe_questionset[10:20]
+		ioe_questionset_3 = ioe_questionset[20:30]
+		ioe_questionset_4 = ioe_questionset[30:40]
+		ioe_questionset_5 = ioe_questionset[40:50]
+		iom_questionset_1 = iom_questionset[:10]
+		iom_questionset_2 = iom_questionset[10:20]
+		iom_questionset_3 = iom_questionset[20:30]
+		iom_questionset_4 = iom_questionset[30:40]
+		iom_questionset_5 = iom_questionset[40:50]
+		moe_questionset_1 = moe_questionset[:10]
+		moe_questionset_2 = moe_questionset[10:20]
+		moe_questionset_3 = moe_questionset[20:30]
+		moe_questionset_4 = moe_questionset[30:40]
+		moe_questionset_5 = moe_questionset[40:50]
 		# ioefreeset = QuestionIOE.objects.filter(questionset=150)
 		# moefreeset = QuestionMOE.objects.filter(questionset=150)
 		# iomfreeset = QuestionIOM.objects.filter(questionset=150)
@@ -190,10 +205,22 @@ def dashboard(request, id):
 			'title':'Dashboard',
 			'rechargeError': request.session['rechargeError'],
 			'qsetError': request.session['qsetError'],
-			'ioe_questionset':ioe_questionset,
-			'iom_questionset':iom_questionset,
-			'moe_questionset':moe_questionset,
 			'firstname':user.first_name,
+			'ioe_questionset_1': ioe_questionset_1,
+			'ioe_questionset_2': ioe_questionset_2,
+			'ioe_questionset_3': ioe_questionset_3,
+			'ioe_questionset_4': ioe_questionset_4,
+			'ioe_questionset_5': ioe_questionset_5,
+			'iom_questionset_1': iom_questionset_1,
+			'iom_questionset_2': iom_questionset_2,
+			'iom_questionset_3': iom_questionset_3,
+			'iom_questionset_4': iom_questionset_4,
+			'iom_questionset_5': iom_questionset_5,
+			'moe_questionset_1': moe_questionset_1,
+			'moe_questionset_2': moe_questionset_2,
+			'moe_questionset_3': moe_questionset_3,
+			'moe_questionset_4': moe_questionset_4,
+			'moe_questionset_5': moe_questionset_5,
 			# 'ioefreeset':ioefreeset,
 			# 'moefreeset':moefreeset,
 			# 'iomfreeset':iomfreeset,
