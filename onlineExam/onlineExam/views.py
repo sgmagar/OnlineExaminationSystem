@@ -1115,9 +1115,9 @@ def api_dashboard(request):
 			ioe_set = []
 			iom_set = []
 			moe_set = []
-			ioe_questionset = request.user.userquestionset_set.filter(qgroup='IOE').order_by('questionset')
-			iom_questionset = request.user.userquestionset_set.filter(qgroup='IOM').order_by('questionset')
-			moe_questionset = request.user.userquestionset_set.filter(qgroup='MOE').order_by('questionset')
+			ioe_questionset = user.userquestionset_set.filter(qgroup='IOE').order_by('questionset')
+			iom_questionset = user.userquestionset_set.filter(qgroup='IOM').order_by('questionset')
+			moe_questionset = user.userquestionset_set.filter(qgroup='MOE').order_by('questionset')
 			for qset in ioe_questionset:
 				ioe_set.append({'questionset':qset.questionset,'score':qset.score})
 			for qset in iom_questionset:
