@@ -56,6 +56,7 @@ urlpatterns = [
     url(r'^api/forgot-password/', api_forgotpassword),
     url(r'^api/recover-password/', api_recoverpassword),
     url(r'^api/change-password/', api_changepassword),
+     url(r'^api/recharge/', api_recharge),
 ]
 
 if settings.DEBUG:

@@ -252,6 +252,8 @@ def recharge(request):
 					userquestionset.save()
 				key[0].status=True
 				key[0].save()
+			else: 
+				request.session['rechargeError']='Limit Excedded! No more set'
 
 
 	return redirect(reverse('dashboard', args=(request.user.id,)))
@@ -1243,6 +1245,42 @@ def api_changepassword(request):
 		user.set_password(password)
 		user.save()
 		return HttpResponse('226')
+	else:
+		return HttpResponse('GFY')
+@csrf_exempt
+def api_recharge(request):
+	if request.method == 'POST':
+		username = request.META['HTTP_USERNAME']
+		password = request.META['HTTP_PASSWORD']
+
+		if '@' in username:
+			try:
+				username = User.objects.get(email=username).username
+			except Exception as e:
+				pass
+		user = authenticate(username=username, password=password)
+		if user:
+			if user.is_active:
+				group = request.POST['group'].upper()
+				key = request.POST['key']
+				key = Key.objects.filter(group=group,key=key,status=False)
+				if  not key:
+					return HttpResponse('225')
+				else:
+					qset = user.userquestionset_set.filter(qgroup=group).count()
+					if qset <=50:
+						for i in range(1,11):
+							userquestionset=UserQuestionSet.objects.create(user=user,qgroup=group,questionset=qset+i)
+							userquestionset.save()
+						key[0].status=True
+						key[0].save()
+						return HttpResponse('226')
+					else:
+						return HttpResponse('limit excedded')
+			else:
+				return HttpResponse("224")
+		else:
+			return HttpResponse("224")
 	else:
 		return HttpResponse('GFY')
 
