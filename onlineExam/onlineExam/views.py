@@ -16,6 +16,7 @@ from django.core import serializers
 from django.core.mail import send_mail
 import random
 import json
+import hashlib
 
 from exam.models import *
 from .forms import *
@@ -91,10 +92,16 @@ def register(request):
 		profileform = UserProfileForm(request.POST)
 		if userform.is_valid() and profileform.is_valid():
 			user = userform.save(commit=False)
+			user.username = userform.cleaned_data['username'].upper()
 			user.set_password(userform.cleaned_data['password'])
+			user.is_active = False
 			test_user = None
 			try :
 				test_user = User.objects.get(email=user.email)
+				if not UserKey.objects.filter(email=user.email):
+					User.objects.get(username=user.username,is_active=False).delete()
+					User.objects.get(email=user.email,is_active=False).delete()
+
 			except Exception as e:
 				pass
 			if test_user != None:
@@ -107,9 +114,24 @@ def register(request):
 			userprofile = profileform.save(commit=False)
 			userprofile.user = user
 			userprofile.save()
+
+			key = str(int(random.random()*100000000))
+			hashedKey = hashlib.sha256(key)
+			key = str(hashedKey.hexdigest())
+
+			message='<h1>Password Change Link</h1><br/>As you had requested for changing password,'+\
+				' the link to change password is here: <br/><a href="http:localhost:8000/verify-registration/'+\
+				key+'" target=_blank>http://localhost:8000/verify-registration/'+key+'</a>'
+			
+			send_mail('Notification: Your password change key is here', '',
+                'someone@email.com', [user.email,], fail_silently=False, html_message=message)
+			
+			userkey = UserKey(key=key, email=user.email)
+			print userform.cleaned_data['email']
+			userkey.save()
 			context={
 				'title':'Register',
-				"register":'Register Success',
+				"register":'An email has been sent to you to verify the registration. Verify within 1 hour',
 				
 			}
 			return render(request,'register.html',context)
@@ -130,12 +152,26 @@ def register(request):
 		}
 	return render(request,'register.html',context)
 
+def verify_registration(request, key):
+	
+	try:
+		key = UserKey.objects.get(key=key)
+		if key != None:
+			user = User.objects.get(email=key.email)
+			user.is_active = 1
+			user.save()
+			return redirect(reverse('login'))
+		else:
+			return redirect(reverse('register'))
+	except Exception as e:
+		return redirect(reverse('register'))
+
 def login_view(request):
 	request.session['rechargeError']=None
 	request.session['qsetError']=None
 	request.session['key'] = None
 	if request.method == 'POST':
-		username = request.POST['username']
+		username = request.POST['username'].upper()
 		password = request.POST['password']
 		
 		if '@' in username:
@@ -154,6 +190,12 @@ def login_view(request):
 				}
 				print user.id
 				return redirect(reverse('dashboard' , args=(user.id,)))
+			else:
+				context={
+					'title':'Login',
+					'login':'Login Here',
+					'error':'Username or Password Invalid',
+				}
 		else:
 			context={
 				'title':'Login',
@@ -987,12 +1029,21 @@ def forgotpassword(request):
 			user = User.objects.get(email=request.POST['email'])
 			if user != None:
 				key = str(int(random.random()*100000000))
-				message='<h1>Password Change Key</h1><br/>As you had requested for changing password your key is here: <br/><b>'+key+'</b>'
+				hashedKey = hashlib.sha256(key)
+				key = str(hashedKey.hexdigest())
+				message='<h1>Password Change Link</h1><br/>As you had requested for changing password,'+\
+					' the link to change password is here: <br/><a href="http:localhost:8000/recover-password/'+\
+					key+'" target=_blank>http://localhost:8000/recover-password/'+key+'</a>'
+				
 				send_mail('Notification: Your password change key is here', '',
 	                'someone@email.com', [request.POST['email'],], fail_silently=False, html_message=message)
-				passchg = PassChgKey.objects.create(key=key, email=request.POST['email'])
+				
+				passchg = PassChgKey(key=key, email=request.POST['email'])
 				passchg.save()
-				return redirect(reverse('recoverpassword'))
+				context = {
+					'success': 'success'
+				}
+				return render(request, 'password_forgot.html', context)
 			else:
 				context = {
 					'error': 'Email does not exist. Please Provide a valid email.'
@@ -1005,24 +1056,24 @@ def forgotpassword(request):
 			return render(request, 'password_forgot.html', context)
 	return render(request, 'password_forgot.html')
 
-def recoverpassword(request):
-	if request.method == 'POST':
-		try:
-			key = PassChgKey.objects.get(key=request.POST['key'])
-			if key != None:
-				request.session['key'] = key
-				return redirect(reverse('changepassword'))
-			else:
-				context = {
-					'error': 'Incorrect key'
-				}
-				return render(request, 'password_recover.html', context)
-		except Exception as e:
+def recoverpassword(request, key):
+	
+	try:
+		print key
+		key = PassChgKey.objects.get(key=key)
+		if key != None:
+			request.session['key'] = key
+			return redirect(reverse('changepassword'))
+		else:
 			context = {
-					'error': 'Incorrect key'
-				}
+				'error': 'Invalid Lifdfnk'
+			}
 			return render(request, 'password_recover.html', context)
-	return render(request, 'password_recover.html')
+	except Exception as e:
+		context = {
+				'error': 'Invalid Link'
+			}
+		return render(request, 'password_recover.html', context)
 
 def changepassword(request):
 	if request.session['key']:
@@ -1293,6 +1344,7 @@ from datetime import datetime
 
 def removekey():
 	PassChgKey.objects.filter(expiry__lt=datetime.now()).delete()
+	UserKey.objects.filter(expiry__lt=datetime.now()).delete()
 	threading.Timer(60, removekey).start()
 
 removekey()

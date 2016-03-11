@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^doctor/', doctor, name='doctor'),
     url(r'^engineer/', engineer, name='engineer'),
     url(r'^register/', register, name='register'),
+     url(r'^verify-registration/(?P<key>\w+)/', verify_registration, name='verifyregistration'),
     url(r'^login/',login_view, name='login'),
     url(r'^logout/',logout_view, name='logout'),
     url(r'^dashboard/(?P<id>[0-9]+)/', dashboard, name='dashboard'),
@@ -44,7 +45,7 @@ urlpatterns = [
     url(r'^iom-syllabus/', iomsyllabus, name='iomsyllabus'),
     url(r'^moe-syllabus/', moesyllabus, name='moesyllabus'),
     url(r'^forgot-password/', forgotpassword, name='forgotpassword'),
-    url(r'^recover-password/', recoverpassword, name='recoverpassword'),
+    url(r'^recover-password/(?P<key>\w+)/', recoverpassword, name='recoverpassword'),
     url(r'^change-password/',changepassword, name='changepassword'),
 
     #api urls

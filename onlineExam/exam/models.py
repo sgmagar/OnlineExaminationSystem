@@ -44,17 +44,26 @@ class Key(models.Model):
 	status = models.BooleanField(default=False)
 	def __unicode__(self):
 		return self.key
+
 def get_expiry():
 		return datetime.now() + timedelta(hours=1)
+		
+class UserKey(models.Model):
+	key = models.CharField(blank=False, max_length=150)
+	email = models.EmailField(default=None)
+	expiry = models.DateTimeField(default=get_expiry)
+
+	def __unicode__(self):
+		return self.key
+
 class PassChgKey(models.Model):
-	key = models.CharField(blank=False, max_length=30)
+	key = models.CharField(blank=False, max_length=150)
 	email = models.EmailField(default=None)
 	expiry = models.DateTimeField(default=get_expiry)
 
 
 	def __unicode__(self):
 		return self.key
-
 
 class Faq(models.Model):
 	question = models.TextField(default=None)
@@ -94,7 +103,7 @@ class QuestionIOE(models.Model):
 			('Chemistry','Chemistry'),
 			('E-Aptitude','Engineering Aptitude Test'),
 		)
-	subject = models.CharField(default='Physics',max_length=12, choices=SUBJECT_CHOICES)
+	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)
 	TYPE_CHOICES=(
 			('Short','Short'),
 			('Long','Long'),
@@ -133,11 +142,12 @@ class QuestionIOM(models.Model):
 	questionno = models.IntegerField()
 	SUBJECT_CHOICES=(
 			('Physics','Physics'),
+			('Math','Math'),
+			('English','English'),
 			('Chemistry','Chemistry'),
-			('Zoology','Zoology'),
-			('Botany','Botany'),
+			('Drawing','Drawing'),
 		)
-	subject = models.CharField(default='Physics',max_length=12, choices=SUBJECT_CHOICES)
+	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)
 	TYPE_CHOICES=(
 			('Short','Short'),
 			('Long','Long'),
@@ -152,7 +162,7 @@ class QuestionIOM(models.Model):
 		)
 	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	qfile = models.ImageField(default=None,blank=True, upload_to="IOE/question/%y/%m/%d/%H/%M/%S")
-	hint = models.TextField(default=None, blank=True)
+	hint = models.TextField(default=None)
 	def __unicode__(self):
 		return str(self.questionset)+" "+str(self.questionno)+" "+ self.subject+"\t"+self.question
 
@@ -173,11 +183,12 @@ class QuestionMOE(models.Model):
 	questionno = models.IntegerField()
 	SUBJECT_CHOICES=(
 			('Physics','Physics'),
+			('Math','Math'),
+			('English','English'),
 			('Chemistry','Chemistry'),
-			('Zoology','Zoology'),
-			('Botany','Botany'),
+			('Drawing','Drawing'),
 		)
-	subject = models.CharField(default='Physics',max_length=12, choices=SUBJECT_CHOICES)
+	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)
 	TYPE_CHOICES=(
 			('Short','Short'),
 			('Long','Long'),
@@ -192,7 +203,7 @@ class QuestionMOE(models.Model):
 		)
 	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)
 	qfile = models.ImageField(default=None,blank=True, upload_to="IOE/question/%y/%m/%d/%H/%M/%S")
-	hint = models.TextField(default=None, blank=True)
+	hint = models.TextField(default=None)
 	def __unicode__(self):
 		return str(self.questionset)+" "+str(self.questionno)+" "+ self.subject+"\t"+self.question
 
