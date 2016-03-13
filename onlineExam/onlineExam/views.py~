@@ -119,7 +119,7 @@ def register(request):
 			hashedKey = hashlib.sha256(key)
 			key = str(hashedKey.hexdigest())
 
-			message='<h1>Register Link</h1><br/>As you had requested for changing password,'+\
+			message='<h1>Password Change Link</h1><br/>As you had requested for changing password,'+\
 				' the link to change password is here: <br/><a href="http:localhost:8000/verify-registration/'+\
 				key+'" target=_blank>http://localhost:8000/verify-registration/'+key+'</a>'
 			

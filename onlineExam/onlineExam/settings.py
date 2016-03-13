@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'na2m1-o$1*t&5o5876&=mux*$ztmj%dp^!$#7x)^!c8zf*buq-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -77,18 +77,18 @@ WSGI_APPLICATION = 'onlineExam.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'onlineexam',
-        'USER': 'root',
-        'PASSWORD': 'heisenberg',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        # 'OPTIONS': {'init_command':'SET storage_engine=INNODB,character_set_connection=utf8,collation_connection=utf8_unicode_ci'},
-        'OPTIONS':{'charset': 'utf8'},
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'onlineexam',
+#         'USER': 'root',
+#         'PASSWORD': 'heisenberg',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#         # 'OPTIONS': {'init_command':'SET storage_engine=INNODB,character_set_connection=utf8,collation_connection=utf8_unicode_ci'},
+#         'OPTIONS':{'charset': 'utf8'},
+#     }
+# }
 
 
 # Internationalization
