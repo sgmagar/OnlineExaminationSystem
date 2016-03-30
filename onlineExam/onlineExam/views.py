@@ -17,8 +17,6 @@ from django.core.mail import send_mail
 import random
 import json
 import hashlib
-from django.contrib.sites.models import Site
-
 from exam.models import *
 from .forms import *
 
