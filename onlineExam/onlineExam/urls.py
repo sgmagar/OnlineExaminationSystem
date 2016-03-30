@@ -57,6 +57,17 @@ urlpatterns = [
     url(r'^api/forgot-password/', api_forgotpassword),
     url(r'^api/recover-password/', api_recoverpassword),
     url(r'^api/change-password/', api_changepassword),
-     url(r'^api/recharge/', api_recharge),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^api/recharge/', api_recharge),
+]
+
+if settings.DEBUG:
+    urlpatterns.append(
+            url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        })
+    )
+    urlpatterns.append(
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.STATIC_ROOT,
+        })
+    )
