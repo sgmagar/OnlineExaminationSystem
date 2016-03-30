@@ -219,6 +219,13 @@ class AnswerMOE(models.Model):
 	
 	afile = models.ImageField(default=None,blank=True, upload_to="IOE/answer/%y/%m/%d/%H/%M/%S")
 
+class Domain(models.Model):
+	domain = models.CharField(max_length = 25, default='localhost')
+	name = models.CharField(max_length=25, default='localhost')
+
+	def __unicode__(self):
+		return self.domain
+
 
 
 

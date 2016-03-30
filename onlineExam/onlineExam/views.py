@@ -17,6 +17,7 @@ from django.core.mail import send_mail
 import random
 import json
 import hashlib
+from django.contrib.sites.models import Site
 
 from exam.models import *
 from .forms import *
@@ -118,10 +119,11 @@ def register(request):
 			key = str(int(random.random()*100000000))
 			hashedKey = hashlib.sha256(key)
 			key = str(hashedKey.hexdigest())
+			domain = Domain.objects.all()[0].domain
 
 			message='<h1>Register Link</h1><br/>As you had requested for changing password,'+\
-				' the link to change password is here: <br/><a href="http:localhost:8000/verify-registration/'+\
-				key+'" target=_blank>http://localhost:8000/verify-registration/'+key+'</a>'
+				' the link to change password is here: <br/><a href="http://'+domain+'/verify-registration/'+\
+				key+'" target=_blank>http://'+domain+'/verify-registration/'+key+'</a>'
 			
 			send_mail('Notification: Your password change key is here', '',
                 'someone@email.com', [user.email,], fail_silently=False, html_message=message)
@@ -1031,9 +1033,10 @@ def forgotpassword(request):
 				key = str(int(random.random()*100000000))
 				hashedKey = hashlib.sha256(key)
 				key = str(hashedKey.hexdigest())
+				domain = Domain.objects.all()[0].domain
 				message='<h1>Password Change Link</h1><br/>As you had requested for changing password,'+\
-					' the link to change password is here: <br/><a href="http:localhost:8000/recover-password/'+\
-					key+'" target=_blank>http://localhost:8000/recover-password/'+key+'</a>'
+					' the link to change password is here: <br/><a href="http://'+domain+'/recover-password/'+\
+					key+'" target=_blank>http://'+domain+'/recover-password/'+key+'</a>'
 				
 				send_mail('Notification: Your password change key is here', '',
 	                'someone@email.com', [request.POST['email'],], fail_silently=False, html_message=message)
