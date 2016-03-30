@@ -113,4 +113,4 @@ admin.site.register(Faq, FaqAdmin)
 admin.site.register(ContactUs, ContactUsAdmin)
 admin.site.register(ChangePassKey,ChangePassKeyAdmin)
 
-admin.site.register(Site)
+#admin.site.register(Site)
