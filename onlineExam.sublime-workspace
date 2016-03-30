@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"Use",
+				"UserKey"
+			],
+			[
+				"verify",
+				"verify-user"
+			],
+			[
+				"verif",
+				"verify-user"
+			],
+			[
+				"userke",
+				"userkey"
+			],
+			[
+				"has",
+				"hashedKey"
+			],
+			[
 				"H",
 				"HttpResponse"
 			],
@@ -494,26 +514,6 @@
 			[
 				"rece",
 				"recipientCountry"
-			],
-			[
-				"tabl",
-				"table_csv"
-			],
-			[
-				"dat",
-				"dateType"
-			],
-			[
-				"so",
-				"source"
-			],
-			[
-				"recipi",
-				"recipientType"
-			],
-			[
-				"recei",
-				"recipientWebsite"
 			]
 		]
 	},
@@ -523,7 +523,31 @@
 			"file": "onlineExam/onlineExam/views.py",
 			"settings":
 			{
-				"buffer_size": 23657,
+				"buffer_size": 40353,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "onlineExam/onlineExam/templates/register.html",
+			"settings":
+			{
+				"buffer_size": 2679,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "onlineExam/exam/models.py",
+			"settings":
+			{
+				"buffer_size": 6600,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "onlineExam/onlineExam/urls.py",
+			"settings":
+			{
+				"buffer_size": 3220,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +555,7 @@
 			"file": "onlineExam/onlineExam/templates/password_forgot.html",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1391,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,18 +563,15 @@
 			"file": "onlineExam/onlineExam/templates/password_recover.html",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 587,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "from django.db import models\nfrom django.contrib.auth.models import User\n\n# Create your models here.\n\nclass News(models.Model):\n	FACULTY_CHOICES = (\n			('IOE','IOE'),\n			('MOE','MOE'),\n			('IOM','IOM'),\n		)\n	faculty = models.CharField(max_length=4, default='IOE', choices=FACULTY_CHOICES)\n	newstitle = models.CharField(max_length=200, default='None')\n	url= models.URLField( default=None)\n	publishDate = models.DateField(auto_now=True)\n\n	def __unicode__(self):\n		return self.newstitle\n\nclass UserProfile(models.Model):\n	user = models.OneToOneField(User)\n	college = models.CharField(blank=True, max_length=40)\n	FACULTY_CHOICES = (\n			('E','Engineer'),\n			('D','Doctor'),\n		)\n	faculty = models.CharField(default='E',max_length=1, choices=FACULTY_CHOICES)\n	phone = models.CharField(default=None,max_length=20)\n	joined_date = models.DateField(auto_now=True)\n\n	def __unicode__(self):\n		return self.user.username\n\nclass Key(models.Model):\n	key = models.CharField(blank=False, max_length=40)\n	GROUP_CHOICES=(\n		('IOE','IOE'),\n		('IOM','IOM'),\n		('MOE','MOE'),\n	)\n	group = models.CharField(default='IOE', max_length=3, choices=GROUP_CHOICES)\n	status = models.BooleanField(default=False)\n	def __unicode__(self):\n		return self.key\n\nclass FPKey(models.Model):\n	key = models.CharField(blank=False, max_length=30)\n	expiry = models.DateTimeField()\n\nclass Faq(models.Model):\n	question = models.TextField(default=None)\n	answer = models.TextField(default=None)\n\n	def __unicode__(self):\n		return self.question\n\nclass ContactUs(models.Model):\n	name = models.CharField(max_length=40)\n	email = models.EmailField()\n	message = models.TextField()\n\n\nclass UserQuestionSet(models.Model):\n	user = models.ForeignKey(User)\n	GROUP_CHOICES=(\n		('IOE','IOE'),\n		('IOM','IOM'),\n		('MOE','MOE'),\n	)\n	qgroup = models.CharField(default='IOE',max_length=4, choices=GROUP_CHOICES)\n	questionset=models.IntegerField()\n	status = models.BooleanField(default=False)\n	score = models.IntegerField(default=0,blank=True)\n\n	def __unicode__(self):\n		return unicode(self.questionset)\n\nclass QuestionIOE(models.Model):\n	questionset = models.IntegerField()\n	questionno = models.IntegerField()\n	SUBJECT_CHOICES=(\n			('Physics','Physics'),\n			('Math','Math'),\n			('English','English'),\n			('Chemistry','Chemistry'),\n			('E-Aptitude','Engineering Aptitude Test'),\n		)\n	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)\n	TYPE_CHOICES=(\n			('Short','Short'),\n			('Long','Long'),\n		)\n	qtype = models.CharField(default='Short',max_length=6, choices=TYPE_CHOICES)\n	question = models.TextField(default=None)\n	ANSWER_CHOICES=(\n			('a','a'),\n			('b','b'),\n			('c','c'),\n			('d','d'),\n		)\n	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)\n	qfile = models.ImageField(default=None,blank=True, upload_to=\"IOE/question/%y/%m/%d/%H/%M/%S\")\n	hint = models.TextField(default=None)\n	\n\n	def __unicode__(self):\n		return str(self.questionset)+\" \"+str(self.questionno)+\" \"+ self.subject+\"\\t\"+self.question\n\nclass AnswerIOE(models.Model):\n	question = models.ForeignKey(QuestionIOE)\n	ANSWER_CHOICES=(\n			('a','a'),\n			('b','b'),\n			('c','c'),\n			('d','d'),\n		)\n	choice = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)\n	answer = models.CharField(max_length=200, default=None)\n	\n	afile = models.ImageField(default=None,blank=True, upload_to=\"IOE/answer/%y/%m/%d/%H/%M/%S\")\n\nclass QuestionIOM(models.Model):\n	questionset = models.IntegerField()\n	questionno = models.IntegerField()\n	SUBJECT_CHOICES=(\n			('Physics','Physics'),\n			('Math','Math'),\n			('English','English'),\n			('Chemistry','Chemistry'),\n			('Drawing','Drawing'),\n		)\n	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)\n	TYPE_CHOICES=(\n			('Short','Short'),\n			('Long','Long'),\n		)\n	qtype = models.CharField(default='Short',max_length=6, choices=TYPE_CHOICES)\n	question = models.TextField(default=None, max_length=200)\n	ANSWER_CHOICES=(\n			('a','a'),\n			('b','b'),\n			('c','c'),\n			('d','d'),\n		)\n	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)\n	qfile = models.ImageField(default=None,blank=True, upload_to=\"IOE/question/%y/%m/%d/%H/%M/%S\")\n	hint = models.TextField(default=None)\n	def __unicode__(self):\n		return str(self.questionset)+\" \"+str(self.questionno)+\" \"+ self.subject+\"\\t\"+self.question\n\nclass AnswerIOM(models.Model):\n	question = models.ForeignKey(QuestionIOM)\n	ANSWER_CHOICES=(\n			('a','a'),\n			('b','b'),\n			('c','c'),\n			('d','d'),\n		)\n	choice = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)\n	answer = models.CharField(max_length=200, default=None)\n	afile = models.ImageField(default=None,blank=True, upload_to=\"IOE/answer/%y/%m/%d/%H/%M/%S\")\n\nclass QuestionMOE(models.Model):\n	questionset = models.IntegerField()\n	questionno = models.IntegerField()\n	SUBJECT_CHOICES=(\n			('Physics','Physics'),\n			('Math','Math'),\n			('English','English'),\n			('Chemistry','Chemistry'),\n			('Drawing','Drawing'),\n		)\n	subject = models.CharField(default='English',max_length=12, choices=SUBJECT_CHOICES)\n	TYPE_CHOICES=(\n			('Short','Short'),\n			('Long','Long'),\n		)\n	qtype = models.CharField(default='Short',max_length=6, choices=TYPE_CHOICES)\n	question = models.TextField(default=None, max_length=200)\n	ANSWER_CHOICES=(\n			('a','a'),\n			('b','b'),\n			('c','c'),\n			('d','d'),\n		)\n	answer = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)\n	qfile = models.ImageField(default=None,blank=True, upload_to=\"IOE/question/%y/%m/%d/%H/%M/%S\")\n	hint = models.TextField(default=None)\n	def __unicode__(self):\n		return str(self.questionset)+\" \"+str(self.questionno)+\" \"+ self.subject+\"\\t\"+self.question\n\nclass AnswerMOE(models.Model):\n	question = models.ForeignKey(QuestionMOE)\n	ANSWER_CHOICES=(\n			('a','a'),\n			('b','b'),\n			('c','c'),\n			('d','d'),\n		)\n	choice = models.CharField(max_length=1, default='a', choices=ANSWER_CHOICES)\n	answer = models.CharField(max_length=200, default=None)\n	\n	afile = models.ImageField(default=None,blank=True, upload_to=\"IOE/answer/%y/%m/%d/%H/%M/%S\")\n\n\n\n\n# Question:\n# questionset,qusetionno,subect,type,quesiton_text,type,file\n\n# answer:\n# 	question, answer,check,file\n	\n",
-			"file": "onlineExam/exam/models.py",
-			"file_size": 6052,
-			"file_write_time": 130999945351286638,
+			"file": "onlineExam/exam/admin.py",
 			"settings":
 			{
-				"buffer_size": 6165,
+				"buffer_size": 3625,
 				"line_ending": "Unix"
 			}
 		},
@@ -566,14 +587,6 @@
 			}
 		},
 		{
-			"file": "onlineExam/onlineExam/urls.py",
-			"settings":
-			{
-				"buffer_size": 2823,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "onlineExam/onlineExam/templates/base.html",
 			"settings":
 			{
@@ -585,7 +598,7 @@
 			"file": "onlineExam/onlineExam/templates/questionset_ioe.html",
 			"settings":
 			{
-				"buffer_size": 7591,
+				"buffer_size": 12719,
 				"line_ending": "Unix"
 			}
 		},
@@ -593,7 +606,7 @@
 			"file": "onlineExam/onlineExam/templates/dashboard.html",
 			"settings":
 			{
-				"buffer_size": 16282,
+				"buffer_size": 53008,
 				"line_ending": "Unix"
 			}
 		},
@@ -601,7 +614,7 @@
 			"file": "onlineExam/onlineExam/templates/solution.html",
 			"settings":
 			{
-				"buffer_size": 4206,
+				"buffer_size": 4376,
 				"line_ending": "Unix"
 			}
 		},
@@ -609,15 +622,7 @@
 			"file": "onlineExam/onlineExam/templates/login.html",
 			"settings":
 			{
-				"buffer_size": 2037,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "onlineExam/onlineExam/templates/forgot_password.html",
-			"settings":
-			{
-				"buffer_size": 178,
+				"buffer_size": 2063,
 				"line_ending": "Unix"
 			}
 		}
@@ -670,12 +675,16 @@
 	},
 	"expanded_folders":
 	[
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/exam",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/exam/migrations",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates"
 	],
 	"file_history":
 	[
+		"/home/saurav/Documents/Django/virtualOnlineExam/onlineExam/onlineExam/views.py",
+		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/forgot_password.html",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/register.html",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/questionset_ioe.html",
 		"/home/saurav/Documents/Django/OnlineExaminationSystem(1.1)/onlineExam/onlineExam/templates/result_ioe.html",
@@ -801,9 +810,7 @@
 		"/home/saurav/Documents/kobitwork/mine_first_project/nepal-relief-fund/data_column.txt",
 		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/templates/table.html",
 		"/home/saurav/Documents/kobitwork/firstProject/nepal-relief-fund/nepalfund/nepalfund/templates/survey.html",
-		"/home/saurav/Documents/Django/try-django/src/newsletter/views.py",
-		"/home/saurav/Documents/Django/try-django/src/templates/base.html",
-		"/home/saurav/Documents/Django/try-django/src/templates/navbar.html"
+		"/home/saurav/Documents/Django/try-django/src/newsletter/views.py"
 	],
 	"find":
 	{
@@ -858,7 +865,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -867,15 +874,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 23657,
+						"buffer_size": 40353,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19204,
-								19204
+								21840,
+								21840
 							]
 						],
 						"settings":
@@ -884,33 +891,33 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 9814.0,
+						"translation.y": 10982.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "onlineExam/onlineExam/templates/password_forgot.html",
+					"file": "onlineExam/onlineExam/templates/register.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 2679,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								488,
+								488
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -921,11 +928,129 @@
 				},
 				{
 					"buffer": 2,
+					"file": "onlineExam/exam/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6600,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1342,
+								1342
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2385.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "onlineExam/onlineExam/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3220,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2852,
+								2852
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 453.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "onlineExam/onlineExam/templates/password_forgot.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1391,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								110,
+								110
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "onlineExam/onlineExam/templates/password_recover.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 587,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								403,
+								403
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "onlineExam/exam/admin.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3625,
 						"regions":
 						{
 						},
@@ -938,46 +1063,18 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "onlineExam/exam/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6165,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1331,
-								1331
-							]
-						],
-						"settings":
-						{
 							"syntax": "Packages/Python/Python.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 1008.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 7,
 					"file": "/home/saurav/Documents/Django/TDD/functional_tests.py",
 					"semi_transient": false,
 					"settings":
@@ -1001,41 +1098,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "onlineExam/onlineExam/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2823,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2169,
-								2169
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 348.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "onlineExam/onlineExam/templates/base.html",
 					"semi_transient": false,
 					"settings":
@@ -1061,16 +1128,16 @@
 						"translation.y": 495.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "onlineExam/onlineExam/templates/questionset_ioe.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7591,
+						"buffer_size": 12719,
 						"regions":
 						{
 						},
@@ -1083,30 +1150,31 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 1755.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 10,
 					"file": "onlineExam/onlineExam/templates/dashboard.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16282,
+						"buffer_size": 53008,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10539,
-								10539
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1119,53 +1187,53 @@
 						"translation.y": 2298.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "onlineExam/onlineExam/templates/solution.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4206,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1167,
-								1167
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
+					"file": "onlineExam/onlineExam/templates/solution.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4376,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
 					"file": "onlineExam/onlineExam/templates/login.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2037,
+						"buffer_size": 2063,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								775,
-								775
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1177,36 +1245,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "onlineExam/onlineExam/templates/forgot_password.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 178,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								178,
-								178
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
+					"stack_index": 12,
 					"type": "text"
 				}
 			]
