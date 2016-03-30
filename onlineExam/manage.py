@@ -5,7 +5,7 @@ import sys
 import socket
 
 if __name__ == "__main__":
-	if socket.gethostname() == 'onlinetest':
+	if socket.gethostname() == 'ip-104-236-49-75':
 		os.environ.setdefault("DJANGO_SETTINGS_MODULE", "onlineExam.settings")
 	else:
 		os.environ.setdefault("DJANGO_SETTINGS_MODULE", "onlineExam.local_settings")
