@@ -1038,7 +1038,7 @@ def forgotpassword(request):
 				send_mail('Notification: Your password change key is here', '',
 	                'someone@email.com', [request.POST['email'],], fail_silently=False, html_message=message)
 				
-				passchg = PassChgKey(key=key, email=request.POST['email'])
+				passchg = ChangePassKey(key=key, email=request.POST['email'])
 				passchg.save()
 				context = {
 					'success': 'success'
@@ -1060,7 +1060,7 @@ def recoverpassword(request, key):
 	
 	try:
 		print key
-		key = PassChgKey.objects.get(key=key)
+		key = ChangePassKey.objects.get(key=key)
 		if key != None:
 			request.session['key'] = key
 			return redirect(reverse('changepassword'))
@@ -1264,7 +1264,7 @@ def api_forgotpassword(request):
 				message='<h1>Password Change Key</h1><br/>As you had requested for changing password your key is here: <br/><b>'+key+'</b>'
 				send_mail('Notification: Your password change key is here', '',
 	                'someone@email.com', [request.POST['email'],], fail_silently=False, html_message=message)
-				passchg = PassChgKey.objects.create(key=key, email=request.POST['email'])
+				passchg = ChangePassKey.objects.create(key=key, email=request.POST['email'])
 				passchg.save()
 				print user
 				return HttpResponse('226')
@@ -1277,7 +1277,7 @@ def api_forgotpassword(request):
 def api_recoverpassword(request):
 	if request.method == 'POST':
 		try:
-			key = PassChgKey.objects.get(key=request.POST['key'])
+			key = ChangePassKey.objects.get(key=request.POST['key'])
 			if key != None:
 				response = {'code':'226','email':key.email}
 				response = json.dumps(response)
@@ -1343,7 +1343,7 @@ import threading
 from datetime import datetime
 
 def removekey():
-	PassChgKey.objects.filter(expiry__lt=datetime.now()).delete()
+	ChangePassKey.objects.filter(expiry__lt=datetime.now()).delete()
 	UserKey.objects.filter(expiry__lt=datetime.now()).delete()
 	threading.Timer(60, removekey).start()
 

@@ -56,11 +56,10 @@ class UserKey(models.Model):
 	def __unicode__(self):
 		return self.key
 
-class PassChgKey(models.Model):
+class ChangePassKey(models.Model):
 	key = models.CharField(blank=False, max_length=150)
 	email = models.EmailField(default=None)
 	expiry = models.DateTimeField(default=get_expiry)
-
 
 	def __unicode__(self):
 		return self.key
