@@ -733,7 +733,7 @@ def checkset(request, qgroup, qset):
 			}
 			request.session["solution"] = "okay"
 			return render(request, 'result_ioe.html', score)
-		if qgroup == 'MOE':
+		elif qgroup == 'MOE':
 			wrong=[]
 			not_attempted = []
 			correct = []
@@ -1201,7 +1201,7 @@ def api_questions(request,qgroup,qset):
 	if user:
 		if user.is_active:
 			if qgroup=='ioe':
-				questions = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')[:5]
+				questions = QuestionIOE.objects.filter(questionset=qset).order_by('questionno')
 				# questionno = serializers.serialize("json", questions, fields=('question',))
 				question_set = []
 				# print questionno
