@@ -2,6 +2,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
+from django.contrib.sites.models import Site
 
 from .models import *;
 
@@ -111,3 +112,5 @@ admin.site.register(QuestionMOE,QuestionMOEAdmin)
 admin.site.register(Faq, FaqAdmin)
 admin.site.register(ContactUs, ContactUsAdmin)
 admin.site.register(ChangePassKey,ChangePassKeyAdmin)
+
+admin.site.register(Site)
