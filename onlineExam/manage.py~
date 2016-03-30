@@ -5,10 +5,10 @@ import sys
 import socket
 
 if __name__ == "__main__":
-	if socket.gethostname() == 'mock-onlinetest':
+	if socket.gethostname() == 'get-do':
 		os.environ.setdefault("DJANGO_SETTINGS_MODULE", "onlineExam.settings")
 	else:
-		os.environ.setdefault("DJANGO_SETTINGS_MODULE", "onlineExam.settings")
+		os.environ.setdefault("DJANGO_SETTINGS_MODULE", "onlineExam.local_settings")
 
 	from django.core.management import execute_from_command_line
 
