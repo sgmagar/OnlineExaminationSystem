@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6
 .navbar-default
 {
     /*background-color: #267D90;*/
-    background-color: #46a1b4;
+    background-color: #46A1B4;
 }
 .navbar-default .navbar-header .logo
 {
@@ -285,7 +285,7 @@ li:last-child
 }
 .slider-inner-text
 {
-    margin: 262px 0px;
+    margin: 152px 0px 262px 0px;
     width: 50%;
 }
 
@@ -342,7 +342,7 @@ section.starting-text
 {
     background-color: #fff;
     margin-top: 20px;
-    color: #46a1b4;
+    color: #46A1B4;
     border-radius: 0px;
     font-size: 16px;
     transition: all 0.3s ease-in;
@@ -352,7 +352,7 @@ section.starting-text
 .welcome-btn:hover 
 {
     color: white;
-    background-color: #46a1b4;
+    background-color: #46A1B4;
 }
 /* ------------------------------------- 1.4 testimonial-------------------------------------------- */
 #testimonial
@@ -639,7 +639,7 @@ textarea.contact-form-control{
     font-family: 'Open Sans',sans-serif;
     color: rgb(255,255,255);
     font-weight: 400;
-    background-color: #46a1b4;
+    background-color: #46A1B4;
     text-transform: uppercase;
     font-size: 13px;
     padding: 10px 50px;
@@ -652,7 +652,7 @@ textarea.contact-form-control{
 .contact-form-btn:hover,.contact-form-btn:focus,.contact-form-btn.active,.contact-form-btn.active:hover,contact-form-btn.active:focus{
     color: rgb(255,255,255);
     font-weight: 400;
-    background-color: #46a1b4;
+    background-color: #46A1B4;
     border: 0px;
 }
 .contact-article h2{
@@ -680,7 +680,7 @@ textarea.contact-form-control{
     width: 35px;
     height: 35px;
     border-radius: 50px;
-    background-color: #46a1b4;
+    background-color: #46A1B4;
     color: #fff;
 }
 .right-block {
@@ -990,7 +990,7 @@ li.socials-icons
 
 
 #dashboard .btn-default {
-    background-color: #46a1b4;
+    background-color: #46A1B4;
     color: white;
     border-radius: 0px;
     padding-left: 12%;
@@ -1025,21 +1025,34 @@ li.socials-icons
 }
 #dashboard .go-premium{
     background:#E9EAEA;
+    padding-top: 50px;
 }
 #dashboard .go-premium .btn-default{
     background-color: #FFFFFF;
     color: #000;
-    padding: 4% 30%;
+    padding: 2% 30%;
     margin-top: 5px;
     margin-bottom: 30px;
+
 }
 #dashboard .go-premium .btn-default:hover{
-    background-color: #46a1b4;
+    background-color: #46A1B4;
     color: #FFFFFF;
 }
-#dashboard .go-premium a{
+#dashboard .go-premium .btn-default:hover .set-no,#dashboard .go-premium .btn-default:hover .marks{
+    background-color: #46A1B4;
+    color: #FFFFFF;
+}
+#dashboard .go-premium .set-no{
     font-size: 20px;
 }
+#dashboard .go-premium .marks{
+    font-size: 14px;
+    color: #46A1B4;
+    font-weight: 600;
+    /*color: red;*/
+}
+
 .rules{
     margin-bottom: 30px;
 }
@@ -1059,7 +1072,7 @@ li.socials-icons
 
 #dashboard-question .status{
     position:fixed; 
-    background:#46a1b4; 
+    background:#46A1B4; 
     color:#fff; 
     padding:20px;
 }
@@ -1075,7 +1088,7 @@ li.socials-icons
     -moz-border-radius: 30px;
     border-radius: 10px;
     opacity: 1 !important;
-    background: #46a1b4;
+    background: #46A1B4;
 }
 
 #dashboard-question .questions{
@@ -1104,7 +1117,7 @@ li.socials-icons
   background-color: transparent;
 }  
 .navbar-nav>li>.dropdown-menu{
-    background: #46a1b4;
+    background: #46A1B4;
 }
   
 @media (max-width: 767px) {
@@ -1303,7 +1316,7 @@ li.socials-icons
 }
 
 .panel-heading.active{
-  background: #1f1f20;
+  background: #46A1B4;
 }
 
 .panel-heading.active .panel-title>a{
@@ -1359,7 +1372,7 @@ a.accordion-toggle  i{
 }
 
 .nav-tabs>li>a:hover{
-  background: #1f1f20;
+  background: #46A1B4;
   color:#fff;
 }
 
@@ -1368,7 +1381,7 @@ a.accordion-toggle  i{
 .nav-tabs>li.active>a:focus {
   border: 0;
   color:#fff;
-  background: #1f1f20;
+  background: #46A1B4;
   position: relative;
 }
 
@@ -1378,7 +1391,7 @@ a.accordion-toggle  i{
   width: auto;
   height: auto;
   border-style:solid;
-  border-color: transparent transparent transparent #1f1f20;
+  border-color: transparent transparent transparent #46A1B4;
   border-width: 25px 22px;
   right: -44px;
   top:0;
@@ -1409,7 +1422,18 @@ a.accordion-toggle  i{
     border: 0 none;
     box-shadow: none;
 }
+#md .table-responsive{
+    background-color: #fff;
+}
+#md .table-responsive thead{
+    background-color: #46A1B4;
+    color: #fff;
+    font-weight: 500;
 
+}
+.tab-content .col-md-6,.tab-content .col-md-12{
+    padding-left: 0px;
+}
 /*===============================================Go-to-top=========================================================*/
 .go-top {
     position: fixed;
