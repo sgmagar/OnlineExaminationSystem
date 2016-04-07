@@ -252,8 +252,6 @@ def dashboard(request, id):
 		print len(ioe_questionset)
 		context={
 			'title':'Dashboard',
-			'rechargeError': request.session['rechargeError'],
-			'qsetError': request.session['qsetError'],
 			'firstname':user.first_name,
 			'ioe_questionset_1': ioe_questionset_1,
 			'ioe_questionset_2': ioe_questionset_2,
