@@ -9,6 +9,7 @@
     
                 <div class="container">
                     <div class="row">
+                        <div style="margin-top:20px;font-size:20px;font-weight:bold;text-align:center">Welcome {{ firstname }}</div>
                         <div class="col-md-12">
                             <!-- tab table begins -->
                             <div class="tabtable"> 
@@ -25,9 +26,9 @@
                                                     <div class="col-md-6 center">
                                                         <p><center><img src="{% static 'img/ioe-logo.png' %}" class="img img-responsive img-circle" alt="profile-pic" style="width:128px; height:128px;" ></center></p>
                                                         <h2>IOE Mock Test</h2>
-                                                        <p>You can take one test for Free!</p>
+                                                        <p>You can take the Demo Test here!</p>
                                                         <p>
-                                                            <a href="{% url 'rules' 'IOE' '150' %}" class="btn btn-default btn-lg">Start Free Test</a>
+                                                            <a href="{% url 'rules' 'IOE' '150' %}" class="btn btn-default btn-lg">Start Demo Test</a>
                                                         </p>
                                                     </div>  
                                                 </div>        
@@ -54,10 +55,10 @@
                                             <div class="container-fluid go-premium">
                                                 <div class="row">
                                                     <div class="col-md-8 center">
-                                                        <h2>Go Premium</h2>
+                                                        <!-- <h2>Go Premium</h2>
                                                         <p>To practice more sets of question, Go premium. You can recharge Rs 100 and practice 10 Sets of question.</p>
                                                         {% if rechargeError != None %}<div class="alert alert-danger"> {{rechargeError}}</div>{% endif %}
-														<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p>
+														<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p> -->
                                                         {% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
                                                         <div class="tabtable"> 
                                                             <ul class="nav nav-tabs">
@@ -208,9 +209,9 @@
                                                     <div class="col-md-6 center">
                                                         <p><center><img src="{% static 'img/iom-logo.png' %}" class="img img-responsive img-circle" alt="profile-pic" style="width:128px; height:128px;" ></center></p>
                                                         <h2>IOM Mock Test</h2>
-                                                        <p>You can take one test for Free!</p>
+                                                        <p>You can take Demo Test here!</p>
                                                         <p>
-                                                            <a href="{% url 'rules' 'IOM' '150' %}" class="btn btn-default btn-lg">Start Free Test</a>
+                                                            <a href="{% url 'rules' 'IOM' '150' %}" class="btn btn-default btn-lg">Start Demo Test</a>
                                                         </p>
                                                     </div>  
                                                 </div>        
@@ -237,10 +238,10 @@
                                             <div class="container-fluid go-premium">
                                                 <div class="row">
                                                     <div class="col-md-8 center">
-                                                        <h2>Go Premium</h2>
+                                                        <!-- <h2>Go Premium</h2>
                                                         <p>To practice more sets of question, Go premium. You can recharge Rs 100 and practice 10 Sets of question.</p>
                                                         {% if rechargeError != None %}<div class="alert alert-danger"> {{rechargeError}}</div>{% endif %}
-															<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p>
+															<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p> -->
 															
                                                         {% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
 										    			<div class="tabtable"> 
@@ -390,9 +391,9 @@
                                                     <div class="col-md-6 center">
                                                         <p><center><img src="{% static 'img/moe-logo.png' %}" class="img img-responsive img-circle" alt="profile-pic" style="width:128px; height:128px;" ></center></p>
                                                         <h2>MOE Mock Test</h2>
-                                                        <p>You can take one test for Free!</p>
+                                                        <p>You can take Demo Test here!</p>
                                                         <p>
-                                                            <a href="{% url 'rules' 'MOE' '150' %}" class="btn btn-default btn-lg">Start Free Test</a>
+                                                            <a href="{% url 'rules' 'MOE' '150' %}" class="btn btn-default btn-lg">Start Demo Test</a>
                                                         </p>
                                                     </div>  
                                                 </div>        
@@ -419,10 +420,10 @@
                                             <div class="container-fluid go-premium">
                                                 <div class="row">
                                                     <div class="col-md-8 center">
-                                                        <h2>Go Premium</h2>
+                                                        <!-- <h2>Go Premium</h2>
                                                         <p>To practice more sets of question, Go premium. You can recharge Rs 100 and practice 10 Sets of question.</p>
                                                         {% if rechargeError != None %}<div class="alert alert-danger"> {{rechargeError}}</div>{% endif %}
-															<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p>
+															<p><button class="btn btn-primary" style="margin-top:10px;" data-toggle="modal" data-target="#rechargeModal" data-whatever="@mdo">Recharge</button></p> -->
 															
                                                         {% if qsetError != None %}<div class="alert alert-danger"> {{qsetError}}</div>{% endif %}
 										    			<div class="tabtable"> 
@@ -578,7 +579,7 @@
         <!-- Dashboard ends -->
 
    {% include 'footer.html' %}
-   <div class="modal fade" id="rechargeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+   <!-- <div class="modal fade" id="rechargeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
@@ -586,7 +587,7 @@
 		        <h4 class="modal-title" id="exampleModalLabel">Recharge Here</h4>
 		      </div>
 		      <div class="modal-body">
-		        <form action = "{% url 'recharge' %}" method = "POST">{% csrf_token %}
+		        <form action = "url 'recharge' " method = "POST">{% csrf_token %}
 		          <div class="form-group">
 		          	<select name="group" class="form-control">
 		          		<option value="IOE">IOE</option>
@@ -605,7 +606,7 @@
 		       </form>
 		    </div>
 		  </div>
-	</div>
+	</div> -->
 
 {% endblock %}
 {% block footer %}

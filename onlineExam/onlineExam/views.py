@@ -160,6 +160,13 @@ def verify_registration(request, key):
 			user = User.objects.get(email=key.email)
 			user.is_active = 1
 			user.save()
+			for qset in range(1,21):
+				userquestionset=UserQuestionSet.objects.create(user=user,qgroup='IOE',questionset=qset)
+				userquestionset.save()
+				userquestionset=UserQuestionSet.objects.create(user=user,qgroup='IOM',questionset=qset)
+				userquestionset.save()
+				userquestionset=UserQuestionSet.objects.create(user=user,qgroup='MOE',questionset=qset)
+				userquestionset.save()
 			return redirect(reverse('login'))
 		else:
 			return redirect(reverse('register'))
@@ -274,31 +281,31 @@ def dashboard(request, id):
 	else:
 		return redirect(reverse('home'))
 
-@login_required(login_url='login')
-def recharge(request):
-	if request.method=='POST':
-		group = request.POST['group']
-		pin = request.POST['pin']
-		user = request.user;
-		key = Key.objects.filter(group=group,key=pin,status=False)
+# @login_required(login_url='login')
+# def recharge(request):
+# 	if request.method=='POST':
+# 		group = request.POST['group']
+# 		pin = request.POST['pin']
+# 		user = request.user;
+# 		key = Key.objects.filter(group=group,key=pin,status=False)
 		
-		print key
-		if  not key:
-			request.session['rechargeError']='Key is invalid'
-			# print request.session['rechargeError']
-		else:
-			qset = user.userquestionset_set.filter(qgroup=group).count()
-			if qset <=50:
-				for i in range(1,11):
-					userquestionset=UserQuestionSet.objects.create(user=user,qgroup=group,questionset=qset+i)
-					userquestionset.save()
-				key[0].status=True
-				key[0].save()
-			else: 
-				request.session['rechargeError']='Limit Excedded! No more set'
+# 		print key
+# 		if  not key:
+# 			request.session['rechargeError']='Key is invalid'
+# 			# print request.session['rechargeError']
+# 		else:
+# 			qset = user.userquestionset_set.filter(qgroup=group).count()
+# 			if qset <=50:
+# 				for i in range(1,11):
+# 					userquestionset=UserQuestionSet.objects.create(user=user,qgroup=group,questionset=qset+i)
+# 					userquestionset.save()
+# 				key[0].status=True
+# 				key[0].save()
+# 			else: 
+# 				request.session['rechargeError']='Limit Excedded! No more set'
 
 
-	return redirect(reverse('dashboard', args=(request.user.id,)))
+# 	return redirect(reverse('dashboard', args=(request.user.id,)))
 @login_required(login_url='login')
 def questionset(request,qgroup,qset):
 	if qgroup.strip() == 'IOE':
