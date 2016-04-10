@@ -1353,5 +1353,5 @@ def removekey():
 	UserKey.objects.filter(expiry__lt=datetime.now()).delete()
 	threading.Timer(60, removekey).start()
 
-# removekey()
+removekey()
 
