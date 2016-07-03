@@ -4,7 +4,6 @@ from django.http import HttpResponse, Http404
 from django.core.urlresolvers import reverse
 
 from django.contrib.auth import authenticate, login,logout
-from django.http import HttpResponse, Http404
 from django.contrib.auth.decorators import login_required
 
 from importlib import import_module
